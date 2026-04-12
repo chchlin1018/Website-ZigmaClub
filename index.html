@@ -3,143 +3,225 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Zigma — USD↔Revit Converter | License Portal</title>
+<title>Zigma — USD↔Revit Converter for Semiconductor Fabs</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#0a0b0f;--surface:#13151c;--surface2:#1a1d27;--border:#2a2d3a;--text:#e4e6ef;--dim:#8b8fa3;--accent:#4f8cff;--glow:rgba(79,140,255,.15);--green:#34d399;--gg:rgba(52,211,153,.15);--font:'DM Sans',sans-serif;--mono:'JetBrains Mono',monospace}
-*{margin:0;padding:0;box-sizing:border-box}body{background:var(--bg);color:var(--text);font-family:var(--font);line-height:1.6}a{color:var(--accent);text-decoration:none}
-nav{display:flex;align-items:center;justify-content:space-between;padding:1.2rem 2rem;border-bottom:1px solid var(--border);backdrop-filter:blur(12px);position:sticky;top:0;z-index:100;background:rgba(10,11,15,.85)}
-.logo{font-size:1.4rem;font-weight:700;letter-spacing:-.5px}.logo span{color:var(--accent)}nav .links{display:flex;gap:2rem;font-size:.9rem;color:var(--dim)}nav .links a:hover{color:var(--text)}
-.hero{text-align:center;padding:5rem 2rem 3rem}.hero h1{font-size:clamp(2rem,5vw,3.5rem);font-weight:700;letter-spacing:-1px;margin-bottom:1rem}.hero h1 em{font-style:normal;color:var(--accent)}
-.hero p{font-size:1.1rem;color:var(--dim);max-width:600px;margin:0 auto 2rem}.badge{display:inline-block;padding:.35rem 1rem;border-radius:20px;font-size:.8rem;font-weight:500;background:var(--glow);color:var(--accent);border:1px solid rgba(79,140,255,.3);margin-bottom:1.5rem}
+:root{--bg:#0a0b0f;--s1:#13151c;--s2:#1a1d27;--bd:#2a2d3a;--tx:#e4e6ef;--dm:#8b8fa3;--ac:#4f8cff;--gw:rgba(79,140,255,.15);--gn:#34d399;--gg:rgba(52,211,153,.15);--or:#fb923c;--og:rgba(251,147,60,.15);--f:'DM Sans',sans-serif;--m:'JetBrains Mono',monospace}
+*{margin:0;padding:0;box-sizing:border-box}body{background:var(--bg);color:var(--tx);font-family:var(--f);line-height:1.6}a{color:var(--ac);text-decoration:none}
+nav{display:flex;align-items:center;justify-content:space-between;padding:1.2rem 2rem;border-bottom:1px solid var(--bd);backdrop-filter:blur(12px);position:sticky;top:0;z-index:100;background:rgba(10,11,15,.85)}
+.logo{font-size:1.4rem;font-weight:700;letter-spacing:-.5px}.logo span{color:var(--ac)}
+nav .links{display:flex;gap:1.2rem;font-size:.9rem;color:var(--dm);align-items:center}nav .links a:hover{color:var(--tx)}
+.dl-btn{background:var(--ac)!important;color:#fff!important;padding:.45rem 1.2rem;border-radius:8px;font-weight:600;font-size:.85rem;transition:all .2s}.dl-btn:hover{background:#3a7bf0!important;transform:translateY(-1px)}
 </style>
 </head>
 <body>
+
 <nav>
   <div class="logo"><span>Z</span>igma</div>
   <div class="links">
     <a href="https://www.realitymatrixai.com" target="_blank">About Us</a>
-    <a href="#activate">Activate License</a>
-    <a href="https://github.com/chchlin1018/ZigmaConverterUSDRevit/releases" target="_blank" style="background:var(--accent);color:#fff;padding:.4rem 1rem;border-radius:8px;font-weight:600">Download Trial</a>
-    <a href="mailto:support@realitymatrixai.com">Support</a>
+    <a href="#trial">Free Trial</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#activate">Activate</a>
+    <a href="https://github.com/chchlin1018/ZigmaConverterUSDRevit/releases" target="_blank" class="dl-btn">Download Trial</a>
   </div>
 </nav>
-
 <style>
-.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.5rem;max-width:900px;margin:0 auto 4rem;padding:0 2rem}
-.step{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:1.8rem;text-align:center;transition:border-color .3s}.step:hover{border-color:var(--accent)}
-.step-num{width:36px;height:36px;border-radius:50%;background:var(--glow);color:var(--accent);font-weight:700;display:inline-flex;align-items:center;justify-content:center;margin-bottom:1rem;font-size:.9rem}
-.step h3{font-size:1rem;margin-bottom:.5rem}.step p{font-size:.85rem;color:var(--dim)}
-.form-section{max-width:680px;margin:0 auto;padding:0 2rem 5rem}.form-card{background:var(--surface);border:1px solid var(--border);border-radius:16px;overflow:hidden}
-.form-header{padding:1.5rem 2rem;border-bottom:1px solid var(--border)}.form-header h2{font-size:1.2rem}.form-body{padding:2rem}
-.field{margin-bottom:1.2rem}.field label{display:block;font-size:.82rem;color:var(--dim);margin-bottom:.4rem;font-weight:500;text-transform:uppercase;letter-spacing:.5px}
-.field input,.field select,.field textarea{width:100%;padding:.75rem 1rem;background:var(--surface2);border:1px solid var(--border);border-radius:8px;color:var(--text);font-family:var(--font);font-size:.95rem;outline:none;transition:border-color .2s}
-.field input:focus,.field select:focus{border-color:var(--accent)}.field .mono{font-family:var(--mono);font-size:.85rem;letter-spacing:1px}
-.row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}.row3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1rem}
-hr.div{border:none;border-top:1px solid var(--border);margin:1.5rem 0}.sl{font-size:.75rem;color:var(--accent);font-weight:700;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:1rem;display:block}
-.btn{display:inline-flex;align-items:center;justify-content:center;padding:.85rem 2rem;border-radius:10px;font-size:.95rem;font-weight:600;cursor:pointer;border:none;transition:all .2s;font-family:var(--font);width:100%;background:var(--accent);color:#fff}
-.btn:hover{background:#3a7bf0;transform:translateY(-1px);box-shadow:0 4px 20px rgba(79,140,255,.3)}
-.rp{display:none;margin-top:1.5rem;padding:1.5rem;background:var(--gg);border:1px solid rgba(52,211,153,.3);border-radius:12px;text-align:center}
-.rp.show{display:block;animation:fi .5s ease}.rp .ck{font-size:2.5rem;margin-bottom:.5rem}
-.rp .key{font-family:var(--mono);font-size:1.1rem;color:var(--green);background:var(--surface);padding:.8rem 1.2rem;border-radius:8px;display:inline-block;margin:.8rem 0;letter-spacing:2px;user-select:all}
-.rp p{font-size:.85rem;color:var(--dim)}.pricing{text-align:center;padding:3rem 2rem;max-width:500px;margin:0 auto}
-.pricing .pr{font-size:2.5rem;font-weight:700}.pricing .pr span{font-size:1rem;color:var(--dim);font-weight:400}.pricing .nt{font-size:.85rem;color:var(--dim);margin-top:.5rem}
-footer{text-align:center;padding:3rem 2rem;border-top:1px solid var(--border);font-size:.8rem;color:var(--dim)}footer strong{color:var(--text);font-weight:500}
+.hero{text-align:center;padding:5rem 2rem 3rem}.hero h1{font-size:clamp(2rem,5vw,3.5rem);font-weight:700;letter-spacing:-1px;margin-bottom:1rem}.hero h1 em{font-style:normal;color:var(--ac)}
+.hero p{font-size:1.1rem;color:var(--dm);max-width:620px;margin:0 auto 2rem}.badge{display:inline-block;padding:.35rem 1rem;border-radius:20px;font-size:.8rem;font-weight:500;background:var(--gw);color:var(--ac);border:1px solid rgba(79,140,255,.3);margin-bottom:1.5rem}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.2rem;max-width:900px;margin:0 auto 4rem;padding:0 2rem}
+.step{background:var(--s1);border:1px solid var(--bd);border-radius:12px;padding:1.5rem;text-align:center;transition:border-color .3s}.step:hover{border-color:var(--ac)}
+.step-n{width:32px;height:32px;border-radius:50%;background:var(--gw);color:var(--ac);font-weight:700;display:inline-flex;align-items:center;justify-content:center;margin-bottom:.8rem;font-size:.85rem}
+.step h3{font-size:.95rem;margin-bottom:.4rem}.step p{font-size:.8rem;color:var(--dm)}
+.section{max-width:720px;margin:0 auto;padding:0 2rem 4rem}
+.card{background:var(--s1);border:1px solid var(--bd);border-radius:16px;overflow:hidden}
+.card-h{padding:1.5rem 2rem;border-bottom:1px solid var(--bd);display:flex;align-items:center;gap:.8rem}.card-h h2{font-size:1.15rem}
+.card-b{padding:2rem}
+.fl{margin-bottom:1.1rem}.fl label{display:block;font-size:.78rem;color:var(--dm);margin-bottom:.35rem;font-weight:500;text-transform:uppercase;letter-spacing:.5px}
+.fl input,.fl select,.fl textarea{width:100%;padding:.7rem .9rem;background:var(--s2);border:1px solid var(--bd);border-radius:8px;color:var(--tx);font-family:var(--f);font-size:.9rem;outline:none;transition:border-color .2s}
+.fl input:focus,.fl select:focus{border-color:var(--ac)}.fl .mn{font-family:var(--m);font-size:.82rem;letter-spacing:1px}
+.rw{display:grid;grid-template-columns:1fr 1fr;gap:1rem}.rw3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1rem}
+hr.dv{border:none;border-top:1px solid var(--bd);margin:1.5rem 0}
+.sl{font-size:.72rem;color:var(--ac);font-weight:700;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:.8rem;display:block}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:.8rem 2rem;border-radius:10px;font-size:.9rem;font-weight:600;cursor:pointer;border:none;transition:all .2s;font-family:var(--f);width:100%}
+.btn-ac{background:var(--ac);color:#fff}.btn-ac:hover{background:#3a7bf0;transform:translateY(-1px);box-shadow:0 4px 20px rgba(79,140,255,.3)}
+.btn-gn{background:var(--gn);color:#0a0b0f}.btn-gn:hover{background:#2bc48a;transform:translateY(-1px)}
+.rp{display:none;margin-top:1.5rem;padding:1.5rem;border-radius:12px;text-align:center}.rp.show{display:block;animation:fi .5s ease}
+.rp-gn{background:var(--gg);border:1px solid rgba(52,211,153,.3)}.rp-or{background:var(--og);border:1px solid rgba(251,147,60,.3)}
+.rp .ck{font-size:2.2rem;margin-bottom:.4rem}
+.rp .key{font-family:var(--m);font-size:1rem;color:var(--gn);background:var(--s1);padding:.7rem 1rem;border-radius:8px;display:inline-block;margin:.6rem 0;letter-spacing:2px;user-select:all;cursor:pointer}
+.rp p{font-size:.82rem;color:var(--dm)}
+footer{text-align:center;padding:3rem 2rem;border-top:1px solid var(--bd);font-size:.8rem;color:var(--dm)}footer strong{color:var(--tx);font-weight:500}
 @keyframes fi{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
-@media(max-width:600px){.row,.row3{grid-template-columns:1fr}nav{padding:1rem}.hero{padding:3rem 1.5rem 2rem}}
+@media(max-width:600px){.rw,.rw3{grid-template-columns:1fr}nav{padding:.8rem 1rem;flex-wrap:wrap;gap:.5rem}nav .links{gap:.8rem;font-size:.8rem}.hero{padding:3rem 1.5rem 2rem}}
 </style>
 
 <section class="hero">
-  <div class="badge">Zigma USD Converter for Autodesk Revit</div>
-  <h1>Bidirectional <em>USD↔Revit</em><br>for Semiconductor Fabs</h1>
-  <p>Export Revit MEP models to NVIDIA Omniverse USD. Import USD back with full fidelity. AIF-compliant.</p>
+  <div class="badge">AIF-Compliant &middot; NVIDIA Omniverse &middot; Autodesk Revit 2026/2027</div>
+  <h1>Bidirectional <em>USD&#8596;Revit</em><br>for Semiconductor Fabs</h1>
+  <p>Export Revit MEP models to NVIDIA Omniverse USD format. Import USD back into Revit with full fidelity. Built for TSMC, Micron, and global semiconductor manufacturers.</p>
 </section>
 
 <section class="steps">
-  <div class="step"><div class="step-num">1</div><h3>Install Zigma</h3><p>Run MSI installer. Zigma tab appears in Revit 2026/2027.</p></div>
-  <div class="step"><div class="step-num">2</div><h3>Get Machine Code</h3><p>Click About in Zigma tab. Copy your unique Machine Code.</p></div>
-  <div class="step"><div class="step-num">3</div><h3>Purchase License</h3><p>Paste Machine Code below, fill in details, and pay.</p></div>
-  <div class="step"><div class="step-num">4</div><h3>Activate</h3><p>Enter the License Key in Zigma About dialog. Done.</p></div>
+  <div class="step"><div class="step-n">1</div><h3>Download &amp; Install</h3><p>Run MSI installer. Zigma tab appears in Revit.</p></div>
+  <div class="step"><div class="step-n">2</div><h3>Get Machine Code</h3><p>Click About in Zigma tab. Copy your Machine Code.</p></div>
+  <div class="step"><div class="step-n">3</div><h3>Get Free Trial</h3><p>Paste Machine Code below. Get 7-day trial key instantly.</p></div>
+  <div class="step"><div class="step-n">4</div><h3>Activate &amp; Go</h3><p>Enter key in Zigma About dialog. Start converting.</p></div>
 </section>
 
-<section class="pricing">
-  <div style="display:flex;gap:2rem;justify-content:center;flex-wrap:wrap;max-width:800px;margin:0 auto">
-    <div style="background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:2rem;flex:1;min-width:280px;text-align:center">
-      <div style="font-size:.75rem;color:var(--accent);font-weight:700;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:.8rem">Enterprise</div>
-      <div class="pr">$24,000 <span>USD/yr</span></div>
-      <div style="color:var(--dim);font-size:.85rem;margin-top:.8rem;line-height:1.8">1,000 import/export operations<br>Up to 20,000 models<br>Priority support</div>
+<section class="section" id="trial">
+<div class="card">
+<div class="card-h" style="background:var(--gg)"><h2 style="color:var(--gn)">&#127873; Free Trial License &mdash; 7 Days</h2></div>
+<div class="card-b">
+  <div style="background:var(--s2);border-radius:10px;padding:1.2rem;margin-bottom:1.5rem;text-align:center">
+    <div style="font-size:.85rem;color:var(--dm)">Your free trial includes:</div>
+    <div style="display:flex;justify-content:center;gap:2rem;margin-top:.8rem;flex-wrap:wrap">
+      <div><span style="font-size:1.5rem;font-weight:700;color:var(--gn)">7</span><br><span style="font-size:.75rem;color:var(--dm)">Days</span></div>
+      <div><span style="font-size:1.5rem;font-weight:700;color:var(--gn)">100</span><br><span style="font-size:.75rem;color:var(--dm)">Import/Export Ops</span></div>
+      <div><span style="font-size:1.5rem;font-weight:700;color:var(--gn)">5,000</span><br><span style="font-size:.75rem;color:var(--dm)">Models</span></div>
     </div>
-    <div style="background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:2rem;flex:1;min-width:280px;text-align:center">
-      <div style="font-size:.75rem;color:var(--accent);font-weight:700;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:.8rem">Individual</div>
-      <div class="pr">$12,000 <span>USD/yr</span></div>
-      <div style="color:var(--dim);font-size:.85rem;margin-top:.8rem;line-height:1.8">300 import/export operations<br>Up to 10,000 models<br>Standard support</div>
+    <div style="font-size:.72rem;color:var(--dm);margin-top:.6rem">One-time generation per Machine Code. No credit card required.</div>
+  </div>
+  <span class="sl">Your Machine Code</span>
+  <div class="fl"><label>Machine Code (from Zigma About dialog) *</label><input type="text" class="mn" id="trMc" placeholder="Paste your Machine Code here" maxlength="300"></div>
+  <hr class="dv">
+  <span class="sl">Contact Information</span>
+  <div class="rw">
+    <div class="fl"><label>Company Name *</label><input type="text" id="trCo" placeholder="e.g. CTCI Corporation"></div>
+    <div class="fl"><label>Contact Name *</label><input type="text" id="trNm" placeholder="Full name"></div>
+  </div>
+  <div class="rw">
+    <div class="fl"><label>Email *</label><input type="email" id="trEm" placeholder="you@company.com"></div>
+    <div class="fl"><label>Phone</label><input type="tel" id="trPh" placeholder="+886-xxx-xxx-xxx"></div>
+  </div>
+  <div style="margin-top:1.2rem"><button class="btn btn-gn" onclick="genTrial()">Generate Free Trial Key</button></div>
+  <div class="rp rp-gn" id="trOk">
+    <div class="ck">&#9989;</div><h3 style="color:var(--gn)">Trial License Generated!</h3>
+    <div class="key" id="trKey" onclick="navigator.clipboard.writeText(this.textContent)">—</div>
+    <p><strong>Valid for 7 days</strong> &middot; 100 operations &middot; 5,000 models<br>
+    Click the key to copy &rarr; Revit &rarr; Zigma Tab &rarr; About &rarr; Paste &rarr; Activate<br>
+    Confirmation sent to <strong id="trCe"></strong></p>
+  </div>
+  <div class="rp rp-or" id="trUsed" style="display:none">
+    <div class="ck">&#9888;&#65039;</div><h3 style="color:var(--or)">Trial Already Generated</h3>
+    <p>A trial key was already generated for this Machine Code.<br>Each Machine Code can only receive one free trial.<br>
+    Need help? Contact <a href="mailto:sales@realitymatrixai.com">sales@realitymatrixai.com</a></p>
+  </div>
+</div></div></section>
+
+<section class="section" id="pricing">
+<div style="text-align:center;margin-bottom:2rem"><h2 style="font-size:1.5rem">Pricing</h2></div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem">
+  <div class="card" style="text-align:center">
+    <div class="card-h" style="justify-content:center"><h2>Enterprise</h2></div>
+    <div class="card-b">
+      <div style="font-size:2.2rem;font-weight:700">$24,000<span style="font-size:.9rem;color:var(--dm);font-weight:400"> USD/yr</span></div>
+      <div style="color:var(--dm);font-size:.85rem;margin-top:1rem;line-height:1.8">1,000 import/export operations<br>Up to 20,000 models<br>Priority support &amp; training<br>Dedicated account manager</div>
+      <div style="margin-top:1.5rem"><a href="mailto:sales@realitymatrixai.com" class="btn btn-ac" style="text-decoration:none">Contact Sales</a></div>
     </div>
   </div>
-  <div style="margin-top:1.5rem;font-size:.85rem;color:var(--dim)">
-    <strong style="color:var(--text)">Free Trial:</strong> 1 day &middot; 2 operations &middot; 2 models<br>
-    Need more? <a href="mailto:sales@realitymatrixai.com">sales@realitymatrixai.com</a> &middot;
-    Training &amp; support: <a href="mailto:sales@realitymatrixai.com">sales@realitymatrixai.com</a>
+  <div class="card" style="text-align:center">
+    <div class="card-h" style="justify-content:center"><h2>Individual</h2></div>
+    <div class="card-b">
+      <div style="font-size:2.2rem;font-weight:700">$12,000<span style="font-size:.9rem;color:var(--dm);font-weight:400"> USD/yr</span></div>
+      <div style="color:var(--dm);font-size:.85rem;margin-top:1rem;line-height:1.8">300 import/export operations<br>Up to 10,000 models<br>Standard support<br>Email-based assistance</div>
+      <div style="margin-top:1.5rem"><a href="#activate" class="btn btn-ac" style="text-decoration:none">Purchase License</a></div>
+    </div>
   </div>
+</div>
+<div style="text-align:center;margin-top:1.5rem;font-size:.82rem;color:var(--dm)">
+  Need more capacity? <a href="mailto:sales@realitymatrixai.com">sales@realitymatrixai.com</a> &middot;
+  Training &amp; onsite support: <a href="mailto:sales@realitymatrixai.com">sales@realitymatrixai.com</a>
+</div>
 </section>
 
-<section class="form-section" id="activate">
-<div class="form-card">
-<div class="form-header"><h2>&#128273; License Activation</h2></div>
-<div class="form-body">
-  <span class="sl">Machine Information</span>
-  <div class="field"><label>Machine Code *</label><input type="text" class="mono" id="mc" placeholder="XXXX-XXXX-XXXX-XXXX" maxlength="40"></div>
-  <div class="row">
-    <div class="field"><label>Revit Version</label><select id="rv"><option>Revit 2027</option><option>Revit 2026</option></select></div>
-    <div class="field"><label>License Type</label><select id="lt"><option>Annual — $2,400/yr</option><option>Perpetual — Contact Sales</option></select></div>
+<section class="section" id="activate">
+<div class="card">
+<div class="card-h"><h2>&#128273; Purchase &amp; Activate License</h2></div>
+<div class="card-b">
+  <span class="sl">License Details</span>
+  <div class="rw">
+    <div class="fl"><label>Machine Code *</label><input type="text" class="mn" id="mc" placeholder="XXXX-XXXX-XXXX-XXXX" maxlength="300"></div>
+    <div class="fl"><label>Plan</label><select id="plan"><option>Enterprise — $24,000/yr</option><option>Individual — $12,000/yr</option></select></div>
   </div>
-  <hr class="div"><span class="sl">Company &amp; Contact</span>
-  <div class="field"><label>Company Name *</label><input type="text" id="co" placeholder="e.g. CTCI Corporation"></div>
-  <div class="row">
-    <div class="field"><label>Contact Name *</label><input type="text" id="cn" placeholder="Full name"></div>
-    <div class="field"><label>Email *</label><input type="email" id="em" placeholder="you@company.com"></div>
+  <hr class="dv"><span class="sl">Company &amp; Contact</span>
+  <div class="fl"><label>Company Name *</label><input type="text" id="co" placeholder="e.g. CTCI Corporation"></div>
+  <div class="rw">
+    <div class="fl"><label>Contact Name *</label><input type="text" id="cn" placeholder="Full name"></div>
+    <div class="fl"><label>Email *</label><input type="email" id="em" placeholder="you@company.com"></div>
   </div>
-  <div class="row">
-    <div class="field"><label>Phone</label><input type="tel" id="ph" placeholder="+886-xxx-xxx-xxx"></div>
-    <div class="field"><label>Country</label><select id="ct"><option>Taiwan</option><option>Japan</option><option>United States</option><option>China</option><option>South Korea</option><option>Germany</option><option>Other</option></select></div>
+  <hr class="dv"><span class="sl">Invoice / Billing</span>
+  <div class="fl"><label>Legal Name (for Invoice)</label><input type="text" id="ln" placeholder="Official registered company name"></div>
+  <div class="rw">
+    <div class="fl"><label>Tax ID / VAT / UBN</label><input type="text" id="tx" placeholder="e.g. 12345678"></div>
+    <div class="fl"><label>Country</label><select id="ct"><option>Taiwan</option><option>Japan</option><option>United States</option><option>China</option><option>South Korea</option><option>Germany</option><option>Other</option></select></div>
   </div>
-  <hr class="div"><span class="sl">Invoice / Billing</span>
-  <div class="field"><label>Legal Name (for Invoice)</label><input type="text" id="ln" placeholder="Official registered name"></div>
-  <div class="field"><label>Tax ID / VAT Number</label><input type="text" id="tx" placeholder="e.g. 12345678 (Taiwan UBN)"></div>
-  <div class="field"><label>Billing Address</label><textarea id="ba" rows="2" placeholder="Street, City, Postal Code, Country"></textarea></div>
-  <hr class="div"><span class="sl">Payment</span>
-  <div class="field"><label>Card Number</label><input type="text" class="mono" id="cd" placeholder="4242 4242 4242 4242" maxlength="19"></div>
-  <div class="row3">
-    <div class="field"><label>Expiry</label><input type="text" id="ex" placeholder="MM/YY"></div>
-    <div class="field"><label>CVC</label><input type="text" id="cv" placeholder="123" maxlength="4"></div>
-    <div class="field"><label>Cardholder</label><input type="text" id="ch" placeholder="Name on card"></div>
+  <div class="fl"><label>Billing Address</label><textarea id="ba" rows="2" placeholder="Street, City, Postal Code, Country"></textarea></div>
+  <hr class="dv"><span class="sl">Payment</span>
+  <div class="fl"><label>Card Number</label><input type="text" class="mn" id="cd" placeholder="4242 4242 4242 4242" maxlength="19"></div>
+  <div class="rw3">
+    <div class="fl"><label>Expiry</label><input type="text" id="ex" placeholder="MM/YY"></div>
+    <div class="fl"><label>CVC</label><input type="text" id="cv" placeholder="123" maxlength="4"></div>
+    <div class="fl"><label>Cardholder</label><input type="text" id="ch" placeholder="Name on card"></div>
   </div>
-  <div style="margin-top:1.5rem"><button class="btn" onclick="go()">Complete Purchase &amp; Generate License Key</button></div>
-  <div class="rp" id="rp">
-    <div class="ck">&#9989;</div><h3>License Activated!</h3>
-    <div class="key" id="gk">ZMCA-XXXX-XXXX-XXXX</div>
-    <p>Copy this key &#8594; Revit &#8594; Zigma Tab &#8594; About &#8594; Paste &#8594; Activate<br>
-    Confirmation email &amp; invoice sent to <strong id="ce"></strong></p>
+  <div style="margin-top:1.2rem"><button class="btn btn-ac" onclick="purchase()">Complete Purchase</button></div>
+  <div class="rp rp-gn" id="pyOk">
+    <div class="ck">&#9989;</div><h3 style="color:var(--gn)">License Activated!</h3>
+    <div class="key" id="pyKey" onclick="navigator.clipboard.writeText(this.textContent)">—</div>
+    <p>Click key to copy &rarr; Revit &rarr; Zigma &rarr; About &rarr; Activate<br>Invoice sent to <strong id="pyCe"></strong></p>
   </div>
 </div></div></section>
 
 <footer>
   <strong>Zigma USD Converter</strong> by <a href="https://www.realitymatrixai.com">Reality Matrix AI Inc.</a><br>
-  &copy; 2026 Reality Matrix AI Inc. All rights reserved.<br>
-  <span style="margin-top:.5rem;display:inline-block">support@realitymatrixai.com &middot; Taipei, Taiwan</span>
+  &copy; 2026 Reality Matrix AI Inc. (&#23526;&#30697;&#31185;&#25216;). All rights reserved.<br>
+  <span style="margin-top:.5rem;display:inline-block">
+    Sales: <a href="mailto:sales@realitymatrixai.com">sales@realitymatrixai.com</a> &middot;
+    Support: <a href="mailto:support@realitymatrixai.com">support@realitymatrixai.com</a> &middot;
+    Taipei, Taiwan
+  </span>
 </footer>
 
 <script>
-function go(){
-  const mc=document.getElementById('mc').value.trim(),em=document.getElementById('em').value.trim(),co=document.getElementById('co').value.trim();
-  if(!mc||!em||!co){alert('Please fill Machine Code, Company, and Email.');return}
-  const h=Array.from(mc).reduce((a,c)=>((a<<5)-a)+c.charCodeAt(0),0);
+// Trial key generation — one-time per Machine Code
+function genTrial(){
+  const mc=document.getElementById('trMc').value.trim();
+  const co=document.getElementById('trCo').value.trim();
+  const nm=document.getElementById('trNm').value.trim();
+  const em=document.getElementById('trEm').value.trim();
+  if(!mc||!co||!nm||!em){alert('Please fill in Machine Code, Company, Name, and Email.');return}
+  // Check one-time
+  const used=JSON.parse(localStorage.getItem('zigma_trials')||'{}');
+  const mcHash=mc.replace(/\s/g,'').substring(0,20);
+  if(used[mcHash]){document.getElementById('trUsed').style.display='block';document.getElementById('trOk').classList.remove('show');return}
+  // Generate deterministic trial key: ZMTR-XXXX-XXXX-XXXX
+  const h=Array.from(mc+co+'ZIGMA-TRIAL-2026').reduce((a,c)=>((a<<5)-a+c.charCodeAt(0))|0,0);
+  const x=Math.abs(h).toString(16).toUpperCase().padStart(12,'0');
+  const k='ZMTR-'+x.slice(0,4)+'-'+x.slice(4,8)+'-'+x.slice(8,12);
+  // Mark as used
+  used[mcHash]={key:k,ts:new Date().toISOString(),co:co,nm:nm,em:em};
+  localStorage.setItem('zigma_trials',JSON.stringify(used));
+  // Show result
+  document.getElementById('trKey').textContent=k;
+  document.getElementById('trCe').textContent=em;
+  document.getElementById('trOk').classList.add('show');
+  document.getElementById('trUsed').style.display='none';
+  console.log('[Zigma Trial]',{ts:new Date().toISOString(),machineCode:mc,company:co,contact:nm,email:em,phone:document.getElementById('trPh').value,key:k,type:'7-day-trial',ops:100,models:5000});
+}
+// Purchase key generation
+function purchase(){
+  const mc=document.getElementById('mc').value.trim();
+  const co=document.getElementById('co').value.trim();
+  const em=document.getElementById('em').value.trim();
+  if(!mc||!co||!em){alert('Please fill in Machine Code, Company, and Email.');return}
+  const h=Array.from(mc+co+'ZIGMA-PAID-2026').reduce((a,c)=>((a<<5)-a+c.charCodeAt(0))|0,0);
   const x=Math.abs(h).toString(16).toUpperCase().padStart(12,'0');
   const k='ZMCA-'+x.slice(0,4)+'-'+x.slice(4,8)+'-'+x.slice(8,12);
-  document.getElementById('gk').textContent=k;
-  document.getElementById('ce').textContent=em;
-  document.getElementById('rp').classList.add('show');
-  console.log('[Zigma License]',{ts:new Date().toISOString(),machineCode:mc,company:co,contact:document.getElementById('cn').value,email:em,phone:document.getElementById('ph').value,country:document.getElementById('ct').value,legalName:document.getElementById('ln').value,taxId:document.getElementById('tx').value,revit:document.getElementById('rv').value,type:document.getElementById('lt').value,key:k});
+  document.getElementById('pyKey').textContent=k;
+  document.getElementById('pyCe').textContent=em;
+  document.getElementById('pyOk').classList.add('show');
+  console.log('[Zigma Purchase]',{ts:new Date().toISOString(),machineCode:mc,company:co,contact:document.getElementById('cn').value,email:em,plan:document.getElementById('plan').value,legalName:document.getElementById('ln').value,taxId:document.getElementById('tx').value,country:document.getElementById('ct').value,key:k});
 }
 </script>
 </body></html>
