@@ -7,7 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#0a0b0f;--s1:#13151c;--s2:#1a1d27;--bd:#2a2d3a;--tx:#e4e6ef;--dm:#8b8fa3;--ac:#4f8cff;--gw:rgba(79,140,255,.15);--gn:#34d399;--gg:rgba(52,211,153,.15);--or:#fb923c;--og:rgba(251,147,60,.15);--f:'DM Sans',sans-serif;--m:'JetBrains Mono',monospace}
+:root{--bg:#0a0b0f;--s1:#13151c;--s2:#1a1d27;--bd:#2a2d3a;--tx:#e4e6ef;--dm:#8b8fa3;--ac:#4f8cff;--gw:rgba(79,140,255,.15);--ac2:#7aa8ff;--ag:rgba(79,140,255,.12);--or:#fb923c;--og:rgba(251,147,60,.15);--f:'DM Sans',sans-serif;--m:'JetBrains Mono',monospace}
 *{margin:0;padding:0;box-sizing:border-box}body{background:var(--bg);color:var(--tx);font-family:var(--f);line-height:1.6}a{color:var(--ac);text-decoration:none}
 nav{display:flex;align-items:center;justify-content:space-between;padding:1.2rem 2rem;border-bottom:1px solid var(--bd);backdrop-filter:blur(12px);position:sticky;top:0;z-index:100;background:rgba(10,11,15,.85)}
 .logo{font-size:1.4rem;font-weight:700;letter-spacing:-.5px}.logo span{color:var(--ac)}
@@ -48,9 +48,9 @@ hr.dv{border:none;border-top:1px solid var(--bd);margin:1.5rem 0}
 .btn-ac{background:var(--ac);color:#fff}.btn-ac:hover{background:#3a7bf0;transform:translateY(-1px);box-shadow:0 4px 20px rgba(79,140,255,.3)}
 .btn-gn{background:var(--gn);color:#0a0b0f}.btn-gn:hover{background:#2bc48a;transform:translateY(-1px)}
 .rp{display:none;margin-top:1.5rem;padding:1.5rem;border-radius:12px;text-align:center}.rp.show{display:block;animation:fi .5s ease}
-.rp-gn{background:var(--gg);border:1px solid rgba(52,211,153,.3)}.rp-or{background:var(--og);border:1px solid rgba(251,147,60,.3)}
+.rp-gn{background:var(--ag);border:1px solid rgba(79,140,255,.3)}.rp-or{background:var(--og);border:1px solid rgba(251,147,60,.3)}
 .rp .ck{font-size:2.2rem;margin-bottom:.4rem}
-.rp .key{font-family:var(--m);font-size:1rem;color:var(--gn);background:var(--s1);padding:.7rem 1rem;border-radius:8px;display:inline-block;margin:.6rem 0;letter-spacing:2px;user-select:all;cursor:pointer}
+.rp .key{font-family:var(--m);font-size:1rem;color:var(--ac);background:var(--s1);padding:.7rem 1rem;border-radius:8px;display:inline-block;margin:.6rem 0;letter-spacing:2px;user-select:all;cursor:pointer}
 .rp p{font-size:.82rem;color:var(--dm)}
 footer{text-align:center;padding:3rem 2rem;border-top:1px solid var(--bd);font-size:.8rem;color:var(--dm)}footer strong{color:var(--tx);font-weight:500}
 @keyframes fi{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
@@ -59,8 +59,8 @@ footer{text-align:center;padding:3rem 2rem;border-top:1px solid var(--bd);font-s
 
 <section class="hero">
   <div class="badge">AIF-Compliant &middot; NVIDIA Omniverse &middot; Autodesk Revit 2026/2027</div>
-  <h1>Bidirectional <em>USD&#8596;Revit</em><br>for Semiconductor Fabs</h1>
-  <p>Export Revit MEP models to NVIDIA Omniverse USD format. Import USD back into Revit with full fidelity. Built for TSMC, Micron, and global semiconductor manufacturers.</p>
+  <h1>Bidirectional <em>USD&#8596;Revit</em><br>for AI Factory Digital Twins</h1>
+  <p>NVIDIA Omniverse holds the AI Factory digital twin. Your MEP team works in Autodesk Revit. Zigma bridges them — bringing OV precision into Revit, and syncing Revit MEP back to Omniverse.</p>
 </section>
 
 <section class="steps">
@@ -72,14 +72,14 @@ footer{text-align:center;padding:3rem 2rem;border-top:1px solid var(--bd);font-s
 
 <section class="section" id="trial">
 <div class="card">
-<div class="card-h" style="background:var(--gg)"><h2 style="color:var(--gn)">&#127873; Free Trial License &mdash; 1 Day</h2></div>
+<div class="card-h" style="background:var(--ag)"><h2 style="color:var(--ac)">&#127873; Free Trial License &mdash; 1 Day</h2></div>
 <div class="card-b">
   <div style="background:var(--s2);border-radius:10px;padding:1.2rem;margin-bottom:1.5rem;text-align:center">
     <div style="font-size:.85rem;color:var(--dm)">Your free trial includes:</div>
     <div style="display:flex;justify-content:center;gap:2rem;margin-top:.8rem;flex-wrap:wrap">
-      <div><span style="font-size:1.5rem;font-weight:700;color:var(--gn)">1</span><br><span style="font-size:.75rem;color:var(--dm)">Day</span></div>
-      <div><span style="font-size:1.5rem;font-weight:700;color:var(--gn)">2</span><br><span style="font-size:.75rem;color:var(--dm)">Import/Export Ops</span></div>
-      <div><span style="font-size:1.5rem;font-weight:700;color:var(--gn)">2</span><br><span style="font-size:.75rem;color:var(--dm)">Models</span></div>
+      <div><span style="font-size:1.5rem;font-weight:700;color:var(--ac)">1</span><br><span style="font-size:.75rem;color:var(--dm)">Day</span></div>
+      <div><span style="font-size:1.5rem;font-weight:700;color:var(--ac)">2</span><br><span style="font-size:.75rem;color:var(--dm)">Import/Export Ops</span></div>
+      <div><span style="font-size:1.5rem;font-weight:700;color:var(--ac)">2</span><br><span style="font-size:.75rem;color:var(--dm)">Models</span></div>
     </div>
     <div style="font-size:.72rem;color:var(--dm);margin-top:.6rem">No credit card required. Want to get more days for your trial? Fill up info below, and paste your Machine Code from the About tab in Zigma plugin in Revit. You can get an extended 6 days and 1,000 operations, and 10K models import/export. <a href="#activate">Request extended trial &darr;</a></div>
   </div>
@@ -95,9 +95,9 @@ footer{text-align:center;padding:3rem 2rem;border-top:1px solid var(--bd);font-s
     <div class="fl"><label>Email *</label><input type="email" id="trEm" placeholder="you@company.com"></div>
     <div class="fl"><label>Phone</label><input type="tel" id="trPh" placeholder="+886-xxx-xxx-xxx"></div>
   </div>
-  <div style="margin-top:1.2rem"><button class="btn btn-gn" onclick="genTrial()">Generate Free Trial Key</button></div>
+  <div style="margin-top:1.2rem"><button class="btn btn-ac" onclick="genTrial()">Generate Free Trial Key</button></div>
   <div class="rp rp-gn" id="trOk">
-    <div class="ck">&#9989;</div><h3 style="color:var(--gn)">Trial License Generated!</h3>
+    <div class="ck">&#9989;</div><h3 style="color:var(--ac)">Trial License Generated!</h3>
     <div class="key" id="trKey" onclick="navigator.clipboard.writeText(this.textContent)">—</div>
     <p><strong>Valid for 1 day</strong> &middot; 2 operations &middot; 2 models<br>
     Click the key to copy &rarr; Revit &rarr; Zigma Tab &rarr; About &rarr; Paste &rarr; Activate<br>
