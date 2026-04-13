@@ -12,6 +12,9 @@
 nav{display:flex;align-items:center;justify-content:space-between;padding:1.2rem 2rem;border-bottom:1px solid var(--bd);backdrop-filter:blur(12px);position:sticky;top:0;z-index:100;background:rgba(10,11,15,.85)}
 .logo{display:inline-flex;align-items:center;gap:2px;line-height:1}
 .logo svg{display:block}
+.lang-sw{display:flex;gap:2px}
+.lbtn{font-size:11px;font-weight:600;padding:4px 8px;border-radius:5px;border:1px solid var(--bd);background:transparent;color:var(--dm);cursor:pointer;transition:all .2s;font-family:var(--m)}
+.lbtn:hover,.lbtn.active{color:var(--tx);border-color:var(--ac);background:var(--ag)}
 nav .links{display:flex;gap:1.2rem;font-size:.9rem;color:var(--dm);align-items:center}nav .links a:hover{color:var(--tx)}
 .dl-btn{background:var(--ac)!important;color:#fff!important;padding:.45rem 1.2rem;border-radius:8px;font-weight:600;font-size:.85rem;transition:all .2s}.dl-btn:hover{background:#3a7bf0!important;transform:translateY(-1px)}
 </style>
@@ -32,11 +35,16 @@ nav .links{display:flex;gap:1.2rem;font-size:.9rem;color:var(--dm);align-items:c
     </svg>
   </div>
   <div class="links">
-    <a href="https://www.realitymatrixai.com" target="_blank">About Us</a>
-    <a href="#trial">Free Trial</a>
-    <a href="#pricing">Pricing</a>
-    <a href="#activate">Request License</a>
-    <a href="https://github.com/chchlin1018/Website-ZigmaClub/releases/download/v2.0.0/ZigmaSetup_v2.0.0.msi" class="dl-btn">Download Trial</a>
+    <div class="lang-sw">
+      <button class="lbtn" id="lbtn-en" onclick="setLang('en')">EN</button>
+      <button class="lbtn" id="lbtn-zh" onclick="setLang('zh')">中文</button>
+      <button class="lbtn" id="lbtn-ja" onclick="setLang('ja')">日本語</button>
+    </div>
+    <a href="https://www.realitymatrixai.com" target="_blank" data-i18n="nav_about">About Us</a>
+    <a href="#trial" data-i18n="nav_trial">Free Trial</a>
+    <a href="#pricing" data-i18n="nav_pricing">Pricing</a>
+    <a href="#activate" data-i18n="nav_license">Request License</a>
+    <a href="https://github.com/chchlin1018/Website-ZigmaClub/releases/download/v2.0.0/ZigmaSetup_v2.0.0.msi" class="dl-btn" data-i18n="nav_dl">Download Trial</a>
   </div>
 </nav>
 <style>
@@ -230,5 +238,214 @@ if(window.location.hash==='#request-sent'){
   if(s)s.style.display='block';
   window.scrollTo({top:document.getElementById('activate').offsetTop-80,behavior:'smooth'});
 }
+</script>
+<script>
+const _ZG={
+en:{
+  nav_about:'About Us',nav_trial:'Free Trial',nav_pricing:'Pricing',nav_license:'Request License',nav_dl:'Download Trial',
+  h_badge:'AIF-Compliant · NVIDIA Omniverse · Autodesk Revit 2026/2027',
+  h1:'Bidirectional <em>USD&#8596;Revit</em><br>for AI Factory Digital Twins',
+  h_sub:'NVIDIA Omniverse holds the AI Factory digital twin. Your MEP team works in Autodesk Revit. Zigma bridges them — bringing OV precision into Revit, and syncing Revit MEP back to Omniverse.',
+  s1h:'Download & Install',s1p:'Run MSI installer. Zigma tab appears in Revit.',
+  s2h:'Get Machine Code',s2p:'Click About in Zigma tab. Copy your Machine Code.',
+  s3h:'Get Free Trial',s3p:'Fill info below. Get extended 7-day trial key.',
+  s4h:'Activate & Go',s4p:'Enter key in Zigma About dialog. Start converting.',
+  tr_title:'🎁 Free Trial License — 1 Day',
+  tr_instant:'Instant trial — no credit card:',
+  tr_d:'Day',tr_ops:'Import/Export Ops',tr_models:'Models',
+  tr_ext:'Fill in contact info below to extend to:',
+  tr_days:'Days',tr_eops:'Operations',tr_emodels:'Models',
+  tr_note:'Or request a license key',
+  mc_label:'YOUR MACHINE CODE',
+  mc_field:'Machine Code (from Zigma → About dialog) *',
+  mc_ph:'Paste your Machine Code here — it\'s a long hex string from Revit → Zigma Tab → About → Copy Machine Code',
+  ci_label:'CONTACT INFORMATION',
+  co_label:'Company Name *',co_ph:'e.g. CTCI Corporation',
+  nm_label:'Contact Name *',nm_ph:'Full name',
+  em_label:'Email *',em_ph:'you@company.com',
+  ph_label:'Phone',ph_ph:'+886-xxx-xxx-xxx',
+  gen_btn:'Generate Free Trial Key',
+  ok_title:'Trial License Generated!',ok_sub:'Valid for 1 day · 2 operations · 2 models',
+  ok_copy:'Click the key to copy → Revit → Zigma Tab → About → Paste → Activate',
+  ok_more:'Need more? Request an extended trial — 7 days, 1,000 ops, 50K models',
+  used_title:'Trial Already Generated',
+  used_sub:'A trial key was already generated for this Machine Code. Each Machine Code can only receive one free trial.',
+  pr_title:'Pricing',pr_sub:'All licenses are issued by our team. Contact us to get started.',
+  ent_name:'Enterprise',ind_name:'Individual',
+  ent_feat:'1,000 import/export operations<br>Up to 20,000 models<br>Priority support & training<br>Dedicated account manager',
+  ind_feat:'300 import/export operations<br>Up to 10,000 models<br>Standard support<br>Email-based assistance',
+  contact_btn:'Contact Sales',
+  act_title:'🔑 Request License Key',
+  mc2_label:'Machine Code *',
+  plan_label:'Plan',
+  co2_label:'Company Name *',nm2_label:'Contact Name *',em2_label:'Email *',
+  ph2_label:'Phone',ct_label:'Country',nt_label:'Notes (optional)',
+  sub_btn:'Submit License Request',
+  sub_note:'Your request will be sent to license@realitymatrixai.com. We will review and send your License Key within 1 business day.',
+  req_ok:'License Request Submitted!',
+  req_sub:'Thank you! We will review your request and send your License Key to your email within 1 business day.',
+  foot_by:'by',foot_cr:'All rights reserved.'
+},
+zh:{
+  nav_about:'關於我們',nav_trial:'免費試用',nav_pricing:'定價',nav_license:'申請授權',nav_dl:'下載試用版',
+  h_badge:'AI Factory 相容 · NVIDIA Omniverse · Autodesk Revit 2026/2027',
+  h1:'雙向 <em>USD&#8596;Revit</em><br>為 AI Factory 數位孿生',
+  h_sub:'NVIDIA Omniverse 擁有 AI Factory 數位孿生。MEP 團隊在 Autodesk Revit 工作。Zigma 橋接兩者 — 將 OV 精準數據帶入 Revit，並將 Revit MEP 同步回 Omniverse。',
+  s1h:'下載安裝',s1p:'執行 MSI 安裝程式。Revit 中出現 Zigma 分頁。',
+  s2h:'取得機器碼',s2p:'點擊 Zigma 分頁的「About」，複製機器碼。',
+  s3h:'申請免費試用',s3p:'填寫資料，立即獲得 7 天延伸試用金鑰。',
+  s4h:'啟動使用',s4p:'在 Zigma About 對話框中輸入金鑰，開始轉換。',
+  tr_title:'🎁 免費試用授權 — 1 天',
+  tr_instant:'即時試用 — 無需信用卡：',
+  tr_d:'天',tr_ops:'匯入/匯出次數',tr_models:'模型數',
+  tr_ext:'填寫聯絡資料可延伸至：',
+  tr_days:'天',tr_eops:'次數',tr_emodels:'模型數',
+  tr_note:'或申請授權金鑰',
+  mc_label:'您的機器碼',
+  mc_field:'機器碼（來自 Zigma About 對話框）*',
+  mc_ph:'貼上您的機器碼 — 從 Revit → Zigma 分頁 → About → 複製機器碼取得的長 HEX 字串',
+  ci_label:'聯絡資訊',
+  co_label:'公司名稱 *',co_ph:'例如：中鼎工程',
+  nm_label:'聯絡人姓名 *',nm_ph:'全名',
+  em_label:'電子信箱 *',em_ph:'you@company.com',
+  ph_label:'電話',ph_ph:'+886-xxx-xxx-xxx',
+  gen_btn:'生成免費試用金鑰',
+  ok_title:'試用授權已生成！',ok_sub:'有效期 1 天 · 2 次操作 · 2 個模型',
+  ok_copy:'點擊金鑰複製 → Revit → Zigma 分頁 → About → 貼上 → 啟動',
+  ok_more:'需要更多？申請延伸試用 — 7 天，1,000 次，50K 模型',
+  used_title:'試用已生成過',
+  used_sub:'此機器碼已生成過試用金鑰。每個機器碼只能獲得一次免費試用。',
+  pr_title:'定價',pr_sub:'所有授權均由我們的團隊發放，請聯絡我們開始使用。',
+  ent_name:'企業版',ind_name:'個人版',
+  ent_feat:'1,000 次匯入/匯出<br>最多 20,000 個模型<br>優先支援和培訓<br>專屬客戶經理',
+  ind_feat:'300 次匯入/匯出<br>最多 10,000 個模型<br>標準支援<br>電子信箱協助',
+  contact_btn:'聯絡銷售',
+  act_title:'🔑 申請授權金鑰',
+  mc2_label:'機器碼 *',
+  plan_label:'方案',
+  co2_label:'公司名稱 *',nm2_label:'聯絡人姓名 *',em2_label:'電子信箱 *',
+  ph2_label:'電話',ct_label:'國家/地區',nt_label:'備註（選填）',
+  sub_btn:'提交授權申請',
+  sub_note:'您的申請將發送至 license@realitymatrixai.com。我們將在 1 個工作天內審核並將授權金鑰發送至您的信箱。',
+  req_ok:'授權申請已提交！',
+  req_sub:'謝謝！我們將在 1 個工作天內審核您的申請並將授權金鑰發送至您的電子信箱。',
+  foot_by:'由',foot_cr:'版權所有。'
+},
+ja:{
+  nav_about:'会社について',nav_trial:'無料トライアル',nav_pricing:'料金',nav_license:'ライセンス申請',nav_dl:'トライアル版ダウンロード',
+  h_badge:'AI Factory 対応 · NVIDIA Omniverse · Autodesk Revit 2026/2027',
+  h1:'双方向 <em>USD&#8596;Revit</em><br>AI Factory デジタルツイン向け',
+  h_sub:'NVIDIA Omniverse が AI Factory デジタルツインを保持します。MEP チームは Autodesk Revit で作業します。Zigma が両者を橋渡しし、OV の精度を Revit に取り込み、Revit MEP を Omniverse に同期します。',
+  s1h:'ダウンロード & インストール',s1p:'MSI インストーラーを実行。Revit に Zigma タブが表示されます。',
+  s2h:'マシンコード取得',s2p:'Zigma タブの「About」をクリックし、マシンコードをコピーします。',
+  s3h:'無料トライアル取得',s3p:'情報を入力して、7 日間の拡張トライアルキーを受け取ります。',
+  s4h:'アクティベート & 開始',s4p:'Zigma About ダイアログにキーを入力して変換を開始します。',
+  tr_title:'🎁 無料トライアルライセンス — 1 日',
+  tr_instant:'即時トライアル — クレジットカード不要：',
+  tr_d:'日',tr_ops:'インポート/エクスポート回数',tr_models:'モデル数',
+  tr_ext:'連絡先情報を入力すると延長されます：',
+  tr_days:'日',tr_eops:'回数',tr_emodels:'モデル数',
+  tr_note:'またはライセンスキーを申請',
+  mc_label:'マシンコード',
+  mc_field:'マシンコード（Zigma About ダイアログから）*',
+  mc_ph:'Revit → Zigma タブ → About → マシンコードをコピー で取得した長い HEX 文字列を貼り付けてください',
+  ci_label:'連絡先情報',
+  co_label:'会社名 *',co_ph:'例：CTCI Corporation',
+  nm_label:'担当者名 *',nm_ph:'氏名',
+  em_label:'メールアドレス *',em_ph:'you@company.com',
+  ph_label:'電話番号',ph_ph:'+81-xxx-xxxx-xxxx',
+  gen_btn:'無料トライアルキーを生成',
+  ok_title:'トライアルライセンスが生成されました！',ok_sub:'有効期間 1 日 · 2 回操作 · 2 モデル',
+  ok_copy:'キーをクリックしてコピー → Revit → Zigma タブ → About → 貼り付け → アクティベート',
+  ok_more:'さらに必要ですか？拡張トライアルを申請 — 7 日間、1,000 回、50K モデル',
+  used_title:'トライアルは既に生成済みです',
+  used_sub:'このマシンコードのトライアルキーは既に生成されています。各マシンコードに対して無料トライアルは 1 回のみです。',
+  pr_title:'料金プラン',pr_sub:'すべてのライセンスはチームが発行します。お問い合わせください。',
+  ent_name:'エンタープライズ',ind_name:'個人',
+  ent_feat:'1,000 回インポート/エクスポート<br>最大 20,000 モデル<br>優先サポート & トレーニング<br>専任アカウントマネージャー',
+  ind_feat:'300 回インポート/エクスポート<br>最大 10,000 モデル<br>標準サポート<br>メールサポート',
+  contact_btn:'営業へお問い合わせ',
+  act_title:'🔑 ライセンスキーの申請',
+  mc2_label:'マシンコード *',
+  plan_label:'プラン',
+  co2_label:'会社名 *',nm2_label:'担当者名 *',em2_label:'メールアドレス *',
+  ph2_label:'電話番号',ct_label:'国',nt_label:'備考（任意）',
+  sub_btn:'ライセンスを申請する',
+  sub_note:'申請は license@realitymatrixai.com に送信されます。1 営業日以内に審査し、ライセンスキーをメールでお送りします。',
+  req_ok:'ライセンス申請を受け付けました！',
+  req_sub:'ありがとうございます！1 営業日以内に申請を審査し、ライセンスキーをメールでお送りします。',
+  foot_by:'作成：',foot_cr:'All rights reserved.'
+}
+};
+function setLang(lang){
+  const t=_ZG[lang]; if(!t) return;
+  // nav data-i18n
+  document.querySelectorAll('[data-i18n]').forEach(el=>{ const k=el.dataset.i18n; if(t[k]!==undefined) el.innerHTML=t[k]; });
+  // hero
+  const hb=document.querySelector('.badge'); if(hb) hb.innerHTML=t.h_badge;
+  const hh=document.querySelector('.hero h1'); if(hh) hh.innerHTML=t.h1;
+  const hp=document.querySelector('.hero p'); if(hp) hp.textContent=t.h_sub;
+  // steps
+  const steps=document.querySelectorAll('.step');
+  [[t.s1h,t.s1p],[t.s2h,t.s2p],[t.s3h,t.s3p],[t.s4h,t.s4p]].forEach(([h,p],i)=>{
+    if(steps[i]){ const hel=steps[i].querySelector('h3'); const pel=steps[i].querySelector('p'); if(hel) hel.textContent=h; if(pel) pel.textContent=p; }
+  });
+  // trial section
+  const trh=document.querySelector('#trial .card-h h2'); if(trh) trh.innerHTML=t.tr_title;
+  const trTexts=document.querySelectorAll('#trial [style*="font-size:.88rem"]');
+  if(trTexts[0]) trTexts[0].textContent=t.tr_instant;
+  // trial stats labels
+  const trSpans=document.querySelectorAll('#trial [style*="font-size:.78rem"]');
+  if(trSpans[0]) trSpans[0].textContent=t.tr_d;
+  if(trSpans[1]) trSpans[1].textContent=t.tr_ops;
+  if(trSpans[2]) trSpans[2].textContent=t.tr_models;
+  if(trSpans[3]) trSpans[3].textContent=t.tr_ext;
+  if(trSpans[4]) trSpans[4].textContent=t.tr_days;
+  if(trSpans[5]) trSpans[5].textContent=t.tr_eops;
+  if(trSpans[6]) trSpans[6].textContent=t.tr_emodels;
+  // labels
+  const labels=document.querySelectorAll('.fl label');
+  const lkeys=['mc_field','co_label','nm_label','em_label','ph_label','mc2_label','plan_label','co2_label','nm2_label','em2_label','ph2_label','ct_label','nt_label'];
+  labels.forEach((l,i)=>{ if(t[lkeys[i]]) l.textContent=t[lkeys[i]]; });
+  // section labels
+  const slabels=document.querySelectorAll('.sl');
+  if(slabels[0]) slabels[0].textContent=t.mc_label;
+  if(slabels[1]) slabels[1].textContent=t.ci_label;
+  // gen button
+  const genbtn=document.querySelector('button[onclick="genTrial()"]'); if(genbtn) genbtn.textContent=t.gen_btn;
+  // ok / used messages
+  const okh=document.querySelector('#trOk h3'); if(okh) okh.textContent=t.ok_title;
+  const okp=document.querySelector('#trOk p');
+  if(okp) okp.innerHTML=`<strong>${t.ok_sub}</strong><br>${t.ok_copy}<br>${t.ok_more}<br>`;
+  const ush=document.querySelector('#trUsed h3'); if(ush) ush.textContent=t.used_title;
+  const usp=document.querySelector('#trUsed p'); if(usp){
+    const a=usp.querySelector('a'); usp.innerHTML=t.used_sub+'<br>'+(a?a.outerHTML:'');
+  }
+  // pricing
+  const prh=document.querySelector('#pricing h2'); if(prh) prh.textContent=t.pr_title;
+  const prp=document.querySelector('#pricing p'); if(prp) prp.textContent=t.pr_sub;
+  const cards=document.querySelectorAll('#pricing .card');
+  if(cards[0]){ const ch=cards[0].querySelector('.card-h h2'); if(ch) ch.textContent=t.ent_name;
+    const cf=cards[0].querySelector('[style*="line-height:2"]'); if(cf) cf.innerHTML=t.ent_feat;
+    const cb=cards[0].querySelector('.btn-ac'); if(cb) cb.textContent=t.contact_btn; }
+  if(cards[1]){ const ch=cards[1].querySelector('.card-h h2'); if(ch) ch.textContent=t.ind_name;
+    const cf=cards[1].querySelector('[style*="line-height:2"]'); if(cf) cf.innerHTML=t.ind_feat;
+    const cb=cards[1].querySelector('.btn-ac'); if(cb) cb.textContent=t.contact_btn; }
+  // activate section
+  const ach=document.querySelector('#activate .card-h h2'); if(ach) ach.innerHTML=t.act_title;
+  const subbtn=document.querySelector('button[type="submit"]'); if(subbtn) subbtn.textContent=t.sub_btn;
+  const subn=document.querySelector('#activate p[style*=".78rem"]'); if(subn) subn.innerHTML=t.sub_note;
+  const reqh=document.querySelector('#requestSent h3'); if(reqh) reqh.textContent=t.req_ok;
+  const reqp=document.querySelector('#requestSent p'); if(reqp) reqp.innerHTML=t.req_sub;
+  // active btn
+  document.querySelectorAll('.lbtn').forEach(b=>b.classList.remove('active'));
+  const ab=document.getElementById('lbtn-'+lang); if(ab) ab.classList.add('active');
+  localStorage.setItem('zg_lang',lang);
+  document.documentElement.lang=lang==='zh'?'zh-TW':lang;
+}
+(function(){
+  const s=localStorage.getItem('zg_lang'); const n=navigator.language||'';
+  setLang(s||(n.startsWith('zh')?'zh':n.startsWith('ja')?'ja':'en'));
+})();
 </script>
 </body></html>
