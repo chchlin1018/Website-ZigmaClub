@@ -23,7 +23,7 @@ nav .links{display:flex;gap:1.2rem;font-size:.9rem;color:var(--dm);align-items:c
     <a href="https://www.realitymatrixai.com" target="_blank">About Us</a>
     <a href="#trial">Free Trial</a>
     <a href="#pricing">Pricing</a>
-    <a href="#activate">Activate</a>
+    <a href="#activate">Request License</a>
     <a href="https://github.com/chchlin1018/ZigmaConverterUSDRevit/releases" target="_blank" class="dl-btn">Download Trial</a>
   </div>
 </nav>
@@ -138,38 +138,31 @@ footer{text-align:center;padding:3rem 2rem;border-top:1px solid var(--bd);font-s
 
 <section class="section" id="activate">
 <div class="card">
-<div class="card-h"><h2>&#128273; Purchase &amp; Activate License</h2></div>
+<div class="card-h"><h2>&#128273; Request License Key</h2></div>
 <div class="card-b">
-  <span class="sl">License Details</span>
-  <div class="rw">
-    <div class="fl"><label>Machine Code *</label><input type="text" class="mn" id="mc" placeholder="XXXX-XXXX-XXXX-XXXX" maxlength="300"></div>
-    <div class="fl"><label>Plan</label><select id="plan"><option>Enterprise — $24,000/yr</option><option>Individual — $12,000/yr</option></select></div>
-  </div>
+  <form action="https://formspree.io/f/xojyazpr" method="POST" id="licenseForm">
+  <input type="hidden" name="_subject" value="[Zigma] New License Request">
+  <input type="hidden" name="_next" value="https://www.zigma.club/#request-sent">
+  <span class="sl">Machine Code</span>
+  <div class="fl"><label>Machine Code *</label><textarea name="machine_code" rows="3" class="mn" placeholder="Paste your Machine Code from Revit → Zigma Tab → About → Copy Machine Code" required style="width:100%;font-family:var(--m);font-size:.82rem;resize:vertical"></textarea></div>
+  <div class="fl"><label>Plan</label><select name="plan"><option>Trial — Free (1 day / 2 models / 2 operations)</option><option>Individual — $12,000 USD/yr</option><option>Enterprise — $24,000 USD/yr</option><option>Custom — Contact Sales</option></select></div>
   <hr class="dv"><span class="sl">Company &amp; Contact</span>
-  <div class="fl"><label>Company Name *</label><input type="text" id="co" placeholder="e.g. CTCI Corporation"></div>
+  <div class="fl"><label>Company Name *</label><input type="text" name="company" placeholder="e.g. CTCI Corporation" required></div>
   <div class="rw">
-    <div class="fl"><label>Contact Name *</label><input type="text" id="cn" placeholder="Full name"></div>
-    <div class="fl"><label>Email *</label><input type="email" id="em" placeholder="you@company.com"></div>
+    <div class="fl"><label>Contact Name *</label><input type="text" name="name" placeholder="Full name" required></div>
+    <div class="fl"><label>Email *</label><input type="email" name="email" placeholder="you@company.com" required></div>
   </div>
-  <hr class="dv"><span class="sl">Invoice / Billing</span>
-  <div class="fl"><label>Legal Name (for Invoice)</label><input type="text" id="ln" placeholder="Official registered company name"></div>
   <div class="rw">
-    <div class="fl"><label>Tax ID / VAT / UBN</label><input type="text" id="tx" placeholder="e.g. 12345678"></div>
-    <div class="fl"><label>Country</label><select id="ct"><option>Taiwan</option><option>Japan</option><option>United States</option><option>China</option><option>South Korea</option><option>Germany</option><option>Other</option></select></div>
+    <div class="fl"><label>Phone</label><input type="text" name="phone" placeholder="+886-xxx-xxx-xxx"></div>
+    <div class="fl"><label>Country</label><select name="country"><option>Taiwan</option><option>Japan</option><option>United States</option><option>China</option><option>South Korea</option><option>Germany</option><option>Other</option></select></div>
   </div>
-  <div class="fl"><label>Billing Address</label><textarea id="ba" rows="2" placeholder="Street, City, Postal Code, Country"></textarea></div>
-  <hr class="dv"><span class="sl">Payment</span>
-  <div class="fl"><label>Card Number</label><input type="text" class="mn" id="cd" placeholder="4242 4242 4242 4242" maxlength="19"></div>
-  <div class="rw3">
-    <div class="fl"><label>Expiry</label><input type="text" id="ex" placeholder="MM/YY"></div>
-    <div class="fl"><label>CVC</label><input type="text" id="cv" placeholder="123" maxlength="4"></div>
-    <div class="fl"><label>Cardholder</label><input type="text" id="ch" placeholder="Name on card"></div>
-  </div>
-  <div style="margin-top:1.2rem"><button class="btn btn-ac" onclick="purchase()">Complete Purchase</button></div>
-  <div class="rp rp-gn" id="pyOk">
-    <div class="ck">&#9989;</div><h3 style="color:var(--gn)">License Activated!</h3>
-    <div class="key" id="pyKey" onclick="navigator.clipboard.writeText(this.textContent)">—</div>
-    <p>Click key to copy &rarr; Revit &rarr; Zigma &rarr; About &rarr; Activate<br>Invoice sent to <strong id="pyCe"></strong></p>
+  <div class="fl"><label>Notes (optional)</label><textarea name="notes" rows="2" placeholder="Any additional requirements or questions"></textarea></div>
+  <div style="margin-top:1.2rem"><button type="submit" class="btn btn-ac">Submit License Request</button></div>
+  <p style="margin-top:.8rem;font-size:.78rem;color:var(--dm)">Your request will be sent to <strong>license@realitymatrixai.com</strong>. We will review and send your License Key within 1 business day.</p>
+  </form>
+  <div class="rp rp-gn" id="requestSent" style="display:none">
+    <div class="ck">&#9989;</div><h3 style="color:var(--gn)">License Request Submitted!</h3>
+    <p>Thank you! We will review your request and send your License Key to your email within 1 business day.<br>Questions? Contact <a href="mailto:license@realitymatrixai.com">license@realitymatrixai.com</a></p>
   </div>
 </div></div></section>
 
@@ -210,18 +203,13 @@ function genTrial(){
   console.log('[Zigma Trial]',{ts:new Date().toISOString(),machineCode:mc,company:co,contact:nm,email:em,phone:document.getElementById('trPh').value,key:k,type:'7-day-trial',ops:100,models:5000});
 }
 // Purchase key generation
-function purchase(){
-  const mc=document.getElementById('mc').value.trim();
-  const co=document.getElementById('co').value.trim();
-  const em=document.getElementById('em').value.trim();
-  if(!mc||!co||!em){alert('Please fill in Machine Code, Company, and Email.');return}
-  const h=Array.from(mc+co+'ZIGMA-PAID-2026').reduce((a,c)=>((a<<5)-a+c.charCodeAt(0))|0,0);
-  const x=Math.abs(h).toString(16).toUpperCase().padStart(12,'0');
-  const k='ZMCA-'+x.slice(0,4)+'-'+x.slice(4,8)+'-'+x.slice(8,12);
-  document.getElementById('pyKey').textContent=k;
-  document.getElementById('pyCe').textContent=em;
-  document.getElementById('pyOk').classList.add('show');
-  console.log('[Zigma Purchase]',{ts:new Date().toISOString(),machineCode:mc,company:co,contact:document.getElementById('cn').value,email:em,plan:document.getElementById('plan').value,legalName:document.getElementById('ln').value,taxId:document.getElementById('tx').value,country:document.getElementById('ct').value,key:k});
+// Show success message if redirected from Formspree
+if(window.location.hash==='#request-sent'){
+  const f=document.getElementById('licenseForm');
+  const s=document.getElementById('requestSent');
+  if(f)f.style.display='none';
+  if(s)s.style.display='block';
+  window.scrollTo({top:document.getElementById('activate').offsetTop-80,behavior:'smooth'});
 }
 </script>
 </body></html>
