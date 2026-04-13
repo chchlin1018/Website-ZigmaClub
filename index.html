@@ -256,6 +256,7 @@ en:{
   tr_ext:'Fill in contact info below to extend to:',
   tr_days:'Days',tr_eops:'Operations',tr_emodels:'Models',
   tr_note:'Or request a license key',
+  tr_note_full:'No credit card required. Fill in your contact info below to get a <strong style="color:var(--ac2)">7-day extended trial</strong> with 1,000 operations and 50K models. <a href="#activate">Or request a license key ↓</a>',
   mc_label:'YOUR MACHINE CODE',
   mc_field:'Machine Code (from Zigma → About dialog) *',
   mc_ph:'Paste your Machine Code here — it\'s a long hex string from Revit → Zigma Tab → About → Copy Machine Code',
@@ -301,6 +302,7 @@ zh:{
   tr_ext:'填寫聯絡資料可延伸至：',
   tr_days:'天',tr_eops:'次數',tr_emodels:'模型數',
   tr_note:'或申請授權金鑰',
+  tr_note_full:'無需信用卡。在下方填寫聯絡資料，即可獲得包含 1,000 次操作和 50K 模型的 <strong style="color:var(--ac2)">7 天延伸試用</strong>。<a href="#activate">或申請授權金鑰 ↓</a>',
   mc_label:'您的機器碼',
   mc_field:'機器碼（來自 Zigma About 對話框）*',
   mc_ph:'貼上您的機器碼 — 從 Revit → Zigma 分頁 → About → 複製機器碼取得的長 HEX 字串',
@@ -346,6 +348,7 @@ ja:{
   tr_ext:'連絡先情報を入力すると延長されます：',
   tr_days:'日',tr_eops:'回数',tr_emodels:'モデル数',
   tr_note:'またはライセンスキーを申請',
+  tr_note_full:'クレジットカード不要。下記に連絡先を入力して、1,000 回の操作と 50K モデルを含む <strong style="color:var(--ac2)">7 日間の拡張トライアル</strong>を取得してください。<a href="#activate">またはライセンスキーを申請 ↓</a>',
   mc_label:'マシンコード',
   mc_field:'マシンコード（Zigma About ダイアログから）*',
   mc_ph:'Revit → Zigma タブ → About → マシンコードをコピー で取得した長い HEX 文字列を貼り付けてください',
@@ -406,6 +409,9 @@ function setLang(lang){
   // tr_ext: the "Fill in contact info..." separator line (.82rem)
   const trExtEl=document.querySelector('#trial [style*="rgba(255,255,255,.55)"]');
   if(trExtEl) trExtEl.textContent=t.tr_ext;
+  // bottom note paragraph (.75rem)
+  const trNoteEl=document.querySelector('#trial [style*=".75rem"]');
+  if(trNoteEl) trNoteEl.innerHTML=t.tr_note_full;
   // labels
   const labels=document.querySelectorAll('.fl label');
   const lkeys=['mc_field','co_label','nm_label','em_label','ph_label','mc2_label','plan_label','co2_label','nm2_label','em2_label','ph2_label','ct_label','nt_label'];
