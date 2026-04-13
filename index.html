@@ -395,14 +395,17 @@ function setLang(lang){
   const trTexts=document.querySelectorAll('#trial [style*="font-size:.88rem"]');
   if(trTexts[0]) trTexts[0].textContent=t.tr_instant;
   // trial stats labels
+  // trial stats labels — 6× .78rem spans: [Day, Ops, Models] + [Days, Ops, Models]
   const trSpans=document.querySelectorAll('#trial [style*="font-size:.78rem"]');
   if(trSpans[0]) trSpans[0].textContent=t.tr_d;
   if(trSpans[1]) trSpans[1].textContent=t.tr_ops;
   if(trSpans[2]) trSpans[2].textContent=t.tr_models;
-  if(trSpans[3]) trSpans[3].textContent=t.tr_ext;
-  if(trSpans[4]) trSpans[4].textContent=t.tr_days;
-  if(trSpans[5]) trSpans[5].textContent=t.tr_eops;
-  if(trSpans[6]) trSpans[6].textContent=t.tr_emodels;
+  if(trSpans[3]) trSpans[3].textContent=t.tr_days;
+  if(trSpans[4]) trSpans[4].textContent=t.tr_eops;
+  if(trSpans[5]) trSpans[5].textContent=t.tr_emodels;
+  // tr_ext: the "Fill in contact info..." separator line (.82rem)
+  const trExtEl=document.querySelector('#trial [style*="rgba(255,255,255,.55)"]');
+  if(trExtEl) trExtEl.textContent=t.tr_ext;
   // labels
   const labels=document.querySelectorAll('.fl label');
   const lkeys=['mc_field','co_label','nm_label','em_label','ph_label','mc2_label','plan_label','co2_label','nm2_label','em2_label','ph2_label','ct_label','nt_label'];
