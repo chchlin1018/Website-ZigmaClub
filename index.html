@@ -66,22 +66,22 @@ footer{text-align:center;padding:3rem 2rem;border-top:1px solid var(--bd);font-s
 <section class="steps">
   <div class="step"><div class="step-n">1</div><h3>Download &amp; Install</h3><p>Run MSI installer. Zigma tab appears in Revit.</p></div>
   <div class="step"><div class="step-n">2</div><h3>Get Machine Code</h3><p>Click About in Zigma tab. Copy your Machine Code.</p></div>
-  <div class="step"><div class="step-n">3</div><h3>Get Free Trial</h3><p>Paste Machine Code below. Get 7-day trial key instantly.</p></div>
+  <div class="step"><div class="step-n">3</div><h3>Get Free Trial</h3><p>Paste Machine Code below. Get 1-day trial key instantly.</p></div>
   <div class="step"><div class="step-n">4</div><h3>Activate &amp; Go</h3><p>Enter key in Zigma About dialog. Start converting.</p></div>
 </section>
 
 <section class="section" id="trial">
 <div class="card">
-<div class="card-h" style="background:var(--gg)"><h2 style="color:var(--gn)">&#127873; Free Trial License &mdash; 7 Days</h2></div>
+<div class="card-h" style="background:var(--gg)"><h2 style="color:var(--gn)">&#127873; Free Trial License &mdash; 1 Day</h2></div>
 <div class="card-b">
   <div style="background:var(--s2);border-radius:10px;padding:1.2rem;margin-bottom:1.5rem;text-align:center">
     <div style="font-size:.85rem;color:var(--dm)">Your free trial includes:</div>
     <div style="display:flex;justify-content:center;gap:2rem;margin-top:.8rem;flex-wrap:wrap">
-      <div><span style="font-size:1.5rem;font-weight:700;color:var(--gn)">7</span><br><span style="font-size:.75rem;color:var(--dm)">Days</span></div>
-      <div><span style="font-size:1.5rem;font-weight:700;color:var(--gn)">100</span><br><span style="font-size:.75rem;color:var(--dm)">Import/Export Ops</span></div>
-      <div><span style="font-size:1.5rem;font-weight:700;color:var(--gn)">5,000</span><br><span style="font-size:.75rem;color:var(--dm)">Models</span></div>
+      <div><span style="font-size:1.5rem;font-weight:700;color:var(--gn)">1</span><br><span style="font-size:.75rem;color:var(--dm)">Day</span></div>
+      <div><span style="font-size:1.5rem;font-weight:700;color:var(--gn)">2</span><br><span style="font-size:.75rem;color:var(--dm)">Import/Export Ops</span></div>
+      <div><span style="font-size:1.5rem;font-weight:700;color:var(--gn)">2</span><br><span style="font-size:.75rem;color:var(--dm)">Models</span></div>
     </div>
-    <div style="font-size:.72rem;color:var(--dm);margin-top:.6rem">One-time generation per Machine Code. No credit card required.</div>
+    <div style="font-size:.72rem;color:var(--dm);margin-top:.6rem">No credit card required. Need more? <a href="#activate">Request an extended trial</a> (7 days, 100 ops, 50K models).</div>
   </div>
   <span class="sl">Your Machine Code</span>
   <div class="fl"><label>Machine Code (from Zigma About dialog) *</label><input type="text" class="mn" id="trMc" placeholder="Paste your Machine Code here" maxlength="300"></div>
@@ -99,8 +99,9 @@ footer{text-align:center;padding:3rem 2rem;border-top:1px solid var(--bd);font-s
   <div class="rp rp-gn" id="trOk">
     <div class="ck">&#9989;</div><h3 style="color:var(--gn)">Trial License Generated!</h3>
     <div class="key" id="trKey" onclick="navigator.clipboard.writeText(this.textContent)">—</div>
-    <p><strong>Valid for 7 days</strong> &middot; 100 operations &middot; 5,000 models<br>
+    <p><strong>Valid for 1 day</strong> &middot; 2 operations &middot; 2 models<br>
     Click the key to copy &rarr; Revit &rarr; Zigma Tab &rarr; About &rarr; Paste &rarr; Activate<br>
+    Need more? <a href="#activate">Request an extended trial</a> (7 days, 100 ops, 50K models)<br>
     Confirmation sent to <strong id="trCe"></strong></p>
   </div>
   <div class="rp rp-or" id="trUsed" style="display:none">
@@ -200,7 +201,7 @@ function genTrial(){
   document.getElementById('trCe').textContent=em;
   document.getElementById('trOk').classList.add('show');
   document.getElementById('trUsed').style.display='none';
-  console.log('[Zigma Trial]',{ts:new Date().toISOString(),machineCode:mc,company:co,contact:nm,email:em,phone:document.getElementById('trPh').value,key:k,type:'7-day-trial',ops:100,models:5000});
+  console.log('[Zigma Trial]',{ts:new Date().toISOString(),machineCode:mc,company:co,contact:nm,email:em,phone:document.getElementById('trPh').value,key:k,type:'1-day-trial',ops:2,models:2});
 }
 // Purchase key generation
 // Show success message if redirected from Formspree
