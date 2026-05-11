@@ -1,0 +1,8 @@
+# robots.txt for zigma.club
+# Allow all well-behaved crawlers
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://www.zigma.club/sitemap.xml
