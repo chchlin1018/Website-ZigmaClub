@@ -57,7 +57,6 @@ nav .links{display:flex;gap:1.2rem;font-size:.9rem;color:var(--dm);align-items:c
     <a href="https://www.realitymatrixai.com" target="_blank" data-i18n="nav_about">About Us</a>
     <a href="#trial" data-i18n="nav_trial">Free Trial</a>
     <a href="#pricing" data-i18n="nav_pricing">Pricing</a>
-    <a href="#activate" data-i18n="nav_license">Request License</a>
     <a class="dl-btn" href="https://github.com/chchlin1018/Website-ZigmaClub/releases/download/v5.5.20-pre-beta/ZigmaSetup_v5.5.20_Pre-Beta.msi" data-i18n="nav_dl" title="Pre-Beta v5.5.20 (140 MB) — Windows MSI">Download Trial</a>
   </div>
 </nav>
@@ -107,49 +106,38 @@ footer{text-align:center;padding:3rem 2rem;border-top:1px solid var(--bd);font-s
 
 <section class="section" id="trial">
 <div class="card">
-<div class="card-h" style="background:var(--ag)"><h2 style="color:var(--ac)">&#127873; Free Trial License &mdash; 1 Day</h2></div>
+<div class="card-h" style="background:var(--ag)"><h2 style="color:var(--ac)" data-i18n="tr_title">&#127873; Free Trial License &mdash; 1 Day</h2></div>
 <div class="card-b">
   <div style="background:var(--s2);border-radius:10px;padding:1.2rem;margin-bottom:1.5rem;text-align:center">
-    <div style="font-size:.88rem;color:rgba(255,255,255,.7);margin-bottom:.4rem">Instant trial — no credit card:</div>
+    <div style="font-size:.88rem;color:rgba(255,255,255,.7);margin-bottom:.4rem" data-i18n="tr_instant">Fill in the form below to request your free trial — no credit card:</div>
     <div style="display:flex;justify-content:center;gap:2.5rem;margin-top:.6rem;flex-wrap:wrap">
-      <div><span style="font-size:2rem;font-weight:800;color:var(--ac)">1</span><br><span style="font-size:.78rem;color:var(--dm)">Day</span></div>
-      <div><span style="font-size:2rem;font-weight:800;color:var(--ac)">2</span><br><span style="font-size:.78rem;color:var(--dm)">Import/Export Ops</span></div>
-      <div><span style="font-size:2rem;font-weight:800;color:var(--ac)">2</span><br><span style="font-size:.78rem;color:var(--dm)">Models</span></div>
+      <div><span style="font-size:2rem;font-weight:800;color:var(--ac)">7</span><br><span style="font-size:.78rem;color:var(--dm)" data-i18n="tr_days">Days</span></div>
+      <div><span style="font-size:2rem;font-weight:800;color:var(--ac)">20</span><br><span style="font-size:.78rem;color:var(--dm)" data-i18n="tr_eops">Export+Import Ops</span></div>
+      <div><span style="font-size:2rem;font-weight:800;color:var(--ac)">10K</span><br><span style="font-size:.78rem;color:var(--dm)" data-i18n="tr_emodels">Elements per Model</span></div>
     </div>
-    <div style="width:100%;height:1px;background:var(--bd);margin:1rem 0"></div>
-    <div style="font-size:.82rem;color:rgba(255,255,255,.55);margin-bottom:.2rem">Fill in contact info below to extend to:</div>
-    <div style="display:flex;justify-content:center;gap:2.5rem;margin-top:.6rem;flex-wrap:wrap">
-      <div><span style="font-size:2rem;font-weight:800;color:var(--ac2)">7</span><br><span style="font-size:.78rem;color:var(--dm)">Days</span></div>
-      <div><span style="font-size:2rem;font-weight:800;color:var(--ac2)">1,000</span><br><span style="font-size:.78rem;color:var(--dm)">Operations</span></div>
-      <div><span style="font-size:2rem;font-weight:800;color:var(--ac2)">50K</span><br><span style="font-size:.78rem;color:var(--dm)">Models</span></div>
-    </div>
-    <div style="font-size:.75rem;color:var(--dm);margin-top:.6rem">No credit card required. Fill in your contact info below to get a <strong style="color:var(--ac)">7-day extended trial</strong> with 1,000 operations and 50K models. <a href="#activate">Or request a license key &darr;</a></div>
+    <div style="font-size:.75rem;color:var(--dm);margin-top:.8rem" data-i18n="tr_note">Submit your Machine Code with contact info. Your trial license key will be emailed within 1 business day.</div>
   </div>
-  <span class="sl">Your Machine Code</span>
-  <div class="fl"><label>Machine Code (from Zigma → About dialog) *</label><textarea class="mn" id="trMc" placeholder="Paste your Machine Code here — it's a long hex string from Revit → Zigma Tab → About → Copy Machine Code" rows="4" maxlength="600" style="resize:vertical;line-height:1.5"></textarea></div>
+  <form action="https://formspree.io/f/xojyazpr" method="POST" id="trialForm">
+  <input type="hidden" name="_subject" value="[Zigma Trial] New Trial Key Request">
+  <input type="hidden" name="_next" value="https://www.zigma.club/#trial-sent">
+  <span class="sl" data-i18n="mc_label">Your Machine Code</span>
+  <div class="fl"><label data-i18n="mc_field">Machine Code (from Zigma &rarr; About dialog) *</label><textarea name="machine_code" class="mn" placeholder="Paste your Machine Code here &mdash; it&apos;s a long hex string from Revit &rarr; Zigma Tab &rarr; About &rarr; Copy Machine Code" rows="4" maxlength="600" required style="resize:vertical;line-height:1.5"></textarea></div>
   <hr class="dv">
-  <span class="sl">Contact Information</span>
+  <span class="sl" data-i18n="ci_label">Contact Information</span>
   <div class="rw">
-    <div class="fl"><label>Company Name *</label><input type="text" id="trCo" placeholder="e.g. CTCI Corporation"></div>
-    <div class="fl"><label>Contact Name *</label><input type="text" id="trNm" placeholder="Full name"></div>
+    <div class="fl"><label data-i18n="co_label">Company Name *</label><input type="text" name="company" placeholder="e.g. CTCI Corporation" required></div>
+    <div class="fl"><label data-i18n="nm_label">Contact Name *</label><input type="text" name="name" placeholder="Full name" required></div>
   </div>
   <div class="rw">
-    <div class="fl"><label>Email *</label><input type="email" id="trEm" placeholder="you@company.com"></div>
-    <div class="fl"><label>Phone</label><input type="tel" id="trPh" placeholder="+886-xxx-xxx-xxx"></div>
+    <div class="fl"><label data-i18n="em_label">Email *</label><input type="email" name="email" placeholder="you@company.com" required></div>
+    <div class="fl"><label data-i18n="ph_label">Phone</label><input type="tel" name="phone" placeholder="+886-xxx-xxx-xxx"></div>
   </div>
-  <div style="margin-top:1.2rem"><button class="btn btn-ac" onclick="genTrial()">Generate Free Trial Key</button></div>
-  <div class="rp rp-gn" id="trOk">
-    <div class="ck">&#9989;</div><h3 style="color:var(--ac)">Trial License Generated!</h3>
-    <div class="key" id="trKey" onclick="navigator.clipboard.writeText(this.textContent)">—</div>
-    <p><strong>Valid for 1 day</strong> &middot; 2 operations &middot; 2 models<br>
-    Click the key to copy &rarr; Revit &rarr; Zigma Tab &rarr; About &rarr; Paste &rarr; Activate<br>
-    Need more? <a href="#activate">Request an extended trial</a> — 7 days, 1,000 ops, 50K models<br>
-    Confirmation sent to <strong id="trCe"></strong></p>
-  </div>
-  <div class="rp rp-or" id="trUsed" style="display:none">
-    <div class="ck">&#9888;&#65039;</div><h3 style="color:var(--or)">Trial Already Generated</h3>
-    <p>A trial key was already generated for this Machine Code.<br>Each Machine Code can only receive one free trial.<br>
-    Need help? Contact <a href="mailto:sales@realitymatrixai.com">sales@realitymatrixai.com</a></p>
+  <div style="margin-top:1.2rem"><button type="submit" class="btn btn-ac" data-i18n="gen_btn">Submit Trial Request</button></div>
+  <p style="margin-top:.8rem;font-size:.78rem;color:var(--dm)" data-i18n="sub_note">Your request will be sent to <strong>michael.lin@realitymatrixai.com</strong>. We will review and email your trial license key within 1 business day.</p>
+  </form>
+  <div class="rp rp-gn" id="trialSent" style="display:none">
+    <div class="ck">&#9989;</div><h3 style="color:var(--ac)" data-i18n="ok_title">Trial Request Submitted!</h3>
+    <p data-i18n="ok_sub">Thank you! We will email your trial license key within 1 business day.<br>Questions? Contact <a href="mailto:michael.lin@realitymatrixai.com">michael.lin@realitymatrixai.com</a></p>
   </div>
 </div></div></section>
 
@@ -178,36 +166,6 @@ footer{text-align:center;padding:3rem 2rem;border-top:1px solid var(--bd);font-s
 </div>
 </section>
 
-<section class="section" id="activate">
-<div class="card">
-<div class="card-h"><h2>&#128273; Request License Key</h2></div>
-<div class="card-b">
-  <form action="https://formspree.io/f/xojyazpr" method="POST" id="licenseForm">
-  <input type="hidden" name="_subject" value="[Zigma] New License Request">
-  <input type="hidden" name="_next" value="https://www.zigma.club/#request-sent">
-  <span class="sl">Machine Code</span>
-  <div class="fl"><label>Machine Code *</label><textarea name="machine_code" rows="3" class="mn" placeholder="Paste your Machine Code from Revit → Zigma Tab → About → Copy Machine Code" required style="width:100%;font-family:var(--m);font-size:.82rem;resize:vertical"></textarea></div>
-  <div class="fl"><label>Plan</label><select name="plan"><option>Trial — Free (1 day / 2 models / 2 operations)</option><option>Individual</option><option>Enterprise</option><option>Custom — Contact Sales</option></select></div>
-  <hr class="dv"><span class="sl">Company &amp; Contact</span>
-  <div class="fl"><label>Company Name *</label><input type="text" name="company" placeholder="e.g. CTCI Corporation" required></div>
-  <div class="rw">
-    <div class="fl"><label>Contact Name *</label><input type="text" name="name" placeholder="Full name" required></div>
-    <div class="fl"><label>Email *</label><input type="email" name="email" placeholder="you@company.com" required></div>
-  </div>
-  <div class="rw">
-    <div class="fl"><label>Phone</label><input type="text" name="phone" placeholder="+886-xxx-xxx-xxx"></div>
-    <div class="fl"><label>Country</label><select name="country"><option>Taiwan</option><option>Japan</option><option>United States</option><option>China</option><option>South Korea</option><option>Germany</option><option>Other</option></select></div>
-  </div>
-  <div class="fl"><label>Notes (optional)</label><textarea name="notes" rows="2" placeholder="Any additional requirements or questions"></textarea></div>
-  <div style="margin-top:1.2rem"><button type="submit" class="btn btn-ac">Submit License Request</button></div>
-  <p style="margin-top:.8rem;font-size:.78rem;color:var(--dm)">Your request will be sent to <strong>license@realitymatrixai.com</strong>. We will review and send your License Key within 1 business day.</p>
-  </form>
-  <div class="rp rp-gn" id="requestSent" style="display:none">
-    <div class="ck">&#9989;</div><h3 style="color:var(--ac)">License Request Submitted!</h3>
-    <p>Thank you! We will review your request and send your License Key to your email within 1 business day.<br>Questions? Contact <a href="mailto:license@realitymatrixai.com">license@realitymatrixai.com</a></p>
-  </div>
-</div></div></section>
-
 <footer>
   <strong>Zigma USD Builder</strong> by <a href="https://www.realitymatrixai.com">Reality Matrix AI Inc.</a><br>
   &copy; 2026 Reality Matrix AI Inc. (&#23526;&#30697;&#31185;&#25216;). All rights reserved.<br>
@@ -219,175 +177,101 @@ footer{text-align:center;padding:3rem 2rem;border-top:1px solid var(--bd);font-s
 </footer>
 
 <script>
-function genTrial(){
-  const mc=document.getElementById('trMc').value.trim();
-  const co=document.getElementById('trCo').value.trim();
-  const nm=document.getElementById('trNm').value.trim();
-  const em=document.getElementById('trEm').value.trim();
-  if(!mc||!co||!nm||!em){alert('Please fill in Machine Code, Company, Name, and Email.');return}
-  const used=JSON.parse(localStorage.getItem('zigma_trials')||'{}');
-  const mcHash=mc.replace(/\s/g,'').substring(0,20);
-  if(used[mcHash]){document.getElementById('trUsed').style.display='block';document.getElementById('trOk').classList.remove('show');return}
-  const h=Array.from(mc+co+'ZIGMA-TRIAL-2026').reduce((a,c)=>((a<<5)-a+c.charCodeAt(0))|0,0);
-  const x=Math.abs(h).toString(16).toUpperCase().padStart(12,'0');
-  const k='ZMTR-'+x.slice(0,4)+'-'+x.slice(4,8)+'-'+x.slice(8,12);
-  used[mcHash]={key:k,ts:new Date().toISOString(),co:co,nm:nm,em:em};
-  localStorage.setItem('zigma_trials',JSON.stringify(used));
-  document.getElementById('trKey').textContent=k;
-  document.getElementById('trCe').textContent=em;
-  document.getElementById('trOk').classList.add('show');
-  document.getElementById('trUsed').style.display='none';
-  console.log('[Zigma Trial]',{ts:new Date().toISOString(),machineCode:mc,company:co,contact:nm,email:em,phone:document.getElementById('trPh').value,key:k,type:'1-day-trial',ops:2,models:2});
-}
-if(window.location.hash==='#request-sent'){
-  const f=document.getElementById('licenseForm');
-  const s=document.getElementById('requestSent');
-  if(f)f.style.display='none';
-  if(s)s.style.display='block';
-  window.scrollTo({top:document.getElementById('activate').offsetTop-80,behavior:'smooth'});
+if(window.location.hash==='#trial-sent'){
+  const f=document.getElementById('trialForm');
+  const s=document.getElementById('trialSent');
+  if(f) f.style.display='none';
+  if(s) s.style.display='block';
+  setTimeout(()=>{const tg=document.getElementById('trial');if(tg)window.scrollTo({top:tg.offsetTop-80,behavior:'smooth'});},100);
 }
 </script>
 <script>
 const _ZG={
 en:{
-  nav_about:'About Us',nav_trial:'Free Trial',nav_pricing:'Pricing',nav_license:'Request License',nav_dl:'Download Trial',
+  nav_about:'About Us',nav_trial:'Free Trial',nav_pricing:'Pricing',nav_dl:'Download Trial',
   h_badge:'OpenUSD Native &middot; USD&#8596;Revit &middot; Autodesk Revit 2026/2027',
   h1:'Bidirectional <em>USD&#8596;Revit</em><br>for Industrial Digital Twins',
-  h_sub:'OpenUSD holds the industrial digital twin. Your MEP team works in Autodesk Revit. Zigma bridges them — bringing USD precision into Revit, and syncing Revit MEP back to USD.',
+  h_sub:'OpenUSD holds the industrial digital twin. Your MEP team works in Autodesk Revit. Zigma bridges them &mdash; bringing USD precision into Revit, and syncing Revit MEP back to USD.',
   s1h:'Download & Install',s1p:'Run MSI installer. Zigma tab appears in Revit.',
   s2h:'Get Machine Code',s2p:'Click About in Zigma tab. Copy your Machine Code.',
-  s3h:'Get Free Trial',s3p:'Fill info below. Get extended 7-day trial key.',
+  s3h:'Submit Trial Request',s3p:'Fill the form below. Your trial key arrives by email.',
   s4h:'Activate & Go',s4p:'Enter key in Zigma About dialog. Start converting.',
-  tr_title:'🎁 Free Trial License — 1 Day',
-  tr_instant:'Instant trial — no credit card:',
-  tr_d:'Day',tr_ops:'Import/Export Ops',tr_models:'Models',
-  tr_ext:'Fill in contact info below to extend to:',
-  tr_days:'Days',tr_eops:'Operations',tr_emodels:'Models',
-  tr_note:'Or request a license key',
-  tr_note_full:'No credit card required. Fill in your contact info below to get a <strong style="color:var(--ac2)">7-day extended trial</strong> with 1,000 operations and 50K models. <a href="#activate">Or request a license key ↓</a>',
+  tr_title:'&#127873; Free Trial License &mdash; 1 Day',
+  tr_instant:'Fill in the form below to request your free trial &mdash; no credit card:',
+  tr_days:'Days',tr_eops:'Export+Import Ops',tr_emodels:'Elements per Model',
+  tr_note:'Submit your Machine Code with contact info. Your trial license key will be emailed within 1 business day.',
   mc_label:'YOUR MACHINE CODE',
-  mc_field:'Machine Code (from Zigma → About dialog) *',
-  mc_ph:'Paste your Machine Code here — it\'s a long hex string from Revit → Zigma Tab → About → Copy Machine Code',
+  mc_field:'Machine Code (from Zigma &rarr; About dialog) *',
   ci_label:'CONTACT INFORMATION',
-  co_label:'Company Name *',co_ph:'e.g. CTCI Corporation',
-  nm_label:'Contact Name *',nm_ph:'Full name',
-  em_label:'Email *',em_ph:'you@company.com',
-  ph_label:'Phone',ph_ph:'+886-xxx-xxx-xxx',
-  gen_btn:'Generate Free Trial Key',
-  ok_title:'Trial License Generated!',ok_sub:'Valid for 1 day · 2 operations · 2 models',
-  ok_copy:'Click the key to copy → Revit → Zigma Tab → About → Paste → Activate',
-  ok_more:'Need more? Request an extended trial — 7 days, 1,000 ops, 50K models',
-  used_title:'Trial Already Generated',
-  used_sub:'A trial key was already generated for this Machine Code. Each Machine Code can only receive one free trial.',
+  co_label:'Company Name *',nm_label:'Contact Name *',em_label:'Email *',ph_label:'Phone',
+  gen_btn:'Submit Trial Request',
+  sub_note:'Your request will be sent to <strong>michael.lin@realitymatrixai.com</strong>. We will review and email your trial license key within 1 business day.',
+  ok_title:'Trial Request Submitted!',
+  ok_sub:'Thank you! We will email your trial license key within 1 business day.<br>Questions? Contact <a href="mailto:michael.lin@realitymatrixai.com">michael.lin@realitymatrixai.com</a>',
   pr_title:'Pricing',pr_sub:'All licenses are issued by our team. Contact us to get started.',
   pr_contact_big:'Contact Sales',
   ent_name:'Enterprise',ind_name:'Individual',
-  ent_feat:'1,000 import/export operations<br>Up to 20,000 models<br>Priority support & training<br>Works offline — no network required',
-  ind_feat:'300 import/export operations<br>Up to 10,000 models<br>Standard support<br>Works offline — no network required',
+  ent_feat:'1,000 import/export operations<br>Up to 20,000 models<br>Priority support & training<br>Works offline &mdash; no network required',
+  ind_feat:'300 import/export operations<br>Up to 10,000 models<br>Standard support<br>Works offline &mdash; no network required',
   contact_btn:'Contact Sales',
-  act_title:'🔑 Request License Key',
-  mc2_label:'Machine Code *',
-  plan_label:'Plan',
-  co2_label:'Company Name *',nm2_label:'Contact Name *',em2_label:'Email *',
-  ph2_label:'Phone',ct_label:'Country',nt_label:'Notes (optional)',
-  sub_btn:'Submit License Request',
-  sub_note:'Your request will be sent to license@realitymatrixai.com. We will review and send your License Key within 1 business day.',
-  req_ok:'License Request Submitted!',
-  req_sub:'Thank you! We will review your request and send your License Key to your email within 1 business day.',
   foot_by:'by',foot_cr:'All rights reserved.'
 },
 zh:{
-  nav_about:'關於我們',nav_trial:'免費試用',nav_pricing:'授權方案',nav_license:'申請授權',nav_dl:'下載試用版',
+  nav_about:'關於我們',nav_trial:'免費試用',nav_pricing:'授權方案',nav_dl:'下載試用版',
   h_badge:'OpenUSD 原生 &middot; USD&#8596;Revit &middot; Autodesk Revit 2026/2027',
   h1:'雙向 <em>USD&#8596;Revit</em><br>為工業數位孿生',
-  h_sub:'OpenUSD 擁有工業數位孿生。MEP 團隊在 Autodesk Revit 工作。Zigma 橋接兩者 — 將 USD 精準數據帶入 Revit,並將 Revit MEP 同步回 USD。',
+  h_sub:'OpenUSD 擁有工業數位孿生。MEP 團隊在 Autodesk Revit 工作。Zigma 橋接兩者 &mdash; 將 USD 精準數據帶入 Revit，並將 Revit MEP 同步回 USD。',
   s1h:'下載安裝',s1p:'執行 MSI 安裝程式。Revit 中出現 Zigma 分頁。',
   s2h:'取得機器碼',s2p:'點擊 Zigma 分頁的「About」，複製機器碼。',
-  s3h:'申請免費試用',s3p:'填寫資料，立即獲得 7 天延伸試用金鑰。',
+  s3h:'提交試用申請',s3p:'填寫下方表單，我們會將試用金鑰寄至您的信箱。',
   s4h:'啟動使用',s4p:'在 Zigma About 對話框中輸入金鑰，開始轉換。',
-  tr_title:'🎁 免費試用授權 — 1 天',
-  tr_instant:'即時試用 — 無需信用卡：',
-  tr_d:'天',tr_ops:'匯入/匯出次數',tr_models:'模型數',
-  tr_ext:'填寫聯絡資料可延伸至：',
-  tr_days:'天',tr_eops:'次數',tr_emodels:'模型數',
-  tr_note:'或申請授權金鑰',
-  tr_note_full:'無需信用卡。在下方填寫聯絡資料，即可獲得包含 1,000 次操作和 50K 模型的 <strong style="color:var(--ac2)">7 天延伸試用</strong>。<a href="#activate">或申請授權金鑰 ↓</a>',
+  tr_title:'&#127873; 免費試用授權 &mdash; 1 天',
+  tr_instant:'填寫下方表單以申請免費試用 &mdash; 無需信用卡：',
+  tr_days:'天',tr_eops:'次 Export+Import',tr_emodels:'元件數／每模型',
+  tr_note:'提交您的機器碼與聯絡資訊。我們將於 1 個工作天內將試用金鑰寄送至您的信箱。',
   mc_label:'您的機器碼',
   mc_field:'機器碼（來自 Zigma About 對話框）*',
-  mc_ph:'貼上您的機器碼 — 從 Revit → Zigma 分頁 → About → 複製機器碼取得的長 HEX 字串',
   ci_label:'聯絡資訊',
-  co_label:'公司名稱 *',co_ph:'例如：中鼎工程',
-  nm_label:'聯絡人姓名 *',nm_ph:'全名',
-  em_label:'電子信箱 *',em_ph:'you@company.com',
-  ph_label:'電話',ph_ph:'+886-xxx-xxx-xxx',
-  gen_btn:'生成免費試用金鑰',
-  ok_title:'試用授權已生成！',ok_sub:'有效期 1 天 · 2 次操作 · 2 個模型',
-  ok_copy:'點擊金鑰複製 → Revit → Zigma 分頁 → About → 貼上 → 啟動',
-  ok_more:'需要更多？申請延伸試用 — 7 天，1,000 次，50K 模型',
-  used_title:'試用已生成過',
-  used_sub:'此機器碼已生成過試用金鑰。每個機器碼只能獲得一次免費試用。',
+  co_label:'公司名稱 *',nm_label:'聯絡人姓名 *',em_label:'電子信箱 *',ph_label:'電話',
+  gen_btn:'提交試用申請',
+  sub_note:'您的申請將發送至 <strong>michael.lin@realitymatrixai.com</strong>。我們將於 1 個工作天內審核並將試用金鑰寄送至您的信箱。',
+  ok_title:'試用申請已提交！',
+  ok_sub:'謝謝！我們將於 1 個工作天內將試用金鑰寄送至您的信箱。<br>有任何問題？請聯絡 <a href="mailto:michael.lin@realitymatrixai.com">michael.lin@realitymatrixai.com</a>',
   pr_title:'授權方案',pr_sub:'所有授權均由我們的團隊發放，請聯絡我們開始使用。',
   pr_contact_big:'洽詢業務',
   ent_name:'企業版',ind_name:'個人版',
-  ent_feat:'1,000 次匯入/匯出<br>最多 20,000 個模型<br>優先支援和培訓<br>支援離線模式 — 無需網路連線',
-  ind_feat:'300 次匯入/匯出<br>最多 10,000 個模型<br>標準支援<br>支援離線模式 — 無需網路連線',
+  ent_feat:'1,000 次匯入/匯出<br>最多 20,000 個模型<br>優先支援和培訓<br>支援離線模式 &mdash; 無需網路連線',
+  ind_feat:'300 次匯入/匯出<br>最多 10,000 個模型<br>標準支援<br>支援離線模式 &mdash; 無需網路連線',
   contact_btn:'聯絡銷售',
-  act_title:'🔑 申請授權金鑰',
-  mc2_label:'機器碼 *',
-  plan_label:'方案',
-  co2_label:'公司名稱 *',nm2_label:'聯絡人姓名 *',em2_label:'電子信箱 *',
-  ph2_label:'電話',ct_label:'國家/地區',nt_label:'備註（選填）',
-  sub_btn:'提交授權申請',
-  sub_note:'您的申請將發送至 license@realitymatrixai.com。我們將在 1 個工作天內審核並將授權金鑰發送至您的信箱。',
-  req_ok:'授權申請已提交！',
-  req_sub:'謝謝！我們將在 1 個工作天內審核您的申請並將授權金鑰發送至您的電子信箱。',
   foot_by:'由',foot_cr:'版權所有。'
 },
 ja:{
-  nav_about:'会社について',nav_trial:'無料トライアル',nav_pricing:'ライセンスプラン',nav_license:'ライセンス申請',nav_dl:'トライアル版ダウンロード',
+  nav_about:'会社について',nav_trial:'無料トライアル',nav_pricing:'ライセンスプラン',nav_dl:'トライアル版ダウンロード',
   h_badge:'OpenUSD ネイティブ &middot; USD&#8596;Revit &middot; Autodesk Revit 2026/2027',
   h1:'双方向 <em>USD&#8596;Revit</em><br>産業デジタルツイン向け',
   h_sub:'OpenUSD が産業デジタルツインを保持します。MEP チームは Autodesk Revit で作業します。Zigma が両者を橋渡しし、USD の精度を Revit に取り込み、Revit MEP を USD に同期します。',
   s1h:'ダウンロード & インストール',s1p:'MSI インストーラーを実行。Revit に Zigma タブが表示されます。',
   s2h:'マシンコード取得',s2p:'Zigma タブの「About」をクリックし、マシンコードをコピーします。',
-  s3h:'無料トライアル取得',s3p:'情報を入力して、7 日間の拡張トライアルキーを受け取ります。',
+  s3h:'トライアル申請を送信',s3p:'下記フォームを記入。トライアルキーをメールでお送りします。',
   s4h:'アクティベート & 開始',s4p:'Zigma About ダイアログにキーを入力して変換を開始します。',
-  tr_title:'🎁 無料トライアルライセンス — 1 日',
-  tr_instant:'即時トライアル — クレジットカード不要：',
-  tr_d:'日',tr_ops:'インポート/エクスポート回数',tr_models:'モデル数',
-  tr_ext:'連絡先情報を入力すると延長されます：',
-  tr_days:'日',tr_eops:'回数',tr_emodels:'モデル数',
-  tr_note:'またはライセンスキーを申請',
-  tr_note_full:'クレジットカード不要。下記に連絡先を入力して、1,000 回の操作と 50K モデルを含む <strong style="color:var(--ac2)">7 日間の拡張トライアル</strong>を取得してください。<a href="#activate">またはライセンスキーを申請 ↓</a>',
+  tr_title:'&#127873; 無料トライアルライセンス &mdash; 1 日',
+  tr_instant:'下記フォームに記入して無料トライアルを申請してください &mdash; クレジットカード不要：',
+  tr_days:'日',tr_eops:'Export+Import 回数',tr_emodels:'モデル毎エレメント数',
+  tr_note:'マシンコードと連絡先を送信してください。1 営業日以内にトライアルキーをメールでお送りします。',
   mc_label:'マシンコード',
   mc_field:'マシンコード（Zigma About ダイアログから）*',
-  mc_ph:'Revit → Zigma タブ → About → マシンコードをコピー で取得した長い HEX 文字列を貼り付けてください',
   ci_label:'連絡先情報',
-  co_label:'会社名 *',co_ph:'例：CTCI Corporation',
-  nm_label:'担当者名 *',nm_ph:'氏名',
-  em_label:'メールアドレス *',em_ph:'you@company.com',
-  ph_label:'電話番号',ph_ph:'+81-xxx-xxxx-xxxx',
-  gen_btn:'無料トライアルキーを生成',
-  ok_title:'トライアルライセンスが生成されました！',ok_sub:'有効期間 1 日 · 2 回操作 · 2 モデル',
-  ok_copy:'キーをクリックしてコピー → Revit → Zigma タブ → About → 貼り付け → アクティベート',
-  ok_more:'さらに必要ですか？拡張トライアルを申請 — 7 日間、1,000 回、50K モデル',
-  used_title:'トライアルは既に生成済みです',
-  used_sub:'このマシンコードのトライアルキーは既に生成されています。各マシンコードに対して無料トライアルは 1 回のみです。',
+  co_label:'会社名 *',nm_label:'担当者名 *',em_label:'メールアドレス *',ph_label:'電話番号',
+  gen_btn:'トライアル申請を送信',
+  sub_note:'申請は <strong>michael.lin@realitymatrixai.com</strong> に送信されます。1 営業日以内に審査し、トライアルキーをメールでお送りします。',
+  ok_title:'トライアル申請を受け付けました！',
+  ok_sub:'ありがとうございます！1 営業日以内にトライアルキーをメールでお送りします。<br>ご質問は <a href="mailto:michael.lin@realitymatrixai.com">michael.lin@realitymatrixai.com</a> までご連絡ください。',
   pr_title:'ライセンスプラン',pr_sub:'すべてのライセンスはチームが発行します。お問い合わせください。',
   pr_contact_big:'営業へお問い合わせ',
   ent_name:'エンタープライズ',ind_name:'個人',
-  ent_feat:'1,000 回インポート/エクスポート<br>最大 20,000 モデル<br>優先サポート & トレーニング<br>オフライン対応 — ネットワーク接続不要',
-  ind_feat:'300 回インポート/エクスポート<br>最大 10,000 モデル<br>標準サポート<br>オフライン対応 — ネットワーク接続不要',
+  ent_feat:'1,000 回インポート/エクスポート<br>最大 20,000 モデル<br>優先サポート & トレーニング<br>オフライン対応 &mdash; ネットワーク接続不要',
+  ind_feat:'300 回インポート/エクスポート<br>最大 10,000 モデル<br>標準サポート<br>オフライン対応 &mdash; ネットワーク接続不要',
   contact_btn:'営業へお問い合わせ',
-  act_title:'🔑 ライセンスキーの申請',
-  mc2_label:'マシンコード *',
-  plan_label:'プラン',
-  co2_label:'会社名 *',nm2_label:'担当者名 *',em2_label:'メールアドレス *',
-  ph2_label:'電話番号',ct_label:'国',nt_label:'備考（任意）',
-  sub_btn:'ライセンスを申請する',
-  sub_note:'申請は license@realitymatrixai.com に送信されます。1 営業日以内に審査し、ライセンスキーをメールでお送りします。',
-  req_ok:'ライセンス申請を受け付けました！',
-  req_sub:'ありがとうございます！1 営業日以内に申請を審査し、ライセンスキーをメールでお送りします。',
   foot_by:'作成：',foot_cr:'All rights reserved.'
 }
 };
@@ -396,39 +280,11 @@ function setLang(lang){
   document.querySelectorAll('[data-i18n]').forEach(el=>{ const k=el.dataset.i18n; if(t[k]!==undefined) el.innerHTML=t[k]; });
   const hb=document.querySelector('.badge'); if(hb) hb.innerHTML=t.h_badge;
   const hh=document.querySelector('.hero h1'); if(hh) hh.innerHTML=t.h1;
-  const hp=document.querySelector('.hero p'); if(hp) hp.textContent=t.h_sub;
+  const hp=document.querySelector('.hero p'); if(hp) hp.innerHTML=t.h_sub;
   const steps=document.querySelectorAll('.step');
   [[t.s1h,t.s1p],[t.s2h,t.s2p],[t.s3h,t.s3p],[t.s4h,t.s4p]].forEach(([h,p],i)=>{
     if(steps[i]){ const hel=steps[i].querySelector('h3'); const pel=steps[i].querySelector('p'); if(hel) hel.textContent=h; if(pel) pel.textContent=p; }
   });
-  const trh=document.querySelector('#trial .card-h h2'); if(trh) trh.innerHTML=t.tr_title;
-  const trTexts=document.querySelectorAll('#trial [style*="font-size:.88rem"]');
-  if(trTexts[0]) trTexts[0].textContent=t.tr_instant;
-  const trSpans=document.querySelectorAll('#trial [style*="font-size:.78rem"]');
-  if(trSpans[0]) trSpans[0].textContent=t.tr_d;
-  if(trSpans[1]) trSpans[1].textContent=t.tr_ops;
-  if(trSpans[2]) trSpans[2].textContent=t.tr_models;
-  if(trSpans[3]) trSpans[3].textContent=t.tr_days;
-  if(trSpans[4]) trSpans[4].textContent=t.tr_eops;
-  if(trSpans[5]) trSpans[5].textContent=t.tr_emodels;
-  const trExtEl=document.querySelector('#trial [style*="rgba(255,255,255,.55)"]');
-  if(trExtEl) trExtEl.textContent=t.tr_ext;
-  const trNoteEl=document.querySelector('#trial [style*=".75rem"]');
-  if(trNoteEl) trNoteEl.innerHTML=t.tr_note_full;
-  const labels=document.querySelectorAll('.fl label');
-  const lkeys=['mc_field','co_label','nm_label','em_label','ph_label','mc2_label','plan_label','co2_label','nm2_label','em2_label','ph2_label','ct_label','nt_label'];
-  labels.forEach((l,i)=>{ if(t[lkeys[i]]) l.textContent=t[lkeys[i]]; });
-  const slabels=document.querySelectorAll('.sl');
-  if(slabels[0]) slabels[0].textContent=t.mc_label;
-  if(slabels[1]) slabels[1].textContent=t.ci_label;
-  const genbtn=document.querySelector('button[onclick="genTrial()"]'); if(genbtn) genbtn.textContent=t.gen_btn;
-  const okh=document.querySelector('#trOk h3'); if(okh) okh.textContent=t.ok_title;
-  const okp=document.querySelector('#trOk p');
-  if(okp) okp.innerHTML=`<strong>${t.ok_sub}</strong><br>${t.ok_copy}<br>${t.ok_more}<br>`;
-  const ush=document.querySelector('#trUsed h3'); if(ush) ush.textContent=t.used_title;
-  const usp=document.querySelector('#trUsed p'); if(usp){
-    const a=usp.querySelector('a'); usp.innerHTML=t.used_sub+'<br>'+(a?a.outerHTML:'');
-  }
   const prh=document.querySelector('#pricing h2'); if(prh) prh.textContent=t.pr_title;
   const prp=document.querySelector('#pricing p'); if(prp) prp.textContent=t.pr_sub;
   document.querySelectorAll('.pr-big').forEach(el=>{ el.textContent=t.pr_contact_big; });
@@ -439,11 +295,6 @@ function setLang(lang){
   if(cards[1]){ const ch=cards[1].querySelector('.card-h h2'); if(ch) ch.textContent=t.ind_name;
     const cf=cards[1].querySelector('[style*="line-height:2"]'); if(cf) cf.innerHTML=t.ind_feat;
     const cb=cards[1].querySelector('.btn-ac'); if(cb) cb.textContent=t.contact_btn; }
-  const ach=document.querySelector('#activate .card-h h2'); if(ach) ach.innerHTML=t.act_title;
-  const subbtn=document.querySelector('button[type="submit"]'); if(subbtn) subbtn.textContent=t.sub_btn;
-  const subn=document.querySelector('#activate p[style*=".78rem"]'); if(subn) subn.innerHTML=t.sub_note;
-  const reqh=document.querySelector('#requestSent h3'); if(reqh) reqh.textContent=t.req_ok;
-  const reqp=document.querySelector('#requestSent p'); if(reqp) reqp.innerHTML=t.req_sub;
   document.querySelectorAll('.lbtn').forEach(b=>b.classList.remove('active'));
   const ab=document.getElementById('lbtn-'+lang); if(ab) ab.classList.add('active');
   localStorage.setItem('zg_lang',lang);
