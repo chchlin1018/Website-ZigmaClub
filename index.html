@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -31,36 +31,6 @@ nav .links{display:flex;gap:1.2rem;font-size:.9rem;color:var(--dm);align-items:c
 .dl-btn{background:var(--ac)!important;color:#fff!important;padding:.45rem 1.2rem;border-radius:8px;font-weight:600;font-size:.85rem;transition:all .2s}.dl-btn:hover{background:#3a7bf0!important;transform:translateY(-1px)}
 .dl-btn.dl-disabled{opacity:0.55!important;cursor:not-allowed!important;background:var(--s2)!important;color:var(--dm)!important;border:1px solid var(--bd)}
 .dl-btn.dl-disabled:hover{background:var(--s2)!important;transform:none!important}
-</style>
-</head>
-<body>
-
-<nav>
-  <div class="logo">
-    <svg width="96" height="30" viewBox="0 0 96 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <linearGradient id="znav" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stop-color="#3b7dff"/>
-          <stop offset="100%" stop-color="#7aa8ff"/>
-        </linearGradient>
-      </defs>
-      <text x="0" y="25" font-family="DM Sans, Arial, sans-serif" font-weight="800" font-size="28" fill="url(#znav)">Z</text>
-      <text x="20" y="24" font-family="DM Sans, Arial, sans-serif" font-weight="600" font-size="22" fill="white">igma</text>
-    </svg>
-  </div>
-  <div class="links">
-    <div class="lang-sw">
-      <button class="lbtn" id="lbtn-en" onclick="setLang('en')">EN</button>
-      <button class="lbtn" id="lbtn-zh" onclick="setLang('zh')">中文</button>
-      <button class="lbtn" id="lbtn-ja" onclick="setLang('ja')">日本語</button>
-    </div>
-    <a href="https://www.realitymatrixai.com" target="_blank" data-i18n="nav_about">About Us</a>
-    <a href="#trial" data-i18n="nav_trial">Free Trial</a>
-    <a href="#pricing" data-i18n="nav_pricing">Pricing</a>
-    <a class="dl-btn" href="https://github.com/chchlin1018/Website-ZigmaClub/releases/download/v5.5.20-pre-beta/ZigmaSetup_v5.5.20_Pre-Beta.msi" data-i18n="nav_dl" title="Pre-Beta v5.5.20 (140 MB) — Windows MSI">Download Trial</a>
-  </div>
-</nav>
-<style>
 .hero{text-align:center;padding:5rem 2rem 3rem}.hero h1{font-size:clamp(2rem,5vw,3.5rem);font-weight:700;letter-spacing:-1px;margin-bottom:1rem}.hero h1 em{font-style:normal;color:var(--ac)}
 .hero p{font-size:1.1rem;color:var(--dm);max-width:620px;margin:0 auto 2rem}.badge{display:inline-block;padding:.35rem 1rem;border-radius:20px;font-size:.8rem;font-weight:500;background:var(--gw);color:var(--ac2);border:1px solid rgba(79,140,255,.3);margin-bottom:1.5rem}
 .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.2rem;max-width:900px;margin:0 auto 4rem;padding:0 2rem}
@@ -68,6 +38,18 @@ nav .links{display:flex;gap:1.2rem;font-size:.9rem;color:var(--dm);align-items:c
 .step-n{width:32px;height:32px;border-radius:50%;background:var(--gw);color:var(--ac);font-weight:700;display:inline-flex;align-items:center;justify-content:center;margin-bottom:.8rem;font-size:.85rem}
 .step h3{font-size:.95rem;margin-bottom:.4rem;color:#fff}.step p{font-size:.82rem;color:var(--dm)}
 .section{max-width:720px;margin:0 auto;padding:0 2rem 4rem}
+.howto-wrap{max-width:1000px;margin:0 auto 4rem;padding:0 2rem}
+.howto-h{text-align:center;margin-bottom:2rem}
+.howto-h h2{font-size:1.5rem;color:#fff;margin-bottom:.5rem}
+.howto-h p{color:var(--dm);font-size:.9rem}
+.ht-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+.ht-step{background:var(--s1);border:1px solid var(--bd);border-radius:12px;padding:1.5rem;position:relative;transition:border-color .3s}
+.ht-step:hover{border-color:var(--ac)}
+.ht-num{position:absolute;top:-12px;left:1.5rem;width:32px;height:32px;border-radius:50%;background:var(--ac);color:#fff;font-weight:700;display:inline-flex;align-items:center;justify-content:center;font-size:.9rem;box-shadow:0 2px 8px rgba(79,140,255,.4)}
+.ht-step h3{font-size:1rem;color:#fff;margin:.5rem 0 .5rem;padding-left:0}
+.ht-step p{font-size:.85rem;color:var(--dm);margin-bottom:1rem}
+.ht-step img{width:100%;height:auto;border-radius:8px;border:1px solid var(--bd);display:block;background:var(--s2)}
+@media(max-width:700px){.ht-grid{grid-template-columns:1fr}}
 .card{background:var(--s1);border:1px solid var(--bd);border-radius:16px;overflow:hidden}
 .card-h{padding:1.5rem 2rem;border-bottom:1px solid var(--bd);display:flex;align-items:center;gap:.8rem}.card-h h2{font-size:1.15rem}
 .card-b{padding:2rem}
@@ -79,29 +61,71 @@ hr.dv{border:none;border-top:1px solid var(--bd);margin:1.5rem 0}
 .sl{font-size:.72rem;color:var(--ac);font-weight:700;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:.8rem;display:block}
 .btn{display:inline-flex;align-items:center;justify-content:center;padding:.8rem 2rem;border-radius:10px;font-size:.9rem;font-weight:600;cursor:pointer;border:none;transition:all .2s;font-family:var(--f);width:100%}
 .btn-ac{background:var(--ac);color:#fff}.btn-ac:hover{background:#3a7bf0;transform:translateY(-1px);box-shadow:0 4px 20px rgba(79,140,255,.3)}
-.btn-gn{background:var(--gn);color:#0a0b0f}.btn-gn:hover{background:#2bc48a;transform:translateY(-1px)}
 .rp{display:none;margin-top:1.5rem;padding:1.5rem;border-radius:12px;text-align:center}.rp.show{display:block;animation:fi .5s ease}
-.rp-gn{background:var(--ag);border:1px solid rgba(79,140,255,.3)}.rp-or{background:var(--og);border:1px solid rgba(251,147,60,.3)}
+.rp-gn{background:var(--ag);border:1px solid rgba(79,140,255,.3)}
 .rp .ck{font-size:2.2rem;margin-bottom:.4rem}
-.rp .key{font-family:var(--m);font-size:1rem;color:var(--ac);background:var(--s1);padding:.7rem 1rem;border-radius:8px;display:inline-block;margin:.6rem 0;letter-spacing:2px;user-select:all;cursor:pointer}
 .rp p{font-size:.82rem;color:var(--dm)}
 .pr-big{font-size:1.7rem;font-weight:700;color:var(--ac);letter-spacing:-0.5px;padding:0.5rem 0}
 footer{text-align:center;padding:3rem 2rem;border-top:1px solid var(--bd);font-size:.8rem;color:var(--dm)}footer strong{color:var(--tx);font-weight:500}
 @keyframes fi{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
 @media(max-width:600px){.rw,.rw3{grid-template-columns:1fr}nav{padding:.8rem 1rem;flex-wrap:wrap;gap:.5rem}nav .links{gap:.8rem;font-size:.8rem}.hero{padding:3rem 1.5rem 2rem}}
 </style>
+</head>
+<body>
+<nav>
+  <div class="logo">
+    <svg width="96" height="30" viewBox="0 0 96 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <defs><linearGradient id="znav" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#3b7dff"/><stop offset="100%" stop-color="#7aa8ff"/></linearGradient></defs>
+      <text x="0" y="25" font-family="DM Sans, Arial, sans-serif" font-weight="800" font-size="28" fill="url(#znav)">Z</text>
+      <text x="20" y="24" font-family="DM Sans, Arial, sans-serif" font-weight="600" font-size="22" fill="white">igma</text>
+    </svg>
+  </div>
+  <div class="links">
+    <div class="lang-sw">
+      <button class="lbtn" id="lbtn-en" onclick="setLang('en')">EN</button>
+      <button class="lbtn" id="lbtn-zh" onclick="setLang('zh')">中文</button>
+      <button class="lbtn" id="lbtn-ja" onclick="setLang('ja')">日本語</button>
+    </div>
+    <a href="https://www.realitymatrixai.com" target="_blank" data-i18n="nav_about">About Us</a>
+    <a href="#howto" data-i18n="nav_howto">How To</a>
+    <a href="#trial" data-i18n="nav_trial">Free Trial</a>
+    <a href="#pricing" data-i18n="nav_pricing">Pricing</a>
+    <a class="dl-btn" href="https://github.com/chchlin1018/Website-ZigmaClub/releases/download/v5.5.20-pre-beta/ZigmaSetup_v5.5.20_Pre-Beta.msi" data-i18n="nav_dl" title="Pre-Beta v5.5.20 (140 MB) — Windows MSI">Download Trial</a>
+  </div>
+</nav>
 
 <section class="hero">
-  <div class="badge">OpenUSD Native &middot; USD&#8596;Revit &middot; Autodesk Revit 2026/2027</div>
+  <div class="badge">OpenUSD Native &middot; USD&#8596;Revit &middot; Autodesk Revit 2027</div>
   <h1>Bidirectional <em>USD&#8596;Revit</em><br>for Industrial Digital Twins</h1>
   <p>OpenUSD holds the industrial digital twin. Your MEP team works in Autodesk Revit. Zigma bridges them — bringing USD precision into Revit, and syncing Revit MEP back to USD.</p>
 </section>
 
 <section class="steps">
-  <div class="step"><div class="step-n">1</div><h3>Download &amp; Install</h3><p>Run MSI installer. Zigma tab appears in Revit.</p></div>
-  <div class="step"><div class="step-n">2</div><h3>Get Machine Code</h3><p>Click About in Zigma tab. Copy your Machine Code.</p></div>
-  <div class="step"><div class="step-n">3</div><h3>Get Free Trial</h3><p>Paste Machine Code below. Get 1-day trial key instantly.</p></div>
-  <div class="step"><div class="step-n">4</div><h3>Activate &amp; Go</h3><p>Enter key in Zigma About dialog. Start converting.</p></div>
+  <div class="step"><div class="step-n">1</div><h3 data-i18n="s1h">Download &amp; Install</h3><p data-i18n="s1p">Run MSI installer. Zigma tab appears in Revit.</p></div>
+  <div class="step"><div class="step-n">2</div><h3 data-i18n="s2h">Get Machine Code</h3><p data-i18n="s2p">Click About in Zigma tab. Copy your Machine Code.</p></div>
+  <div class="step"><div class="step-n">3</div><h3 data-i18n="s3h">Get Free Trial</h3><p data-i18n="s3p">Paste Machine Code below. Get 1-day trial key instantly.</p></div>
+  <div class="step"><div class="step-n">4</div><h3 data-i18n="s4h">Activate &amp; Go</h3><p data-i18n="s4p">Enter key in Zigma About dialog. Start converting.</p></div>
+</section>
+
+<section class="howto-wrap" id="howto">
+  <div class="howto-h">
+    <h2 data-i18n="ht_title">How to Find Your Machine Code</h2>
+    <p data-i18n="ht_desc">Two simple steps inside the Revit Zigma tab:</p>
+  </div>
+  <div class="ht-grid">
+    <div class="ht-step">
+      <div class="ht-num">1</div>
+      <h3 data-i18n="ht_s1">Open About in Zigma Ribbon</h3>
+      <p data-i18n="ht_s1p">In Revit, click the Zigma tab on the ribbon, then click the About button.</p>
+      <img src="img/step1-ribbon.jpg" alt="Step 1: Zigma Ribbon About button">
+    </div>
+    <div class="ht-step">
+      <div class="ht-num">2</div>
+      <h3 data-i18n="ht_s2">Copy Machine Code from About dialog</h3>
+      <p data-i18n="ht_s2p">In the About dialog, choose your language, copy the Machine Code, then fill in the form below and submit.</p>
+      <img src="img/step2-about.jpg" alt="Step 2: About dialog with Machine Code">
+    </div>
+  </div>
 </section>
 
 <section class="section" id="trial">
@@ -117,9 +141,7 @@ footer{text-align:center;padding:3rem 2rem;border-top:1px solid var(--bd);font-s
     </div>
     <div style="font-size:.75rem;color:var(--dm);margin-top:.8rem" data-i18n="tr_note">Submit your Machine Code with contact info. Your trial license key will be emailed within 1 business day.</div>
   </div>
-  <form action="https://formspree.io/f/xojyazpr" method="POST" id="trialForm">
-  <input type="hidden" name="_subject" value="[Zigma Trial] New Trial Key Request">
-  <input type="hidden" name="_next" value="https://www.zigma.club/#trial-sent">
+  <form id="trialForm" onsubmit="return submitToMail(event)">
   <span class="sl" data-i18n="mc_label">Your Machine Code</span>
   <div class="fl"><label data-i18n="mc_field">Machine Code (from Zigma &rarr; About dialog) *</label><textarea name="machine_code" class="mn" placeholder="Paste your Machine Code here &mdash; it&apos;s a long hex string from Revit &rarr; Zigma Tab &rarr; About &rarr; Copy Machine Code" rows="4" maxlength="600" required style="resize:vertical;line-height:1.5"></textarea></div>
   <hr class="dv">
@@ -133,69 +155,83 @@ footer{text-align:center;padding:3rem 2rem;border-top:1px solid var(--bd);font-s
     <div class="fl"><label data-i18n="ph_label">Phone</label><input type="tel" name="phone" placeholder="+886-xxx-xxx-xxx"></div>
   </div>
   <div style="margin-top:1.2rem"><button type="submit" class="btn btn-ac" data-i18n="gen_btn">Submit Trial Request</button></div>
-  <p style="margin-top:.8rem;font-size:.78rem;color:var(--dm)" data-i18n="sub_note">Your request will be sent to <strong>michael.lin@realitymatrixai.com</strong>. We will review and email your trial license key within 1 business day.</p>
+  <p style="margin-top:.8rem;font-size:.78rem;color:var(--dm)" data-i18n="sub_note">Clicking Submit will open your email client with a pre-filled message to <strong>michael.lin@realitymatrixai.com</strong>. We will review and email your trial license key within 1 business day.</p>
   </form>
   <div class="rp rp-gn" id="trialSent" style="display:none">
     <div class="ck">&#9989;</div><h3 style="color:var(--ac)" data-i18n="ok_title">Trial Request Submitted!</h3>
-    <p data-i18n="ok_sub">Thank you! We will email your trial license key within 1 business day.<br>Questions? Contact <a href="mailto:michael.lin@realitymatrixai.com">michael.lin@realitymatrixai.com</a></p>
+    <p data-i18n="ok_sub">Thank you! Your email client should have opened with the pre-filled request. After you send it, we will email your trial license key within 1 business day.<br>Questions? Contact <a href="mailto:michael.lin@realitymatrixai.com">michael.lin@realitymatrixai.com</a></p>
   </div>
 </div></div></section>
 
 <section class="section" id="pricing">
-<div style="text-align:center;margin-bottom:2rem"><h2 style="font-size:1.5rem;color:#fff">Pricing</h2><p style="color:var(--dm);font-size:.9rem;margin-top:.5rem">All licenses are issued by our team. Contact us to get started.</p></div>
+<div style="text-align:center;margin-bottom:2rem"><h2 style="font-size:1.5rem;color:#fff" data-i18n="pr_title">Pricing</h2><p style="color:var(--dm);font-size:.9rem;margin-top:.5rem" data-i18n="pr_sub">All licenses are issued by our team. Contact us to get started.</p></div>
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem">
   <div class="card" style="text-align:center">
-    <div class="card-h" style="justify-content:center"><h2 style="color:#fff">Enterprise</h2></div>
+    <div class="card-h" style="justify-content:center"><h2 style="color:#fff" data-i18n="ent_name">Enterprise</h2></div>
     <div class="card-b">
-      <div class="pr-big">Contact Sales</div>
-      <div style="color:var(--dm);font-size:.88rem;margin-top:1rem;line-height:2">1,000 import/export operations<br>Up to 20,000 models<br>Priority support &amp; training<br>Works offline — no network required</div>
-      <div style="margin-top:1.5rem"><a href="mailto:sales@realitymatrixai.com" class="btn btn-ac" style="text-decoration:none">Contact Sales</a></div>
+      <div class="pr-big" data-i18n="pr_contact_big">Contact Sales</div>
+      <div style="color:var(--dm);font-size:.88rem;margin-top:1rem;line-height:2" data-i18n="ent_feat">1,000 import/export operations<br>Up to 20,000 models<br>Priority support &amp; training<br>Works offline — no network required</div>
+      <div style="margin-top:1.5rem"><a href="mailto:sales@realitymatrixai.com" class="btn btn-ac" style="text-decoration:none" data-i18n="contact_btn">Contact Sales</a></div>
     </div>
   </div>
   <div class="card" style="text-align:center">
-    <div class="card-h" style="justify-content:center"><h2 style="color:#fff">Individual</h2></div>
+    <div class="card-h" style="justify-content:center"><h2 style="color:#fff" data-i18n="ind_name">Individual</h2></div>
     <div class="card-b">
-      <div class="pr-big">Contact Sales</div>
-      <div style="color:var(--dm);font-size:.88rem;margin-top:1rem;line-height:2">300 import/export operations<br>Up to 10,000 models<br>Standard support<br>Works offline — no network required</div>
-      <div style="margin-top:1.5rem"><a href="mailto:sales@realitymatrixai.com" class="btn btn-ac" style="text-decoration:none">Contact Sales</a></div>
+      <div class="pr-big" data-i18n="pr_contact_big">Contact Sales</div>
+      <div style="color:var(--dm);font-size:.88rem;margin-top:1rem;line-height:2" data-i18n="ind_feat">300 import/export operations<br>Up to 10,000 models<br>Standard support<br>Works offline — no network required</div>
+      <div style="margin-top:1.5rem"><a href="mailto:sales@realitymatrixai.com" class="btn btn-ac" style="text-decoration:none" data-i18n="contact_btn">Contact Sales</a></div>
     </div>
   </div>
 </div>
-<div style="text-align:center;margin-top:1.5rem;font-size:.85rem;color:var(--dm)">
-  Questions? <a href="mailto:sales@realitymatrixai.com">sales@realitymatrixai.com</a>
-</div>
+<div style="text-align:center;margin-top:1.5rem;font-size:.85rem;color:var(--dm)">Questions? <a href="mailto:sales@realitymatrixai.com">sales@realitymatrixai.com</a></div>
 </section>
 
 <footer>
   <strong>Zigma USD Builder</strong> by <a href="https://www.realitymatrixai.com">Reality Matrix AI Inc.</a><br>
   &copy; 2026 Reality Matrix AI Inc. (&#23526;&#30697;&#31185;&#25216;). All rights reserved.<br>
-  <span style="margin-top:.5rem;display:inline-block">
-    Sales: <a href="mailto:sales@realitymatrixai.com">sales@realitymatrixai.com</a> &middot;
-    Support: <a href="mailto:support@realitymatrixai.com">support@realitymatrixai.com</a> &middot;
-    Taipei, Taiwan
-  </span>
+  <span style="margin-top:.5rem;display:inline-block">Sales: <a href="mailto:sales@realitymatrixai.com">sales@realitymatrixai.com</a> &middot; Support: <a href="mailto:support@realitymatrixai.com">support@realitymatrixai.com</a> &middot; Taipei, Taiwan</span>
 </footer>
 
 <script>
-if(window.location.hash==='#trial-sent'){
-  const f=document.getElementById('trialForm');
-  const s=document.getElementById('trialSent');
-  if(f) f.style.display='none';
-  if(s) s.style.display='block';
-  setTimeout(()=>{const tg=document.getElementById('trial');if(tg)window.scrollTo({top:tg.offsetTop-80,behavior:'smooth'});},100);
+function submitToMail(e){
+  e.preventDefault();
+  var f=document.getElementById('trialForm');
+  var mc=(f.machine_code.value||'').trim();
+  var co=(f.company.value||'').trim();
+  var nm=(f.name.value||'').trim();
+  var em=(f.email.value||'').trim();
+  var ph=(f.phone.value||'').trim();
+  if(!mc||!co||!nm||!em){alert('Please fill in Machine Code, Company, Name, and Email.');return false;}
+  var subject='[ZigmaClub License Request]';
+  var body='Machine Code:\n'+mc+'\n\n'+'Company: '+co+'\n'+'Name: '+nm+'\n'+'Email: '+em+'\n'+'Phone: '+ph+'\n\n'+'-- Sent from Zigma Club (https://www.zigma.club)';
+  var url='mailto:michael.lin@realitymatrixai.com?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body);
+  window.location.href=url;
+  setTimeout(function(){
+    var fr=document.getElementById('trialForm');
+    var sv=document.getElementById('trialSent');
+    if(fr)fr.style.display='none';
+    if(sv)sv.style.display='block';
+    var tg=document.getElementById('trial');
+    if(tg)window.scrollTo({top:tg.offsetTop-80,behavior:'smooth'});
+  },500);
+  return false;
 }
-</script>
-<script>
 const _ZG={
 en:{
-  nav_about:'About Us',nav_trial:'Free Trial',nav_pricing:'Pricing',nav_dl:'Download Trial',
-  h_badge:'OpenUSD Native &middot; USD&#8596;Revit &middot; Autodesk Revit 2026/2027',
+  nav_about:'About Us',nav_howto:'How To',nav_trial:'Free Trial',nav_pricing:'Pricing',nav_dl:'Download Trial',
+  h_badge:'OpenUSD Native &middot; USD&#8596;Revit &middot; Autodesk Revit 2027',
   h1:'Bidirectional <em>USD&#8596;Revit</em><br>for Industrial Digital Twins',
   h_sub:'OpenUSD holds the industrial digital twin. Your MEP team works in Autodesk Revit. Zigma bridges them &mdash; bringing USD precision into Revit, and syncing Revit MEP back to USD.',
   s1h:'Download & Install',s1p:'Run MSI installer. Zigma tab appears in Revit.',
   s2h:'Get Machine Code',s2p:'Click About in Zigma tab. Copy your Machine Code.',
-  s3h:'Submit Trial Request',s3p:'Fill the form below. Your trial key arrives by email.',
+  s3h:'Get Free Trial',s3p:'Paste Machine Code below. Get 1-day trial key instantly.',
   s4h:'Activate & Go',s4p:'Enter key in Zigma About dialog. Start converting.',
+  ht_title:'How to Find Your Machine Code',
+  ht_desc:'Two simple steps inside the Revit Zigma tab:',
+  ht_s1:'Open About in Zigma Ribbon',
+  ht_s1p:'In Revit, click the Zigma tab on the ribbon, then click the About button.',
+  ht_s2:'Copy Machine Code from About dialog',
+  ht_s2p:'In the About dialog, choose your language, copy the Machine Code, then fill in the form below and submit.',
   tr_title:'&#127873; Free Trial License &mdash; 1 Day',
   tr_instant:'Fill in the form below to request your free trial &mdash; no credit card:',
   tr_days:'Days',tr_eops:'Export+Import Ops',tr_emodels:'Elements per Model',
@@ -205,26 +241,31 @@ en:{
   ci_label:'CONTACT INFORMATION',
   co_label:'Company Name *',nm_label:'Contact Name *',em_label:'Email *',ph_label:'Phone',
   gen_btn:'Submit Trial Request',
-  sub_note:'Your request will be sent to <strong>michael.lin@realitymatrixai.com</strong>. We will review and email your trial license key within 1 business day.',
+  sub_note:'Clicking Submit will open your email client with a pre-filled message to <strong>michael.lin@realitymatrixai.com</strong>. We will review and email your trial license key within 1 business day.',
   ok_title:'Trial Request Submitted!',
-  ok_sub:'Thank you! We will email your trial license key within 1 business day.<br>Questions? Contact <a href="mailto:michael.lin@realitymatrixai.com">michael.lin@realitymatrixai.com</a>',
+  ok_sub:'Thank you! Your email client should have opened with the pre-filled request. After you send it, we will email your trial license key within 1 business day.<br>Questions? Contact <a href="mailto:michael.lin@realitymatrixai.com">michael.lin@realitymatrixai.com</a>',
   pr_title:'Pricing',pr_sub:'All licenses are issued by our team. Contact us to get started.',
   pr_contact_big:'Contact Sales',
   ent_name:'Enterprise',ind_name:'Individual',
   ent_feat:'1,000 import/export operations<br>Up to 20,000 models<br>Priority support & training<br>Works offline &mdash; no network required',
   ind_feat:'300 import/export operations<br>Up to 10,000 models<br>Standard support<br>Works offline &mdash; no network required',
-  contact_btn:'Contact Sales',
-  foot_by:'by',foot_cr:'All rights reserved.'
+  contact_btn:'Contact Sales'
 },
 zh:{
-  nav_about:'關於我們',nav_trial:'免費試用',nav_pricing:'授權方案',nav_dl:'下載試用版',
-  h_badge:'OpenUSD 原生 &middot; USD&#8596;Revit &middot; Autodesk Revit 2026/2027',
+  nav_about:'關於我們',nav_howto:'操作指引',nav_trial:'免費試用',nav_pricing:'授權方案',nav_dl:'下載試用版',
+  h_badge:'OpenUSD 原生 &middot; USD&#8596;Revit &middot; Autodesk Revit 2027',
   h1:'雙向 <em>USD&#8596;Revit</em><br>為工業數位孿生',
   h_sub:'OpenUSD 擁有工業數位孿生。MEP 團隊在 Autodesk Revit 工作。Zigma 橋接兩者 &mdash; 將 USD 精準數據帶入 Revit，並將 Revit MEP 同步回 USD。',
   s1h:'下載安裝',s1p:'執行 MSI 安裝程式。Revit 中出現 Zigma 分頁。',
   s2h:'取得機器碼',s2p:'點擊 Zigma 分頁的「About」，複製機器碼。',
-  s3h:'提交試用申請',s3p:'填寫下方表單，我們會將試用金鑰寄至您的信箱。',
+  s3h:'申請免費試用',s3p:'將機器碼填入下方表單，立即取得 1 日試用金鑰。',
   s4h:'啟動使用',s4p:'在 Zigma About 對話框中輸入金鑰，開始轉換。',
+  ht_title:'如何取得您的機器碼',
+  ht_desc:'在 Revit Zigma 分頁中只需兩個簡單步驟：',
+  ht_s1:'打開 Zigma Ribbon 的 About',
+  ht_s1p:'在 Revit 中，點擊功能區的 Zigma 分頁，然後點擊「About」按鈕。',
+  ht_s2:'從 About 對話框複製機器碼',
+  ht_s2p:'在 About 對話框中，選擇您的語言，複製機器碼，然後填寫下方表單並提交。',
   tr_title:'&#127873; 免費試用授權 &mdash; 1 天',
   tr_instant:'填寫下方表單以申請免費試用 &mdash; 無需信用卡：',
   tr_days:'天',tr_eops:'次 Export+Import',tr_emodels:'元件數／每模型',
@@ -234,26 +275,31 @@ zh:{
   ci_label:'聯絡資訊',
   co_label:'公司名稱 *',nm_label:'聯絡人姓名 *',em_label:'電子信箱 *',ph_label:'電話',
   gen_btn:'提交試用申請',
-  sub_note:'您的申請將發送至 <strong>michael.lin@realitymatrixai.com</strong>。我們將於 1 個工作天內審核並將試用金鑰寄送至您的信箱。',
+  sub_note:'點擊提交將打開您的電子郵件用戶端，預先填好寄至 <strong>michael.lin@realitymatrixai.com</strong> 的訊息。我們將於 1 個工作天內審核並將試用金鑰寄送至您的信箱。',
   ok_title:'試用申請已提交！',
-  ok_sub:'謝謝！我們將於 1 個工作天內將試用金鑰寄送至您的信箱。<br>有任何問題？請聯絡 <a href="mailto:michael.lin@realitymatrixai.com">michael.lin@realitymatrixai.com</a>',
+  ok_sub:'謝謝！您的電子郵件用戶端應已打開預填好的申請訊息。寄出後，我們將於 1 個工作天內將試用金鑰寄送至您的信箱。<br>有任何問題？請聯絡 <a href="mailto:michael.lin@realitymatrixai.com">michael.lin@realitymatrixai.com</a>',
   pr_title:'授權方案',pr_sub:'所有授權均由我們的團隊發放，請聯絡我們開始使用。',
   pr_contact_big:'洽詢業務',
   ent_name:'企業版',ind_name:'個人版',
   ent_feat:'1,000 次匯入/匯出<br>最多 20,000 個模型<br>優先支援和培訓<br>支援離線模式 &mdash; 無需網路連線',
   ind_feat:'300 次匯入/匯出<br>最多 10,000 個模型<br>標準支援<br>支援離線模式 &mdash; 無需網路連線',
-  contact_btn:'聯絡銷售',
-  foot_by:'由',foot_cr:'版權所有。'
+  contact_btn:'聯絡銷售'
 },
 ja:{
-  nav_about:'会社について',nav_trial:'無料トライアル',nav_pricing:'ライセンスプラン',nav_dl:'トライアル版ダウンロード',
-  h_badge:'OpenUSD ネイティブ &middot; USD&#8596;Revit &middot; Autodesk Revit 2026/2027',
+  nav_about:'会社について',nav_howto:'使い方',nav_trial:'無料トライアル',nav_pricing:'ライセンスプラン',nav_dl:'トライアル版ダウンロード',
+  h_badge:'OpenUSD ネイティブ &middot; USD&#8596;Revit &middot; Autodesk Revit 2027',
   h1:'双方向 <em>USD&#8596;Revit</em><br>産業デジタルツイン向け',
   h_sub:'OpenUSD が産業デジタルツインを保持します。MEP チームは Autodesk Revit で作業します。Zigma が両者を橋渡しし、USD の精度を Revit に取り込み、Revit MEP を USD に同期します。',
   s1h:'ダウンロード & インストール',s1p:'MSI インストーラーを実行。Revit に Zigma タブが表示されます。',
   s2h:'マシンコード取得',s2p:'Zigma タブの「About」をクリックし、マシンコードをコピーします。',
-  s3h:'トライアル申請を送信',s3p:'下記フォームを記入。トライアルキーをメールでお送りします。',
+  s3h:'無料トライアル申請',s3p:'下のフォームにマシンコードを貼り付けて 1 日トライアルキーを取得。',
   s4h:'アクティベート & 開始',s4p:'Zigma About ダイアログにキーを入力して変換を開始します。',
+  ht_title:'マシンコードの取得方法',
+  ht_desc:'Revit Zigma タブで 2 つの簡単なステップ：',
+  ht_s1:'Zigma リボンの About を開く',
+  ht_s1p:'Revit で、リボンの Zigma タブをクリックし、「About」ボタンをクリックします。',
+  ht_s2:'About ダイアログからマシンコードをコピー',
+  ht_s2p:'About ダイアログで、言語を選択し、マシンコードをコピーして、下のフォームに記入し送信してください。',
   tr_title:'&#127873; 無料トライアルライセンス &mdash; 1 日',
   tr_instant:'下記フォームに記入して無料トライアルを申請してください &mdash; クレジットカード不要：',
   tr_days:'日',tr_eops:'Export+Import 回数',tr_emodels:'モデル毎エレメント数',
@@ -263,16 +309,15 @@ ja:{
   ci_label:'連絡先情報',
   co_label:'会社名 *',nm_label:'担当者名 *',em_label:'メールアドレス *',ph_label:'電話番号',
   gen_btn:'トライアル申請を送信',
-  sub_note:'申請は <strong>michael.lin@realitymatrixai.com</strong> に送信されます。1 営業日以内に審査し、トライアルキーをメールでお送りします。',
+  sub_note:'送信ボタンをクリックすると、<strong>michael.lin@realitymatrixai.com</strong> 宛の事前入力済みメッセージがメールクライアントで開きます。1 営業日以内に審査し、トライアルキーをメールでお送りします。',
   ok_title:'トライアル申請を受け付けました！',
-  ok_sub:'ありがとうございます！1 営業日以内にトライアルキーをメールでお送りします。<br>ご質問は <a href="mailto:michael.lin@realitymatrixai.com">michael.lin@realitymatrixai.com</a> までご連絡ください。',
+  ok_sub:'ありがとうございます！メールクライアントで事前入力済みの申請メッセージが開いているはずです。送信後、1 営業日以内にトライアルキーをメールでお送りします。<br>ご質問は <a href="mailto:michael.lin@realitymatrixai.com">michael.lin@realitymatrixai.com</a> までご連絡ください。',
   pr_title:'ライセンスプラン',pr_sub:'すべてのライセンスはチームが発行します。お問い合わせください。',
   pr_contact_big:'営業へお問い合わせ',
   ent_name:'エンタープライズ',ind_name:'個人',
   ent_feat:'1,000 回インポート/エクスポート<br>最大 20,000 モデル<br>優先サポート & トレーニング<br>オフライン対応 &mdash; ネットワーク接続不要',
   ind_feat:'300 回インポート/エクスポート<br>最大 10,000 モデル<br>標準サポート<br>オフライン対応 &mdash; ネットワーク接続不要',
-  contact_btn:'営業へお問い合わせ',
-  foot_by:'作成：',foot_cr:'All rights reserved.'
+  contact_btn:'営業へお問い合わせ'
 }
 };
 function setLang(lang){
@@ -281,20 +326,6 @@ function setLang(lang){
   const hb=document.querySelector('.badge'); if(hb) hb.innerHTML=t.h_badge;
   const hh=document.querySelector('.hero h1'); if(hh) hh.innerHTML=t.h1;
   const hp=document.querySelector('.hero p'); if(hp) hp.innerHTML=t.h_sub;
-  const steps=document.querySelectorAll('.step');
-  [[t.s1h,t.s1p],[t.s2h,t.s2p],[t.s3h,t.s3p],[t.s4h,t.s4p]].forEach(([h,p],i)=>{
-    if(steps[i]){ const hel=steps[i].querySelector('h3'); const pel=steps[i].querySelector('p'); if(hel) hel.textContent=h; if(pel) pel.textContent=p; }
-  });
-  const prh=document.querySelector('#pricing h2'); if(prh) prh.textContent=t.pr_title;
-  const prp=document.querySelector('#pricing p'); if(prp) prp.textContent=t.pr_sub;
-  document.querySelectorAll('.pr-big').forEach(el=>{ el.textContent=t.pr_contact_big; });
-  const cards=document.querySelectorAll('#pricing .card');
-  if(cards[0]){ const ch=cards[0].querySelector('.card-h h2'); if(ch) ch.textContent=t.ent_name;
-    const cf=cards[0].querySelector('[style*="line-height:2"]'); if(cf) cf.innerHTML=t.ent_feat;
-    const cb=cards[0].querySelector('.btn-ac'); if(cb) cb.textContent=t.contact_btn; }
-  if(cards[1]){ const ch=cards[1].querySelector('.card-h h2'); if(ch) ch.textContent=t.ind_name;
-    const cf=cards[1].querySelector('[style*="line-height:2"]'); if(cf) cf.innerHTML=t.ind_feat;
-    const cb=cards[1].querySelector('.btn-ac'); if(cb) cb.textContent=t.contact_btn; }
   document.querySelectorAll('.lbtn').forEach(b=>b.classList.remove('active'));
   const ab=document.getElementById('lbtn-'+lang); if(ab) ab.classList.add('active');
   localStorage.setItem('zg_lang',lang);
