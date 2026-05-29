@@ -4,18 +4,24 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="msvalidate.01" content="6325F170C8E28644F93D4A10820E6ED9" />
-<title>Zigma — USD↔Revit Builder for Semiconductor Fabs</title>
-<meta name="description" content="Zigma Builder — bidirectional USD ↔ Revit plugin for semiconductor fabs. OpenUSD-native, full round-trip fidelity.">
+<title>Zigma — Bidirectional USD↔Revit Builder for Industrial Digital Twins</title>
+<meta name="description" content="Zigma Builder — bidirectional USD ↔ Revit plugin for semiconductor fabs and industrial digital twins. OpenUSD-native, full round-trip fidelity, single-USDC SSOT, Pre-Beta on Revit 2027.">
 <link rel="canonical" href="https://www.zigma.club/">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%233b7dff'/%3E%3Cstop offset='100%25' stop-color='%237aa8ff'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' rx='18' fill='%230a0b0f'/%3E%3Ctext x='50' y='72' font-family='Arial,sans-serif' font-weight='900' font-size='72' fill='url(%23g)' text-anchor='middle'%3EZ%3C/text%3E%3C/svg%3E">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Zigma — Bidirectional USD ↔ Revit Builder">
 <meta property="og:description" content="Bidirectional USD ↔ Revit plugin for semiconductor fabs. OpenUSD-native, full round-trip fidelity.">
 <meta property="og:url" content="https://www.zigma.club/">
 <meta property="og:site_name" content="Zigma">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://www.zigma.club/img/step2-about.jpg">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="zh_TW">
+<meta property="og:locale:alternate" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Zigma — USD ↔ Revit Builder">
-<meta name="twitter:description" content="OpenUSD-native USD ↔ Revit plugin for semiconductor fabs.">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Zigma Builder","operatingSystem":"Windows","applicationCategory":"DesignApplication","description":"Bidirectional USD \u2194 Revit plugin for OpenUSD-native digital twin workflows.","publisher":{"@type":"Organization","name":"Reality Matrix AI Inc.","url":"https://www.realitymatrixai.com"}}</script>
+<meta name="twitter:description" content="OpenUSD-native USD ↔ Revit plugin for industrial digital twins. Pre-Beta on Revit 2027.">
+<meta name="twitter:image" content="https://www.zigma.club/img/step2-about.jpg">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Zigma Builder","operatingSystem":"Windows 10/11","applicationCategory":"DesignApplication","description":"Bidirectional USD \u2194 Revit plugin for OpenUSD-native industrial digital twin workflows.","softwareVersion":"5.5.29","releaseNotes":"https://github.com/chchlin1018/Website-ZigmaClub/releases/tag/v5.5.29-pre-beta","downloadUrl":"https://github.com/chchlin1018/Website-ZigmaClub/releases/download/v5.5.29-pre-beta/ZigmaSetup_v5.5.29_Pre-Beta.msi","requirements":"Autodesk Revit 2027, .NET 10 Desktop Runtime, Visual C++ 2022 Redistributable (x64)","offers":{"@type":"Offer","price":"0","priceCurrency":"USD","availability":"https://schema.org/PreOrder","description":"Pre-Beta trial \u2014 request via website form"},"publisher":{"@type":"Organization","name":"Reality Matrix AI Inc.","url":"https://www.realitymatrixai.com"}}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
@@ -49,6 +55,7 @@ nav .links{display:flex;gap:1.2rem;font-size:.9rem;color:var(--dm);align-items:c
 .ht-step h3{font-size:1rem;color:#fff;margin:.5rem 0 .5rem;padding-left:0}
 .ht-step p{font-size:.85rem;color:var(--dm);margin-bottom:1rem}
 .ht-step img{width:100%;height:auto;border-radius:8px;border:1px solid var(--bd);display:block;background:var(--s2)}
+.banner-pb{background:rgba(251,147,60,.10);border:1px solid rgba(251,147,60,.35);color:var(--or);padding:0.6rem 1.2rem;border-radius:8px;font-size:.78rem;line-height:1.55;text-align:center;max-width:920px;margin:1.2rem auto 0}
 @media(max-width:700px){.ht-grid{grid-template-columns:1fr}}
 .card{background:var(--s1);border:1px solid var(--bd);border-radius:16px;overflow:hidden}
 .card-h{padding:1.5rem 2rem;border-bottom:1px solid var(--bd);display:flex;align-items:center;gap:.8rem}.card-h h2{font-size:1.15rem}
@@ -68,13 +75,14 @@ hr.dv{border:none;border-top:1px solid var(--bd);margin:1.5rem 0}
 .pr-big{font-size:1.7rem;font-weight:700;color:var(--ac);letter-spacing:-0.5px;padding:0.5rem 0}
 footer{text-align:center;padding:3rem 2rem;border-top:1px solid var(--bd);font-size:.8rem;color:var(--dm)}footer strong{color:var(--tx);font-weight:500}
 @keyframes fi{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:1024px){.section{max-width:90vw;padding:0 1.5rem 4rem}.howto-wrap{max-width:95vw}}
 @media(max-width:600px){.rw,.rw3{grid-template-columns:1fr}nav{padding:.8rem 1rem;flex-wrap:wrap;gap:.5rem}nav .links{gap:.8rem;font-size:.8rem}.hero{padding:3rem 1.5rem 2rem}}
 </style>
 </head>
 <body>
 <nav>
   <div class="logo">
-    <svg width="96" height="30" viewBox="0 0 96 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg width="96" height="30" viewBox="0 0 96 30" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Zigma"><title>Zigma</title>
       <defs><linearGradient id="znav" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#3b7dff"/><stop offset="100%" stop-color="#7aa8ff"/></linearGradient></defs>
       <text x="0" y="25" font-family="DM Sans, Arial, sans-serif" font-weight="800" font-size="28" fill="url(#znav)">Z</text>
       <text x="20" y="24" font-family="DM Sans, Arial, sans-serif" font-weight="600" font-size="22" fill="white">igma</text>
@@ -99,15 +107,17 @@ footer{text-align:center;padding:3rem 2rem;border-top:1px solid var(--bd);font-s
   <span style="color:#ff4d4d;font-weight:700;font-size:.85rem">Latest Version: 5.5.29-release+2200A3E2</span>
   <br>
   <span style="color:rgba(255,255,255,.5);font-size:.76rem" data-i18n="ts_label">License troubleshooting:</span>&nbsp;
-  <a href="https://github.com/chchlin1018/Website-ZigmaClub/releases/download/v5.5.29-pre-beta/ZigmaToolkit_v5.5.29.zip" style="color:#ff4d4d;text-decoration:underline;font-weight:600" title="Diagnostic + Defender restore + Empirical test + 3-language README (40 KB ZIP · 9 scripts)">Zigma Toolkit</a>
+  <a href="https://github.com/chchlin1018/Website-ZigmaClub/releases/download/v5.5.29-pre-beta/ZigmaToolkit_v5.5.29.zip" style="color:#ff4d4d;text-decoration:underline;font-weight:600" title="Diagnostic + Defender restore + Empirical test + 3-language README (40 KB ZIP · 9 scripts)" data-i18n="tk_label">Zigma Toolkit</a>
   &nbsp;&middot;&nbsp;
-  <a href="https://github.com/chchlin1018/Website-ZigmaClub/releases/download/v5.5.29-pre-beta/README.txt" style="color:#ff4d4d;text-decoration:underline;font-weight:600" title="Pre-Beta installation guide + troubleshooting (3-language picker)">README.txt</a>
+  <a href="https://github.com/chchlin1018/Website-ZigmaClub/releases/download/v5.5.29-pre-beta/README.txt" style="color:#ff4d4d;text-decoration:underline;font-weight:600" title="Pre-Beta installation guide + troubleshooting (3-language picker)" data-i18n="rm_label">README.txt</a>
   <br>
   <span style="color:#ff4d4d;font-size:.78rem">
-    <strong>What's New v5.5.29:</strong> README version + Defender path-count documentation refresh (no behavioral change) · fresh IP protection refresh on all native binaries · all 5 ship-gate audits green.<br>
-    <strong>Upgrade note:</strong> Just double-click v5.5.29 MSI to upgrade. If About Dialog shows License inactive after upgrade, please re-paste your original license.txt.
+    <strong data-i18n="wn_label">What's New v5.5.29:</strong> <span data-i18n="wn_text">README version + Defender path-count documentation refresh (no behavioral change) · fresh IP protection refresh on all native binaries · all 5 ship-gate audits green.</span><br>
+    <strong data-i18n="un_label">Upgrade note:</strong> <span data-i18n="un_text">Just double-click v5.5.29 MSI to upgrade. If About Dialog shows License inactive after upgrade, please re-paste your original license.txt.</span>
   </span>
 </div>
+
+<div class="banner-pb" data-i18n="pb_notice">⚠ Pre-Beta · MSI is not yet code-signed. Windows may show a SmartScreen "Unknown Publisher" warning — click "More info" → "Run anyway" to proceed. Trial access is NDA-bound · do not redistribute.</div>
 
 <section class="hero">
   <div class="badge">OpenUSD Native &middot; USD&#8596;Revit &middot; Autodesk Revit 2027</div>
@@ -118,7 +128,7 @@ footer{text-align:center;padding:3rem 2rem;border-top:1px solid var(--bd);font-s
 <section class="steps">
   <div class="step"><div class="step-n">1</div><h3 data-i18n="s1h">Download &amp; Install</h3><p data-i18n="s1p">Run MSI installer. Zigma tab appears in Revit.</p></div>
   <div class="step"><div class="step-n">2</div><h3 data-i18n="s2h">Get Machine Code</h3><p data-i18n="s2p">Click About in Zigma tab. Copy your Machine Code.</p></div>
-  <div class="step"><div class="step-n">3</div><h3 data-i18n="s3h">Get Free Trial</h3><p data-i18n="s3p">Paste Machine Code below. Get 1-day trial key instantly.</p></div>
+  <div class="step"><div class="step-n">3</div><h3 data-i18n="s3h">Get Free Trial</h3><p data-i18n="s3p">Paste Machine Code below. Get 7-day trial key instantly.</p></div>
   <div class="step"><div class="step-n">4</div><h3 data-i18n="s4h">Activate &amp; Go</h3><p data-i18n="s4p">Enter key in Zigma About dialog. Start converting.</p></div>
 </section>
 
@@ -132,42 +142,42 @@ footer{text-align:center;padding:3rem 2rem;border-top:1px solid var(--bd);font-s
       <div class="ht-num">1</div>
       <h3 data-i18n="ht_s1">Open About in Zigma Ribbon</h3>
       <p data-i18n="ht_s1p">In Revit, click the Zigma tab on the ribbon, then click the About button.</p>
-      <img src="img/step1-ribbon.jpg" alt="Step 1: Zigma Ribbon About button">
+      <img src="img/step1-ribbon.jpg" alt="Step 1: Zigma Ribbon About button" loading="lazy">
     </div>
     <div class="ht-step">
       <div class="ht-num">2</div>
       <h3 data-i18n="ht_s2">Copy Machine Code from About dialog</h3>
       <p data-i18n="ht_s2p">In the About dialog, choose your language, copy the Machine Code, then fill in the form below and submit.</p>
-      <img src="img/step2-about.jpg" alt="Step 2: About dialog with Machine Code">
+      <img src="img/step2-about.jpg" alt="Step 2: About dialog with Machine Code" loading="lazy">
     </div>
   </div>
 </section>
 
 <section class="section" id="trial">
 <div class="card">
-<div class="card-h" style="background:var(--ag)"><h2 style="color:var(--ac)" data-i18n="tr_title">&#127873; Free Trial License &mdash; 1 Day</h2></div>
+<div class="card-h" style="background:var(--ag)"><h2 style="color:var(--ac)" data-i18n="tr_title">&#127873; Free Trial License &mdash; 7 Days</h2></div>
 <div class="card-b">
   <div style="background:var(--s2);border-radius:10px;padding:1.2rem;margin-bottom:1.5rem;text-align:center">
     <div style="font-size:.88rem;color:rgba(255,255,255,.7);margin-bottom:.4rem" data-i18n="tr_instant">Fill in the form below to request your free trial — no credit card:</div>
     <div style="display:flex;justify-content:center;gap:2.5rem;margin-top:.6rem;flex-wrap:wrap">
       <div><span style="font-size:2rem;font-weight:800;color:var(--ac)">7</span><br><span style="font-size:.78rem;color:var(--dm)" data-i18n="tr_days">Days</span></div>
       <div><span style="font-size:2rem;font-weight:800;color:var(--ac)">20</span><br><span style="font-size:.78rem;color:var(--dm)" data-i18n="tr_eops">Export+Import Ops</span></div>
-      <div><span style="font-size:2rem;font-weight:800;color:var(--ac)">10K</span><br><span style="font-size:.78rem;color:var(--dm)" data-i18n="tr_emodels">Elements per Model</span></div>
+      <div><span style="font-size:2rem;font-weight:800;color:var(--ac)">10K</span><br><span style="font-size:.78rem;color:var(--dm)" data-i18n="tr_emodels">Elements per Operation</span></div>
     </div>
     <div style="font-size:.75rem;color:var(--dm);margin-top:.8rem" data-i18n="tr_note">Submit your Machine Code with contact info. Your trial license key will be emailed within 1 business day.</div>
   </div>
   <form id="trialForm" onsubmit="return submitToMail(event)">
   <span class="sl" data-i18n="mc_label">Your Machine Code</span>
-  <div class="fl"><label data-i18n="mc_field">Machine Code (from Zigma &rarr; About dialog) *</label><textarea name="machine_code" class="mn" placeholder="Paste your Machine Code here &mdash; it&apos;s a long hex string from Revit &rarr; Zigma Tab &rarr; About &rarr; Copy Machine Code" rows="4" maxlength="600" required style="resize:vertical;line-height:1.5"></textarea></div>
+  <div class="fl"><label for="mc_input" data-i18n="mc_field">Machine Code (from Zigma &rarr; About dialog) *</label><textarea id="mc_input" name="machine_code" class="mn" data-i18n-placeholder="mc_ph" placeholder="Paste your Machine Code here &mdash; it&apos;s a long hex string from Revit &rarr; Zigma Tab &rarr; About &rarr; Copy Machine Code" rows="4" maxlength="800" required style="resize:vertical;line-height:1.5"></textarea></div>
   <hr class="dv">
   <span class="sl" data-i18n="ci_label">Contact Information</span>
   <div class="rw">
-    <div class="fl"><label data-i18n="co_label">Company Name *</label><input type="text" name="company" placeholder="e.g. CTCI Corporation" required></div>
-    <div class="fl"><label data-i18n="nm_label">Contact Name *</label><input type="text" name="name" placeholder="Full name" required></div>
+    <div class="fl"><label for="co_input" data-i18n="co_label">Company Name *</label><input id="co_input" type="text" name="company" data-i18n-placeholder="co_ph" placeholder="e.g. CTCI Corporation" required></div>
+    <div class="fl"><label for="nm_input" data-i18n="nm_label">Contact Name *</label><input id="nm_input" type="text" name="name" data-i18n-placeholder="nm_ph" placeholder="Full name" required></div>
   </div>
   <div class="rw">
-    <div class="fl"><label data-i18n="em_label">Email *</label><input type="email" name="email" placeholder="you@company.com" required></div>
-    <div class="fl"><label data-i18n="ph_label">Phone</label><input type="tel" name="phone" placeholder="+886-xxx-xxx-xxx"></div>
+    <div class="fl"><label for="em_input" data-i18n="em_label">Email *</label><input id="em_input" type="email" name="email" data-i18n-placeholder="em_ph" placeholder="you@company.com" required></div>
+    <div class="fl"><label for="ph_input" data-i18n="ph_label">Phone</label><input id="ph_input" type="tel" name="phone" data-i18n-placeholder="ph_ph" placeholder="+886-xxx-xxx-xxx"></div>
   </div>
   <div style="margin-top:1.2rem"><button type="submit" class="btn btn-ac" data-i18n="gen_btn">Submit Trial Request</button></div>
   <p style="margin-top:.8rem;font-size:.78rem;color:var(--dm)" data-i18n="sub_note">Clicking Submit will open your email client with a pre-filled message to <strong>michael.lin@realitymatrixai.com</strong>. We will review and email your trial license key within 1 business day.</p>
@@ -185,7 +195,7 @@ footer{text-align:center;padding:3rem 2rem;border-top:1px solid var(--bd);font-s
     <div class="card-h" style="justify-content:center"><h2 style="color:#fff" data-i18n="ent_name">Enterprise</h2></div>
     <div class="card-b">
       <div class="pr-big" data-i18n="pr_contact_big">Contact Sales</div>
-      <div style="color:var(--dm);font-size:.88rem;margin-top:1rem;line-height:2" data-i18n="ent_feat">1,000 import/export operations<br>Up to 20,000 models<br>Priority support &amp; training<br>Works offline — no network required</div>
+      <div style="color:var(--dm);font-size:.88rem;margin-top:1rem;line-height:2" data-i18n="ent_feat">1,000 import/export operations<br>Up to 20,000 elements per operation<br>Priority support &amp; training<br>Works offline — no network required</div>
       <div style="margin-top:1.5rem"><a href="mailto:sales@realitymatrixai.com" class="btn btn-ac" style="text-decoration:none" data-i18n="contact_btn">Contact Sales</a></div>
     </div>
   </div>
@@ -193,18 +203,18 @@ footer{text-align:center;padding:3rem 2rem;border-top:1px solid var(--bd);font-s
     <div class="card-h" style="justify-content:center"><h2 style="color:#fff" data-i18n="ind_name">Individual</h2></div>
     <div class="card-b">
       <div class="pr-big" data-i18n="pr_contact_big">Contact Sales</div>
-      <div style="color:var(--dm);font-size:.88rem;margin-top:1rem;line-height:2" data-i18n="ind_feat">300 import/export operations<br>Up to 10,000 models<br>Standard support<br>Works offline — no network required</div>
+      <div style="color:var(--dm);font-size:.88rem;margin-top:1rem;line-height:2" data-i18n="ind_feat">300 import/export operations<br>Up to 10,000 elements per operation<br>Standard support<br>Works offline — no network required</div>
       <div style="margin-top:1.5rem"><a href="mailto:sales@realitymatrixai.com" class="btn btn-ac" style="text-decoration:none" data-i18n="contact_btn">Contact Sales</a></div>
     </div>
   </div>
 </div>
-<div style="text-align:center;margin-top:1.5rem;font-size:.85rem;color:var(--dm)">Questions? <a href="mailto:sales@realitymatrixai.com">sales@realitymatrixai.com</a></div>
+<div style="text-align:center;margin-top:1.5rem;font-size:.85rem;color:var(--dm)"><span data-i18n="pr_questions">Questions?</span> <a href="mailto:sales@realitymatrixai.com">sales@realitymatrixai.com</a></div>
 </section>
 
 <footer>
-  <strong>Zigma USD Builder</strong> by <a href="https://www.realitymatrixai.com">Reality Matrix AI Inc.</a><br>
-  &copy; 2026 Reality Matrix AI Inc. (&#23526;&#30697;&#31185;&#25216;). All rights reserved.<br>
-  <span style="margin-top:.5rem;display:inline-block">Sales: <a href="mailto:sales@realitymatrixai.com">sales@realitymatrixai.com</a> &middot; Support: <a href="mailto:support@realitymatrixai.com">support@realitymatrixai.com</a> &middot; Taipei, Taiwan</span>
+  <strong>Zigma USD Builder</strong> <span data-i18n="ftr_by">by</span> <a href="https://www.realitymatrixai.com">Reality Matrix AI Inc.</a><br>
+  <span data-i18n="ftr_copyright">&copy; 2026 Reality Matrix AI Inc. (&#23526;&#30697;&#31185;&#25216;). All rights reserved.</span><br>
+  <span style="margin-top:.5rem;display:inline-block"><span data-i18n="ftr_sales">Sales:</span> <a href="mailto:sales@realitymatrixai.com">sales@realitymatrixai.com</a> &middot; <span data-i18n="ftr_support">Support:</span> <a href="mailto:support@realitymatrixai.com">support@realitymatrixai.com</a> &middot; <span data-i18n="ftr_location">Taipei, Taiwan</span></span>
 </footer>
 
 <script>
@@ -239,7 +249,7 @@ en:{
   h_sub:'OpenUSD holds the industrial digital twin. Your MEP team works in Autodesk Revit. Zigma bridges them &mdash; bringing USD precision into Revit, and syncing Revit MEP back to USD.',
   s1h:'Download & Install',s1p:'Run MSI installer. Zigma tab appears in Revit.',
   s2h:'Get Machine Code',s2p:'Click About in Zigma tab. Copy your Machine Code.',
-  s3h:'Get Free Trial',s3p:'Paste Machine Code below. Get 1-day trial key instantly.',
+  s3h:'Get Free Trial',s3p:'Paste Machine Code below. Get 7-day trial key instantly.',
   s4h:'Activate & Go',s4p:'Enter key in Zigma About dialog. Start converting.',
   ht_title:'How to Find Your Machine Code',
   ht_desc:'Two simple steps inside the Revit Zigma tab:',
@@ -247,9 +257,9 @@ en:{
   ht_s1p:'In Revit, click the Zigma tab on the ribbon, then click the About button.',
   ht_s2:'Copy Machine Code from About dialog',
   ht_s2p:'In the About dialog, choose your language, copy the Machine Code, then fill in the form below and submit.',
-  tr_title:'&#127873; Free Trial License &mdash; 1 Day',
+  tr_title:'&#127873; Free Trial License &mdash; 7 Days',
   tr_instant:'Fill in the form below to request your free trial &mdash; no credit card:',
-  tr_days:'Days',tr_eops:'Export+Import Ops',tr_emodels:'Elements per Model',
+  tr_days:'Days',tr_eops:'Export+Import Ops',tr_emodels:'Elements per Operation',
   tr_note:'Submit your Machine Code with contact info. Your trial license key will be emailed within 1 business day.',
   mc_label:'YOUR MACHINE CODE',
   mc_field:'Machine Code (from Zigma &rarr; About dialog) *',
@@ -262,18 +272,30 @@ en:{
   pr_title:'Pricing',pr_sub:'All licenses are issued by our team. Contact us to get started.',
   pr_contact_big:'Contact Sales',
   ent_name:'Enterprise',ind_name:'Individual',
-  ent_feat:'1,000 import/export operations<br>Up to 20,000 models<br>Priority support & training<br>Works offline &mdash; no network required',
-  ind_feat:'300 import/export operations<br>Up to 10,000 models<br>Standard support<br>Works offline &mdash; no network required',
-  contact_btn:'Contact Sales'
+  ent_feat:'1,000 import/export operations<br>Up to 20,000 elements per operation<br>Priority support & training<br>Works offline &mdash; no network required',
+  ind_feat:'300 import/export operations<br>Up to 10,000 elements per operation<br>Standard support<br>Works offline &mdash; no network required',
+  contact_btn:'Contact Sales',
+  tk_label:'Zigma Toolkit',rm_label:'README.txt',
+  wn_label:"What's New v5.5.29:",
+  wn_text:'README version + Defender path-count documentation refresh (no behavioral change) &middot; fresh IP protection refresh on all native binaries &middot; all 5 ship-gate audits green.',
+  un_label:'Upgrade note:',
+  un_text:'Just double-click v5.5.29 MSI to upgrade. If About Dialog shows License inactive after upgrade, please re-paste your original license.txt.',
+  pb_notice:'&#9888; Pre-Beta &middot; MSI is not yet code-signed. Windows may show a SmartScreen "Unknown Publisher" warning &mdash; click "More info" &rarr; "Run anyway" to proceed. Trial access is NDA-bound &middot; do not redistribute.',
+  mc_ph:"Paste your Machine Code here — it's a long hex string from Revit → Zigma Tab → About → Copy Machine Code",
+  co_ph:'e.g. CTCI Corporation',nm_ph:'Full name',em_ph:'you@company.com',ph_ph:'+886-xxx-xxx-xxx',
+  pr_questions:'Questions?',
+  ftr_by:'by',
+  ftr_copyright:'&copy; 2026 Reality Matrix AI Inc. (&#23526;&#30697;&#31185;&#25216;). All rights reserved.',
+  ftr_sales:'Sales:',ftr_support:'Support:',ftr_location:'Taipei, Taiwan'
 },
 zh:{
   nav_about:'關於我們',nav_howto:'操作指引',nav_trial:'免費試用',nav_pricing:'授權方案',nav_dl:'下載試用版',
   h_badge:'OpenUSD 原生 &middot; USD&#8596;Revit &middot; Autodesk Revit 2027',
-  h1:'雙向 <em>USD&#8596;Revit</em><br>為工業數位孿生',
-  h_sub:'OpenUSD 擁有工業數位孿生。MEP 團隊在 Autodesk Revit 工作。Zigma 橋接兩者 &mdash; 將 USD 精準數據帶入 Revit，並將 Revit MEP 同步回 USD。',
+  h1:'雙向 <em>USD&#8596;Revit</em><br>為工業數位孿生而生',
+  h_sub:'OpenUSD 承載工業數位孿生。MEP 團隊在 Autodesk Revit 工作。Zigma 橋接兩者 &mdash; 將 USD 精準數據帶入 Revit，並將 Revit MEP 同步回 USD。',
   s1h:'下載安裝',s1p:'執行 MSI 安裝程式。Revit 中出現 Zigma 分頁。',
   s2h:'取得機器碼',s2p:'點擊 Zigma 分頁的「About」，複製機器碼。',
-  s3h:'申請免費試用',s3p:'將機器碼填入下方表單，立即取得 1 日試用金鑰。',
+  s3h:'申請免費試用',s3p:'將機器碼填入下方表單，立即取得 7 日試用金鑰。',
   s4h:'啟動使用',s4p:'在 Zigma About 對話框中輸入金鑰，開始轉換。',
   ht_title:'如何取得您的機器碼',
   ht_desc:'在 Revit Zigma 分頁中只需兩個簡單步驟：',
@@ -281,9 +303,9 @@ zh:{
   ht_s1p:'在 Revit 中，點擊功能區的 Zigma 分頁，然後點擊「About」按鈕。',
   ht_s2:'從 About 對話框複製機器碼',
   ht_s2p:'在 About 對話框中，選擇您的語言，複製機器碼，然後填寫下方表單並提交。',
-  tr_title:'&#127873; 免費試用授權 &mdash; 1 天',
+  tr_title:'&#127873; 免費試用授權 &mdash; 7 天',
   tr_instant:'填寫下方表單以申請免費試用 &mdash; 無需信用卡：',
-  tr_days:'天',tr_eops:'次 Export+Import',tr_emodels:'元件數／每模型',
+  tr_days:'天',tr_eops:'次 Export+Import',tr_emodels:'元件數／每次操作',
   tr_note:'提交您的機器碼與聯絡資訊。我們將於 1 個工作天內將試用金鑰寄送至您的信箱。',
   mc_label:'您的機器碼',
   mc_field:'機器碼（來自 Zigma About 對話框）*',
@@ -296,9 +318,21 @@ zh:{
   pr_title:'授權方案',pr_sub:'所有授權均由我們的團隊發放，請聯絡我們開始使用。',
   pr_contact_big:'洽詢業務',
   ent_name:'企業版',ind_name:'個人版',
-  ent_feat:'1,000 次匯入/匯出<br>最多 20,000 個模型<br>優先支援和培訓<br>支援離線模式 &mdash; 無需網路連線',
-  ind_feat:'300 次匯入/匯出<br>最多 10,000 個模型<br>標準支援<br>支援離線模式 &mdash; 無需網路連線',
-  contact_btn:'聯絡銷售'
+  ent_feat:'1,000 次匯入/匯出<br>最多 20,000 元件／每次操作<br>優先支援和培訓<br>支援離線模式 &mdash; 無需網路連線',
+  ind_feat:'300 次匯入/匯出<br>最多 10,000 元件／每次操作<br>標準支援<br>支援離線模式 &mdash; 無需網路連線',
+  contact_btn:'聯絡銷售',
+  tk_label:'Zigma 工具包',rm_label:'README.txt',
+  wn_label:'v5.5.29 更新內容：',
+  wn_text:'README 版本資訊與 Defender 排除路徑數說明同步更新（功能無變更）&middot; 重新打包所有原生元件 IP 保護 &middot; 5 項出貨前 audit 全綠。',
+  un_label:'升級提醒：',
+  un_text:'雙擊 v5.5.29 MSI 即可升級。若升級後 About 對話框顯示授權失效，請重新貼上原 license.txt。',
+  pb_notice:'&#9888; Pre-Beta &middot; MSI 尚未進行程式碼簽署。Windows 可能顯示 SmartScreen「未知發行者」警告 &mdash; 請點「其他資訊」&rarr;「仍要執行」繼續安裝。試用授權受 NDA 約束 &middot; 不得轉發。',
+  mc_ph:'請貼上您的機器碼 — 是一段長 hex 字串，可從 Revit → Zigma 分頁 → About → 複製機器碼',
+  co_ph:'例如：中鼎工程',nm_ph:'姓名全名',em_ph:'you@company.com',ph_ph:'+886-xxx-xxx-xxx',
+  pr_questions:'有任何問題？',
+  ftr_by:'由',
+  ftr_copyright:'&copy; 2026 Reality Matrix AI Inc. (&#23526;&#30697;&#31185;&#25216;) 版權所有',
+  ftr_sales:'業務：',ftr_support:'技術支援：',ftr_location:'臺北 · 臺灣'
 },
 ja:{
   nav_about:'会社について',nav_howto:'使い方',nav_trial:'無料トライアル',nav_pricing:'ライセンスプラン',nav_dl:'トライアル版ダウンロード',
@@ -307,7 +341,7 @@ ja:{
   h_sub:'OpenUSD が産業デジタルツインを保持します。MEP チームは Autodesk Revit で作業します。Zigma が両者を橋渡しし、USD の精度を Revit に取り込み、Revit MEP を USD に同期します。',
   s1h:'ダウンロード & インストール',s1p:'MSI インストーラーを実行。Revit に Zigma タブが表示されます。',
   s2h:'マシンコード取得',s2p:'Zigma タブの「About」をクリックし、マシンコードをコピーします。',
-  s3h:'無料トライアル申請',s3p:'下のフォームにマシンコードを貼り付けて 1 日トライアルキーを取得。',
+  s3h:'無料トライアル申請',s3p:'下のフォームにマシンコードを貼り付けて 7 日トライアルキーを取得。',
   s4h:'アクティベート & 開始',s4p:'Zigma About ダイアログにキーを入力して変換を開始します。',
   ht_title:'マシンコードの取得方法',
   ht_desc:'Revit Zigma タブで 2 つの簡単なステップ：',
@@ -315,9 +349,9 @@ ja:{
   ht_s1p:'Revit で、リボンの Zigma タブをクリックし、「About」ボタンをクリックします。',
   ht_s2:'About ダイアログからマシンコードをコピー',
   ht_s2p:'About ダイアログで、言語を選択し、マシンコードをコピーして、下のフォームに記入し送信してください。',
-  tr_title:'&#127873; 無料トライアルライセンス &mdash; 1 日',
+  tr_title:'&#127873; 無料トライアルライセンス &mdash; 7 日',
   tr_instant:'下記フォームに記入して無料トライアルを申請してください &mdash; クレジットカード不要：',
-  tr_days:'日',tr_eops:'Export+Import 回数',tr_emodels:'モデル毎エレメント数',
+  tr_days:'日',tr_eops:'Export+Import 回数',tr_emodels:'オペレーション毎エレメント数',
   tr_note:'マシンコードと連絡先を送信してください。1 営業日以内にトライアルキーをメールでお送りします。',
   mc_label:'マシンコード',
   mc_field:'マシンコード（Zigma About ダイアログから）*',
@@ -330,14 +364,27 @@ ja:{
   pr_title:'ライセンスプラン',pr_sub:'すべてのライセンスはチームが発行します。お問い合わせください。',
   pr_contact_big:'営業へお問い合わせ',
   ent_name:'エンタープライズ',ind_name:'個人',
-  ent_feat:'1,000 回インポート/エクスポート<br>最大 20,000 モデル<br>優先サポート & トレーニング<br>オフライン対応 &mdash; ネットワーク接続不要',
-  ind_feat:'300 回インポート/エクスポート<br>最大 10,000 モデル<br>標準サポート<br>オフライン対応 &mdash; ネットワーク接続不要',
-  contact_btn:'営業へお問い合わせ'
+  ent_feat:'1,000 回インポート/エクスポート<br>最大 20,000 エレメント／オペレーション<br>優先サポート & トレーニング<br>オフライン対応 &mdash; ネットワーク接続不要',
+  ind_feat:'300 回インポート/エクスポート<br>最大 10,000 エレメント／オペレーション<br>標準サポート<br>オフライン対応 &mdash; ネットワーク接続不要',
+  contact_btn:'営業へお問い合わせ',
+  tk_label:'Zigma ツールキット',rm_label:'README.txt',
+  wn_label:'v5.5.29 の新機能：',
+  wn_text:'README バージョンと Defender 除外パス数の表記を統一（動作変更なし）&middot; すべてのネイティブバイナリの IP 保護を再生成 &middot; 出荷前 5 ゲート audit 全クリア。',
+  un_label:'アップグレードの注意：',
+  un_text:'v5.5.29 MSI をダブルクリックするだけでアップグレードできます。アップグレード後に About ダイアログで License 無効と表示された場合は、元の license.txt を貼り直してください。',
+  pb_notice:'&#9888; Pre-Beta &middot; MSI はまだコード署名されていません。Windows に SmartScreen の「不明な発行元」警告が表示される場合は「詳細情報」&rarr;「実行」をクリックして続行してください。トライアルアクセスは NDA 対象 &middot; 再配布禁止。',
+  mc_ph:'マシンコードをここに貼り付けてください — Revit → Zigma タブ → About → マシンコードをコピー で取得した長い hex 文字列です',
+  co_ph:'例：CTCI コーポレーション',nm_ph:'氏名',em_ph:'you@company.com',ph_ph:'+886-xxx-xxx-xxx',
+  pr_questions:'ご質問は？',
+  ftr_by:'by',
+  ftr_copyright:'&copy; 2026 Reality Matrix AI Inc. (&#23526;&#30697;&#31185;&#25216;). All rights reserved.',
+  ftr_sales:'営業：',ftr_support:'サポート：',ftr_location:'台北 · 台湾'
 }
 };
 function setLang(lang){
   const t=_ZG[lang]; if(!t) return;
   document.querySelectorAll('[data-i18n]').forEach(el=>{ const k=el.dataset.i18n; if(t[k]!==undefined) el.innerHTML=t[k]; });
+  document.querySelectorAll('[data-i18n-placeholder]').forEach(el=>{ const k=el.dataset.i18nPlaceholder; if(t[k]!==undefined) el.setAttribute('placeholder',t[k]); });
   const hb=document.querySelector('.badge'); if(hb) hb.innerHTML=t.h_badge;
   const hh=document.querySelector('.hero h1'); if(hh) hh.innerHTML=t.h1;
   const hp=document.querySelector('.hero p'); if(hp) hp.innerHTML=t.h_sub;
