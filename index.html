@@ -280,7 +280,7 @@ function submitTrial(e){
 // Web API key = Firebase web key (非機密 · 安全靠 Firestore Rules anon create-only on trial_requests)。
 // 未設真 key (placeholder) -> 跳過 (FormSubmit email 仍照常)。
 const _ZG_FB_PROJECT='reality-dev-center';
-const _ZG_FB_APIKEY='REPLACE_WITH_REALITY_DEV_CENTER_WEB_API_KEY';
+const _ZG_FB_APIKEY='AIzaSyClCKk3RI-cti8gGJ3TjGZOZlDpO0HlZY0';
 async function writeTrialToFirestore(data){
   try{
     if(!_ZG_FB_APIKEY||_ZG_FB_APIKEY.indexOf('REPLACE')===0)return; // 未設 key -> 跳過
