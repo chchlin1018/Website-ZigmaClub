@@ -218,17 +218,16 @@ footer{text-align:center;padding:3rem 2rem;border-top:1px solid var(--bd);font-s
 
 <script>
 function validateMachineCode(raw){
-  // 結構預檢(無密鑰 · 完整 HMAC/AES 驗證在 QtLicenseMaker 端)
-  // 對齊 MachineKeyDecoder.cpp:70/74 + Base64Url.cpp:62-68
-  var s=(raw||'').replace(/\s+/g,'');             // strip 空白(decoder 同樣 strip)
+  // Lightweight client-side format check only (no secrets here).
+  var s=(raw||'').replace(/\s+/g,'');             // strip whitespace
   if(!s)return false;
-  if(!/^[A-Za-z0-9_=-]+$/.test(s))return false;    // base64url 字元集
+  if(!/^[A-Za-z0-9_=-]+$/.test(s))return false;    // allowed character set
   var t=s.replace(/-/g,'+').replace(/_/g,'/').replace(/=+$/,'');
   while(t.length%4!==0)t+='=';
   var bin;
   try{bin=atob(t);}catch(_){return false;}
-  if(bin.length<81)return false;                   // 1+32+16+32 (MachineKeyDecoder.cpp:70)
-  if(bin.charCodeAt(0)!==0x01)return false;         // version byte 0x01 (MachineKeyDecoder.cpp:74)
+  if(bin.length<81)return false;                   // minimum decoded length
+  if(bin.charCodeAt(0)!==0x01)return false;         // expected leading version marker
   return true;
 }
 function submitTrial(e){
@@ -249,8 +248,8 @@ function submitTrial(e){
   if(mcErr)mcErr.style.display='none';
   var btn=f.querySelector('button[type="submit"]');
   if(btn){btn.disabled=true;btn.style.opacity='.6';}
-  // §G · dual-write -> Firebase trial_requests (best-effort · 不擋 FormSubmit · audit H7)
-  try{ writeTrialToFirestore({machine_code:mc,company:co,name:nm,email:em,phone:ph}); }catch(_){}
+  // Optional secondary record of the request (best-effort · never blocks the email submission below).
+  try{ writeTrialRequestRecord({machine_code:mc,company:co,name:nm,email:em,phone:ph}); }catch(_){}
   fetch('https://formsubmit.co/ajax/michael.lin@realitymatrixai.com',{
     method:'POST',
     headers:{'Content-Type':'application/json','Accept':'application/json'},
@@ -275,20 +274,19 @@ function submitTrial(e){
   });
   return false;
 }
-// §G · S-ZGM-PREBETA-TELEMETRY-FIREBASE-HUB · 網站 trial-request -> Firebase trial_requests (雙寫)
-// Anonymous Auth + Firestore REST create · best-effort (失敗不擋 FormSubmit email) · audit H7.
-// Web API key = Firebase web key (非機密 · 安全靠 Firestore Rules anon create-only on trial_requests)。
-// 未設真 key (placeholder) -> 跳過 (FormSubmit email 仍照常)。
+// Optional: record the trial request to our backend (best-effort · failures never block the email submission).
+// The web API key below is a public client identifier (not a secret); access is restricted server-side to
+// create-only on the trial-request collection. If left as a placeholder, this step is skipped.
 const _ZG_FB_PROJECT='reality-dev-center';
 const _ZG_FB_APIKEY='AIzaSyClCKk3RI-cti8gGJ3TjGZOZlDpO0HlZY0';
-async function writeTrialToFirestore(data){
+async function writeTrialRequestRecord(data){
   try{
-    if(!_ZG_FB_APIKEY||_ZG_FB_APIKEY.indexOf('REPLACE')===0)return; // 未設 key -> 跳過
-    // 1) Anonymous Auth -> idToken
+    if(!_ZG_FB_APIKEY||_ZG_FB_APIKEY.indexOf('REPLACE')===0)return; // no key configured -> skip
+    // 1) Obtain a short-lived anonymous token
     const ar=await fetch('https://identitytoolkit.googleapis.com/v1/accounts:signUp?key='+_ZG_FB_APIKEY,
       {method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({returnSecureToken:true})});
     if(!ar.ok)return; const aj=await ar.json(); const idToken=aj.idToken; if(!idToken)return;
-    // 2) Firestore createDocument trial_requests (POST ?documentId · 非 PATCH · audit C1)
+    // 2) Create the trial-request record
     const docId=(crypto&&crypto.randomUUID)?crypto.randomUUID():('w'+Date.now()+Math.floor(Math.random()*1e6));
     const sv=function(s){return {stringValue:String(s||'')};};
     const fields={
@@ -302,7 +300,7 @@ async function writeTrialToFirestore(data){
       '/databases/(default)/documents/trial_requests?documentId='+encodeURIComponent(docId),
       {method:'POST',headers:{'Content-Type':'application/json','Authorization':'Bearer '+idToken},
        body:JSON.stringify({fields:fields})});
-  }catch(_){/* best-effort · FormSubmit email 為主路徑 */}
+  }catch(_){/* best-effort · email submission is the primary path */}
 }
 const _ZG={
 en:{
