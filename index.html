@@ -168,7 +168,8 @@ footer{text-align:center;padding:3rem 2rem;border-top:1px solid var(--bd);font-s
   </div>
   <form id="trialForm" onsubmit="return submitTrial(event)">
   <span class="sl" data-i18n="mc_label">Your Machine Code</span>
-  <div class="fl"><label for="mc_input" data-i18n="mc_field">Machine Code (from Zigma &rarr; About dialog) *</label><textarea id="mc_input" name="machine_code" class="mn" data-i18n-placeholder="mc_ph" placeholder="Paste your Machine Code here &mdash; it&apos;s a long hex string from Revit &rarr; Zigma Tab &rarr; About &rarr; Copy Machine Code" rows="4" maxlength="800" required style="resize:vertical;line-height:1.5"></textarea></div>
+  <div class="fl"><label for="mc_input" data-i18n="mc_field">Machine Code (from Zigma &rarr; About dialog) *</label><textarea id="mc_input" name="machine_code" class="mn" data-i18n-placeholder="mc_ph" placeholder="Paste your Machine Code here &mdash; it&apos;s a long hex string from Revit &rarr; Zigma Tab &rarr; About &rarr; Copy Machine Code" rows="4" maxlength="800" required style="resize:vertical;line-height:1.5"></textarea>
+  <div id="mcErr" data-i18n="mc_err" style="display:none;margin-top:.4rem;font-size:.8rem;color:var(--or)">This doesn&apos;t look like a valid Machine Code. Please re-copy it from Revit &rarr; Zigma Tab &rarr; About &rarr; Copy Machine Code.</div></div>
   <hr class="dv">
   <span class="sl" data-i18n="ci_label">Contact Information</span>
   <div class="rw">
@@ -218,6 +219,20 @@ footer{text-align:center;padding:3rem 2rem;border-top:1px solid var(--bd);font-s
 </footer>
 
 <script>
+function validateMachineCode(raw){
+  // 結構預檢(無密鑰 · 完整 HMAC/AES 驗證在 QtLicenseMaker 端)
+  // 對齊 MachineKeyDecoder.cpp:70/74 + Base64Url.cpp:62-68
+  var s=(raw||'').replace(/\s+/g,'');             // strip 空白(decoder 同樣 strip)
+  if(!s)return false;
+  if(!/^[A-Za-z0-9_=-]+$/.test(s))return false;    // base64url 字元集
+  var t=s.replace(/-/g,'+').replace(/_/g,'/').replace(/=+$/,'');
+  while(t.length%4!==0)t+='=';
+  var bin;
+  try{bin=atob(t);}catch(_){return false;}
+  if(bin.length<81)return false;                   // 1+32+16+32 (MachineKeyDecoder.cpp:70)
+  if(bin.charCodeAt(0)!==0x01)return false;         // version byte 0x01 (MachineKeyDecoder.cpp:74)
+  return true;
+}
 function submitTrial(e){
   e.preventDefault();
   var f=document.getElementById('trialForm');
@@ -227,6 +242,13 @@ function submitTrial(e){
   var em=(f.email.value||'').trim();
   var ph=(f.phone.value||'').trim();
   if(!mc||!co||!nm||!em){alert('Please fill in Machine Code, Company, Name, and Email.');return false;}
+  var mcErr=document.getElementById('mcErr');
+  if(!validateMachineCode(mc)){
+    if(mcErr)mcErr.style.display='block';
+    var mcIn=document.getElementById('mc_input');if(mcIn)mcIn.focus();
+    return false;
+  }
+  if(mcErr)mcErr.style.display='none';
   var btn=f.querySelector('button[type="submit"]');
   if(btn){btn.disabled=true;btn.style.opacity='.6';}
   fetch('https://formsubmit.co/ajax/michael.lin@realitymatrixai.com',{
@@ -294,6 +316,7 @@ en:{
   un_text:'Just double-click v5.5.42 MSI to upgrade. If About Dialog shows License inactive after upgrade, please re-paste your original license.txt.',
   pb_notice:'&#9888; Pre-Beta &middot; MSI is not yet code-signed. Windows may show a SmartScreen "Unknown Publisher" warning &mdash; click "More info" &rarr; "Run anyway" to proceed. Trial access is NDA-bound &middot; do not redistribute.',
   mc_ph:"Paste your Machine Code here — it's a long hex string from Revit → Zigma Tab → About → Copy Machine Code",
+  mc_err:'This doesn\'t look like a valid Machine Code. Please re-copy it from Revit → Zigma Tab → About → Copy Machine Code.',
   co_ph:'e.g. CTCI Corporation',nm_ph:'Full name',em_ph:'you@company.com',ph_ph:'+886-xxx-xxx-xxx',
   pr_questions:'Questions?',
   ftr_by:'by',
@@ -340,6 +363,7 @@ zh:{
   un_text:'雙擊 v5.5.42 MSI 即可升級。若升級後 About 對話框顯示授權失效，請重新貼上原 license.txt。',
   pb_notice:'&#9888; Pre-Beta &middot; MSI 尚未進行程式碼簽署。Windows 可能顯示 SmartScreen「未知發行者」警告 &mdash; 請點「其他資訊」&rarr;「仍要執行」繼續安裝。試用授權受 NDA 約束 &middot; 不得轉發。',
   mc_ph:'請貼上您的機器碼 — 是一段長 hex 字串，可從 Revit → Zigma 分頁 → About → 複製機器碼',
+  mc_err:'這看起來不是有效的機器碼。請從 Revit → Zigma 分頁 → About → 複製機器碼 重新複製。',
   co_ph:'例如：中鼎工程',nm_ph:'姓名全名',em_ph:'you@company.com',ph_ph:'+886-xxx-xxx-xxx',
   pr_questions:'有任何問題？',
   ftr_by:'由',
@@ -386,6 +410,7 @@ ja:{
   un_text:'v5.5.42 MSI をダブルクリックするだけでアップグレードできます。アップグレード後に About ダイアログで License 無効と表示された場合は、元の license.txt を貼り直してください。',
   pb_notice:'&#9888; Pre-Beta &middot; MSI はまだコード署名されていません。Windows に SmartScreen の「不明な発行元」警告が表示される場合は「詳細情報」&rarr;「実行」をクリックして続行してください。トライアルアクセスは NDA 対象 &middot; 再配布禁止。',
   mc_ph:'マシンコードをここに貼り付けてください — Revit → Zigma タブ → About → マシンコードをコピー で取得した長い hex 文字列です',
+  mc_err:'有効なマシンコードではないようです。Revit → Zigma タブ → About → マシンコードをコピー から再度コピーしてください。',
   co_ph:'例：CTCI コーポレーション',nm_ph:'氏名',em_ph:'you@company.com',ph_ph:'+886-xxx-xxx-xxx',
   pr_questions:'ご質問は？',
   ftr_by:'by',
