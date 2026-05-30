@@ -166,7 +166,7 @@ footer{text-align:center;padding:3rem 2rem;border-top:1px solid var(--bd);font-s
     </div>
     <div style="font-size:.75rem;color:var(--dm);margin-top:.8rem" data-i18n="tr_note">Submit your Machine Code with contact info. Your trial license key will be emailed within 1 business day.</div>
   </div>
-  <form id="trialForm" onsubmit="return submitToMail(event)">
+  <form id="trialForm" onsubmit="return submitTrial(event)">
   <span class="sl" data-i18n="mc_label">Your Machine Code</span>
   <div class="fl"><label for="mc_input" data-i18n="mc_field">Machine Code (from Zigma &rarr; About dialog) *</label><textarea id="mc_input" name="machine_code" class="mn" data-i18n-placeholder="mc_ph" placeholder="Paste your Machine Code here &mdash; it&apos;s a long hex string from Revit &rarr; Zigma Tab &rarr; About &rarr; Copy Machine Code" rows="4" maxlength="800" required style="resize:vertical;line-height:1.5"></textarea></div>
   <hr class="dv">
@@ -180,11 +180,11 @@ footer{text-align:center;padding:3rem 2rem;border-top:1px solid var(--bd);font-s
     <div class="fl"><label for="ph_input" data-i18n="ph_label">Phone</label><input id="ph_input" type="tel" name="phone" data-i18n-placeholder="ph_ph" placeholder="+886-xxx-xxx-xxx"></div>
   </div>
   <div style="margin-top:1.2rem"><button type="submit" class="btn btn-ac" data-i18n="gen_btn">Submit Trial Request</button></div>
-  <p style="margin-top:.8rem;font-size:.78rem;color:var(--dm)" data-i18n="sub_note">Clicking Submit will open your email client with a pre-filled message to <strong>michael.lin@realitymatrixai.com</strong>. We will review and email your trial license key within 1 business day.</p>
+  <p style="margin-top:.8rem;font-size:.78rem;color:var(--dm)" data-i18n="sub_note">Click Submit to send your request directly to our team &mdash; no email client needed. We will review and email your trial license key within 1 business day.</p>
   </form>
   <div class="rp rp-gn" id="trialSent" style="display:none">
     <div class="ck">&#9989;</div><h3 style="color:var(--ac)" data-i18n="ok_title">Trial Request Submitted!</h3>
-    <p data-i18n="ok_sub">Thank you! Your email client should have opened with the pre-filled request. After you send it, we will email your trial license key within 1 business day.<br>Questions? Contact <a href="mailto:michael.lin@realitymatrixai.com">michael.lin@realitymatrixai.com</a></p>
+    <p data-i18n="ok_sub">Thank you! Your trial request has been sent to our team. We will email your trial license key within 1 business day.<br>Questions? Contact <a href="mailto:michael.lin@realitymatrixai.com">michael.lin@realitymatrixai.com</a></p>
   </div>
 </div></div></section>
 
@@ -218,7 +218,7 @@ footer{text-align:center;padding:3rem 2rem;border-top:1px solid var(--bd);font-s
 </footer>
 
 <script>
-function submitToMail(e){
+function submitTrial(e){
   e.preventDefault();
   var f=document.getElementById('trialForm');
   var mc=(f.machine_code.value||'').trim();
@@ -227,18 +227,30 @@ function submitToMail(e){
   var em=(f.email.value||'').trim();
   var ph=(f.phone.value||'').trim();
   if(!mc||!co||!nm||!em){alert('Please fill in Machine Code, Company, Name, and Email.');return false;}
-  var subject='[ZigmaClub License Request]';
-  var body='Machine Code:\n'+mc+'\n\n'+'Company: '+co+'\n'+'Name: '+nm+'\n'+'Email: '+em+'\n'+'Phone: '+ph+'\n\n'+'-- Sent from Zigma Club (https://www.zigma.club)';
-  var url='mailto:michael.lin@realitymatrixai.com?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body);
-  window.location.href=url;
-  setTimeout(function(){
-    var fr=document.getElementById('trialForm');
-    var sv=document.getElementById('trialSent');
-    if(fr)fr.style.display='none';
-    if(sv)sv.style.display='block';
-    var tg=document.getElementById('trial');
-    if(tg)window.scrollTo({top:tg.offsetTop-80,behavior:'smooth'});
-  },500);
+  var btn=f.querySelector('button[type="submit"]');
+  if(btn){btn.disabled=true;btn.style.opacity='.6';}
+  fetch('https://formsubmit.co/ajax/michael.lin@realitymatrixai.com',{
+    method:'POST',
+    headers:{'Content-Type':'application/json','Accept':'application/json'},
+    body:JSON.stringify({
+      _subject:'[ZigmaClub License Request]',
+      _template:'table',
+      _captcha:'false',
+      machine_code:mc,company:co,name:nm,email:em,phone:ph,
+      source:'https://www.zigma.club'
+    })
+  }).then(function(r){return r.json();}).then(function(d){
+    if(d&&(d.success===true||d.success==='true')){
+      f.style.display='none';
+      var sv=document.getElementById('trialSent');
+      if(sv)sv.style.display='block';
+      var tg=document.getElementById('trial');
+      if(tg)window.scrollTo({top:tg.offsetTop-80,behavior:'smooth'});
+    }else{throw new Error('submit-failed');}
+  }).catch(function(){
+    if(btn){btn.disabled=false;btn.style.opacity='1';}
+    alert('Submission failed. Please email michael.lin@realitymatrixai.com directly with your Machine Code.');
+  });
   return false;
 }
 const _ZG={
@@ -266,9 +278,9 @@ en:{
   ci_label:'CONTACT INFORMATION',
   co_label:'Company Name *',nm_label:'Contact Name *',em_label:'Email *',ph_label:'Phone',
   gen_btn:'Submit Trial Request',
-  sub_note:'Clicking Submit will open your email client with a pre-filled message to <strong>michael.lin@realitymatrixai.com</strong>. We will review and email your trial license key within 1 business day.',
+  sub_note:'Click Submit to send your request directly to our team &mdash; no email client needed. We will review and email your trial license key within 1 business day.',
   ok_title:'Trial Request Submitted!',
-  ok_sub:'Thank you! Your email client should have opened with the pre-filled request. After you send it, we will email your trial license key within 1 business day.<br>Questions? Contact <a href="mailto:michael.lin@realitymatrixai.com">michael.lin@realitymatrixai.com</a>',
+  ok_sub:'Thank you! Your trial request has been sent to our team. We will email your trial license key within 1 business day.<br>Questions? Contact <a href="mailto:michael.lin@realitymatrixai.com">michael.lin@realitymatrixai.com</a>',
   pr_title:'Pricing',pr_sub:'All licenses are issued by our team. Contact us to get started.',
   pr_contact_big:'Contact Sales',
   ent_name:'Enterprise',ind_name:'Individual',
@@ -312,9 +324,9 @@ zh:{
   ci_label:'聯絡資訊',
   co_label:'公司名稱 *',nm_label:'聯絡人姓名 *',em_label:'電子信箱 *',ph_label:'電話',
   gen_btn:'提交試用申請',
-  sub_note:'點擊提交將打開您的電子郵件用戶端，預先填好寄至 <strong>michael.lin@realitymatrixai.com</strong> 的訊息。我們將於 1 個工作天內審核並將試用金鑰寄送至您的信箱。',
+  sub_note:'點擊提交將直接把您的申請送至我們團隊，無需電子郵件用戶端。我們將於 1 個工作天內審核並將試用金鑰寄送至您的信箱。',
   ok_title:'試用申請已提交！',
-  ok_sub:'謝謝！您的電子郵件用戶端應已打開預填好的申請訊息。寄出後，我們將於 1 個工作天內將試用金鑰寄送至您的信箱。<br>有任何問題？請聯絡 <a href="mailto:michael.lin@realitymatrixai.com">michael.lin@realitymatrixai.com</a>',
+  ok_sub:'謝謝！您的試用申請已送出至我們團隊。我們將於 1 個工作天內將試用金鑰寄送至您的信箱。<br>有任何問題？請聯絡 <a href="mailto:michael.lin@realitymatrixai.com">michael.lin@realitymatrixai.com</a>',
   pr_title:'授權方案',pr_sub:'所有授權均由我們的團隊發放，請聯絡我們開始使用。',
   pr_contact_big:'洽詢業務',
   ent_name:'企業版',ind_name:'個人版',
@@ -358,9 +370,9 @@ ja:{
   ci_label:'連絡先情報',
   co_label:'会社名 *',nm_label:'担当者名 *',em_label:'メールアドレス *',ph_label:'電話番号',
   gen_btn:'トライアル申請を送信',
-  sub_note:'送信ボタンをクリックすると、<strong>michael.lin@realitymatrixai.com</strong> 宛の事前入力済みメッセージがメールクライアントで開きます。1 営業日以内に審査し、トライアルキーをメールでお送りします。',
+  sub_note:'送信ボタンをクリックすると、申請内容が直接当社チームに送信されます（メールクライアント不要）。1 営業日以内に審査し、トライアルキーをメールでお送りします。',
   ok_title:'トライアル申請を受け付けました！',
-  ok_sub:'ありがとうございます！メールクライアントで事前入力済みの申請メッセージが開いているはずです。送信後、1 営業日以内にトライアルキーをメールでお送りします。<br>ご質問は <a href="mailto:michael.lin@realitymatrixai.com">michael.lin@realitymatrixai.com</a> までご連絡ください。',
+  ok_sub:'ありがとうございます！トライアル申請が当社チームに送信されました。1 営業日以内にトライアルキーをメールでお送りします。<br>ご質問は <a href="mailto:michael.lin@realitymatrixai.com">michael.lin@realitymatrixai.com</a> までご連絡ください。',
   pr_title:'ライセンスプラン',pr_sub:'すべてのライセンスはチームが発行します。お問い合わせください。',
   pr_contact_big:'営業へお問い合わせ',
   ent_name:'エンタープライズ',ind_name:'個人',
