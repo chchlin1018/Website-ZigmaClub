@@ -248,30 +248,35 @@ function submitTrial(e){
   if(mcErr)mcErr.style.display='none';
   var btn=f.querySelector('button[type="submit"]');
   if(btn){btn.disabled=true;btn.style.opacity='.6';}
-  // Optional secondary record of the request (best-effort · never blocks the email submission below).
-  try{ writeTrialRequestRecord({machine_code:mc,company:co,name:nm,email:em,phone:ph}); }catch(_){}
-  fetch('https://formsubmit.co/ajax/michael.lin@realitymatrixai.com',{
-    method:'POST',
-    headers:{'Content-Type':'application/json','Accept':'application/json'},
-    body:JSON.stringify({
-      _subject:'[ZigmaClub License Request]',
-      _template:'table',
-      _captcha:'false',
-      machine_code:mc,company:co,name:nm,email:em,phone:ph,
-      source:'https://www.zigma.club'
-    })
-  }).then(function(r){return r.json();}).then(function(d){
-    if(d&&(d.success===true||d.success==='true')){
-      f.style.display='none';
-      var sv=document.getElementById('trialSent');
-      if(sv)sv.style.display='block';
-      var tg=document.getElementById('trial');
-      if(tg)window.scrollTo({top:tg.offsetTop-80,behavior:'smooth'});
-    }else{throw new Error('submit-failed');}
-  }).catch(function(){
+  function showSent(){
+    f.style.display='none';
+    var sv=document.getElementById('trialSent');
+    if(sv)sv.style.display='block';
+    var tg=document.getElementById('trial');
+    if(tg)window.scrollTo({top:tg.offsetTop-80,behavior:'smooth'});
+  }
+  function showFail(){
     if(btn){btn.disabled=false;btn.style.opacity='1';}
     alert('Submission failed. Please email michael.lin@realitymatrixai.com directly with your Machine Code.');
-  });
+  }
+  // Best-effort email notification via third-party relay (may be temporarily unavailable · never gates success).
+  try{
+    fetch('https://formsubmit.co/ajax/michael.lin@realitymatrixai.com',{
+      method:'POST',
+      headers:{'Content-Type':'application/json','Accept':'application/json'},
+      body:JSON.stringify({
+        _subject:'[ZigmaClub License Request]',
+        _template:'table',
+        _captcha:'false',
+        machine_code:mc,company:co,name:nm,email:em,phone:ph,
+        source:'https://www.zigma.club'
+      })
+    }).catch(function(){});
+  }catch(_){}
+  // Primary path: record the request to the license backend · this is what feeds license issuance.
+  writeTrialRequestRecord({machine_code:mc,company:co,name:nm,email:em,phone:ph})
+    .then(function(ok){ ok?showSent():showFail(); })
+    .catch(function(){ showFail(); });
   return false;
 }
 // Optional: record the trial request to our backend (best-effort · failures never block the email submission).
@@ -281,26 +286,28 @@ const _ZG_FB_PROJECT='reality-dev-center';
 const _ZG_FB_APIKEY='AIzaSyClCKk3RI-cti8gGJ3TjGZOZlDpO0HlZY0';
 async function writeTrialRequestRecord(data){
   try{
-    if(!_ZG_FB_APIKEY||_ZG_FB_APIKEY.indexOf('REPLACE')===0)return; // no key configured -> skip
+    if(!_ZG_FB_APIKEY||_ZG_FB_APIKEY.indexOf('REPLACE')===0)return false; // no key configured -> skip
     // 1) Obtain a short-lived anonymous token
     const ar=await fetch('https://identitytoolkit.googleapis.com/v1/accounts:signUp?key='+_ZG_FB_APIKEY,
       {method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({returnSecureToken:true})});
-    if(!ar.ok)return; const aj=await ar.json(); const idToken=aj.idToken; if(!idToken)return;
+    if(!ar.ok)return false; const aj=await ar.json(); const idToken=aj.idToken; if(!idToken)return false;
     // 2) Create the trial-request record
     const docId=(crypto&&crypto.randomUUID)?crypto.randomUUID():('w'+Date.now()+Math.floor(Math.random()*1e6));
     const sv=function(s){return {stringValue:String(s||'')};};
+    // license_status is assigned server-side (license backend) · the client must NOT set it (backend rules reject the write otherwise)
     const fields={
       report_id:sv(docId), schema_version:sv('1.1'), type:sv('trial_request'),
       ts_utc:sv(new Date().toISOString()), zigma_version:sv(''),
-      source:sv('website'), status:sv('new'), license_status:sv('new'),
+      source:sv('website'), status:sv('new'),
       machine_code:sv(data.machine_code), company:sv(data.company),
       name:sv(data.name), email:sv(data.email), phone:sv(data.phone)
     };
-    await fetch('https://firestore.googleapis.com/v1/projects/'+_ZG_FB_PROJECT+
+    const wr=await fetch('https://firestore.googleapis.com/v1/projects/'+_ZG_FB_PROJECT+
       '/databases/(default)/documents/trial_requests?documentId='+encodeURIComponent(docId),
       {method:'POST',headers:{'Content-Type':'application/json','Authorization':'Bearer '+idToken},
        body:JSON.stringify({fields:fields})});
-  }catch(_){/* best-effort · email submission is the primary path */}
+    return wr.ok;
+  }catch(_){return false;}
 }
 const _ZG={
 en:{
