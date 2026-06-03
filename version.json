@@ -1,7 +1,7 @@
 {
-  "zigma_version": "5.5.46",
-  "download_url": "https://github.com/chchlin1018/Website-ZigmaClub/releases/download/v5.5.46-pre-beta/ZigmaSetup_v5.5.46_Pre-Beta.msi",
-  "download_zip_url": "https://github.com/chchlin1018/Website-ZigmaClub/releases/download/v5.5.46-pre-beta/ZigmaSetup_v5.5.46_Pre-Beta.zip",
-  "release_url": "https://github.com/chchlin1018/Website-ZigmaClub/releases/tag/v5.5.46-pre-beta",
-  "notes": "Single multilingual MSI · pre-install README in your Windows language · prerequisite auto-check · ZIP alternative if Microsoft blocks the .msi download"
+  "zigma_version": "5.6.0",
+  "download_url": "https://github.com/chchlin1018/Website-ZigmaClub/releases/download/v5.6.0-pre-beta/ZigmaSetup_v5.6.0_Pre-Beta.msi",
+  "download_zip_url": "https://github.com/chchlin1018/Website-ZigmaClub/releases/download/v5.6.0-pre-beta/ZigmaSetup_v5.6.0_Pre-Beta.zip",
+  "release_url": "https://github.com/chchlin1018/Website-ZigmaClub/releases/tag/v5.6.0-pre-beta",
+  "notes": "v5.6.0 IFC support · bidirectional IFC <-> USD roundtrip (IfcOpenShell + OCCT) · two new Ribbon buttons · encrypted ZSM v3.6 · no VMProtect · ZIP alternative if Microsoft blocks the .msi download"
 }
