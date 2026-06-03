@@ -1,6 +1,7 @@
 {
-  "zigma_version": "5.5.43",
-  "download_url": "https://github.com/chchlin1018/Website-ZigmaClub/releases/download/v5.5.43-pre-beta/ZigmaSetup_v5.5.43_Pre-Beta.msi",
-  "release_url": "https://github.com/chchlin1018/Website-ZigmaClub/releases/tag/v5.5.43-pre-beta",
-  "notes": "Single multilingual MSI · pre-install README in your Windows language · prerequisite auto-check"
+  "zigma_version": "5.5.46",
+  "download_url": "https://github.com/chchlin1018/Website-ZigmaClub/releases/download/v5.5.46-pre-beta/ZigmaSetup_v5.5.46_Pre-Beta.msi",
+  "download_zip_url": "https://github.com/chchlin1018/Website-ZigmaClub/releases/download/v5.5.46-pre-beta/ZigmaSetup_v5.5.46_Pre-Beta.zip",
+  "release_url": "https://github.com/chchlin1018/Website-ZigmaClub/releases/tag/v5.5.46-pre-beta",
+  "notes": "Single multilingual MSI · pre-install README in your Windows language · prerequisite auto-check · ZIP alternative if Microsoft blocks the .msi download"
 }
