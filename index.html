@@ -17,11 +17,12 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="zh_TW">
 <meta property="og:locale:alternate" content="ja_JP">
+<meta property="og:locale:alternate" content="ko_KR">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Zigma — USD ↔ Revit Builder">
 <meta name="twitter:description" content="OpenUSD-native USD ↔ Revit plugin for industrial digital twins. Pre-Beta on Revit 2027.">
 <meta name="twitter:image" content="https://www.zigma.club/img/step2-about.jpg">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Zigma Builder","operatingSystem":"Windows 10/11","applicationCategory":"DesignApplication","description":"Bidirectional USD \u2194 Revit plugin for OpenUSD-native industrial digital twin workflows.","softwareVersion":"5.6.9.1","releaseNotes":"https://github.com/chchlin1018/Website-ZigmaClub/releases/tag/v5.6.9.1-pre-beta","downloadUrl":"https://github.com/chchlin1018/Website-ZigmaClub/releases/download/v5.6.9.1-pre-beta/ZigmaSetup_v5.6.9.1_Pre-Beta.msi","requirements":"Autodesk Revit 2027, .NET 10 Desktop Runtime, Visual C++ 2022 Redistributable (x64)","offers":{"@type":"Offer","price":"0","priceCurrency":"USD","availability":"https://schema.org/PreOrder","description":"Pre-Beta trial \u2014 request via website form"},"publisher":{"@type":"Organization","name":"Reality Matrix AI Inc.","url":"https://www.realitymatrixai.com"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Zigma Builder","operatingSystem":"Windows 10/11","applicationCategory":"DesignApplication","description":"Bidirectional USD \u2194 Revit plugin for OpenUSD-native industrial digital twin workflows.","softwareVersion":"5.6.0","releaseNotes":"https://github.com/chchlin1018/Website-ZigmaClub/releases/tag/v5.6.0-pre-beta","downloadUrl":"https://github.com/chchlin1018/Website-ZigmaClub/releases/download/v5.6.0-pre-beta/ZigmaSetup_v5.6.0_Pre-Beta.msi","requirements":"Autodesk Revit 2027, .NET 10 Desktop Runtime, Visual C++ 2022 Redistributable (x64)","offers":{"@type":"Offer","price":"0","priceCurrency":"USD","availability":"https://schema.org/PreOrder","description":"Pre-Beta trial \u2014 request via website form"},"publisher":{"@type":"Organization","name":"Reality Matrix AI Inc.","url":"https://www.realitymatrixai.com"}}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
@@ -93,31 +94,32 @@ footer{text-align:center;padding:3rem 2rem;border-top:1px solid var(--bd);font-s
       <button class="lbtn" id="lbtn-en" onclick="setLang('en')">EN</button>
       <button class="lbtn" id="lbtn-zh" onclick="setLang('zh')">中文</button>
       <button class="lbtn" id="lbtn-ja" onclick="setLang('ja')">日本語</button>
+      <button class="lbtn" id="lbtn-ko" onclick="setLang('ko')">한국어</button>
     </div>
     <a href="https://www.realitymatrixai.com" target="_blank" data-i18n="nav_about">About Us</a>
     <a href="#howto" data-i18n="nav_howto">How To</a>
     <a href="#trial" data-i18n="nav_trial">Free Trial</a>
     <a href="#pricing" data-i18n="nav_pricing">Pricing</a>
-    <a class="dl-btn" href="https://github.com/chchlin1018/Website-ZigmaClub/releases/download/v5.6.9.1-pre-beta/ZigmaSetup_v5.6.9.1_Pre-Beta.msi" data-i18n="nav_dl" title="Pre-Beta v5.6.9.1 (125 MB) — single multilingual MSI · shows a pre-install README in your Windows language + checks prerequisites before installing">Download Trial</a>
+    <a class="dl-btn" href="https://github.com/chchlin1018/Website-ZigmaClub/releases/download/v5.6.0-pre-beta/ZigmaSetup_v5.6.0_Pre-Beta.msi" data-i18n="nav_dl" title="Pre-Beta v5.6.0 (124.9 MB) — single multilingual MSI · shows a pre-install README in your Windows language + checks prerequisites before installing">Download Trial</a>
   </div>
 </nav>
 
 <!-- Version + Troubleshooting downloads (red text · matches About Dialog version) -->
 <div style="text-align:right;padding:0.4rem 1.5rem 0.6rem;font-size:.82rem;background:rgba(0,0,0,.15)">
-  <span style="color:#ff4d4d;font-weight:700;font-size:.85rem">Latest Version: 5.6.9.1 (Pre-Beta)</span>
+  <span style="color:#ff4d4d;font-weight:700;font-size:.85rem">Latest Version: 5.6.0 (Pre-Beta)</span>
   <br>
   <span style="color:rgba(255,255,255,.5);font-size:.76rem" data-i18n="ts_label">Install guide:</span>&nbsp;
-  <a href="https://github.com/chchlin1018/Website-ZigmaClub/releases/download/v5.6.9.1-pre-beta/README.txt" style="color:#FFD700;text-decoration:underline;font-weight:600" title="Pre-Beta installation guide + troubleshooting (3-language)" data-i18n="rm_label">README.txt</a>
+  <a href="https://github.com/chchlin1018/Website-ZigmaClub/releases/download/v5.6.0-pre-beta/README.txt" style="color:#FFD700;text-decoration:underline;font-weight:600" title="Pre-Beta installation guide + troubleshooting (3-language)" data-i18n="rm_label">README.txt</a>
   <br>
   <span style="color:rgba(255,255,255,.5);font-size:.76rem" data-i18n="zip_label">.msi download blocked by Microsoft? ZIP version:</span>&nbsp;
-  <a href="https://github.com/chchlin1018/Website-ZigmaClub/releases/download/v5.6.9.1-pre-beta/ZigmaSetup_v5.6.9.1_Pre-Beta.zip" style="color:#FFD700;text-decoration:underline;font-weight:600" title="If your browser or SmartScreen blocks the .msi download, get this .zip instead, extract it, then run the MSI inside. If a SmartScreen prompt appears, click 'More info → Run anyway' (expected for unsigned pre-beta)." data-i18n="zip_link">MSI in ZIP (.zip)</a>
+  <a href="https://github.com/chchlin1018/Website-ZigmaClub/releases/download/v5.6.0-pre-beta/ZigmaSetup_v5.6.0_Pre-Beta.zip" style="color:#FFD700;text-decoration:underline;font-weight:600" title="If your browser or SmartScreen blocks the .msi download, get this .zip instead, extract it, then run the MSI inside. If a SmartScreen prompt appears, click 'More info → Run anyway' (expected for unsigned pre-beta)." data-i18n="zip_link">MSI in ZIP (.zip)</a>
   <br>
   <span style="color:rgba(255,255,255,.5);font-size:.76rem" data-i18n="diag_label">Can't install or start? Diagnostic tool:</span>&nbsp;
-  <a href="https://github.com/chchlin1018/Website-ZigmaClub/releases/download/v5.6.9.1-pre-beta/Zigma-Diagnostic-Toolkit.zip" style="color:#FFD700;text-decoration:underline;font-weight:600" title="If install/startup fails: download + extract, right-click customer-diagnostic.cmd -> Run as administrator, then email the Desktop .txt to michael.lin@realitymatrixai.com" data-i18n="diag_link">Diagnostic Toolkit (.zip)</a>
+  <a href="https://github.com/chchlin1018/Website-ZigmaClub/releases/download/v5.6.0-pre-beta/Zigma-Diagnostic-Toolkit.zip" style="color:#FFD700;text-decoration:underline;font-weight:600" title="If install/startup fails: download + extract, right-click customer-diagnostic.cmd -> Run as administrator, then email the Desktop .txt to michael.lin@realitymatrixai.com" data-i18n="diag_link">Diagnostic Toolkit (.zip)</a>
   <br>
   <span style="color:#ff4d4d;font-size:.78rem">
-    <strong data-i18n="wn_label">What's New v5.6.9.1:</strong> <span data-i18n="wn_text">NEW — bidirectional IFC ↔ USD roundtrip: two new Ribbon buttons (IFC to USD / USD to IFC), IfcOpenShell + OCCT bundled, encrypted ZSM v3.6, 99.78% ModelBA fidelity. Plus the multilingual pre-install README + prerequisite checker.</span><br>
-    <strong data-i18n="un_label">Upgrade note:</strong> <span data-i18n="un_text">Just double-click v5.6.9.1 MSI to upgrade. If About Dialog shows License inactive after upgrade, please re-paste your original license.txt.</span>
+    <strong data-i18n="wn_label">What's New v5.6.0:</strong> <span data-i18n="wn_text">NEW — bidirectional IFC ↔ USD roundtrip: two new Ribbon buttons (IFC to USD / USD to IFC), IfcOpenShell + OCCT bundled, encrypted ZSM v3.6, 99.78% ModelBA fidelity. Plus the multilingual pre-install README + prerequisite checker.</span><br>
+    <strong data-i18n="un_label">Upgrade note:</strong> <span data-i18n="un_text">Just double-click v5.6.0 MSI to upgrade. If About Dialog shows License inactive after upgrade, please re-paste your original license.txt.</span>
   </span>
 </div>
 
@@ -352,10 +354,10 @@ en:{
   tk_label:'Zigma Toolkit',rm_label:'README.txt',
   diag_label:"Can't install or start? Diagnostic tool:",diag_link:'Diagnostic Toolkit (.zip)',
   zip_label:'.msi download blocked by Microsoft? ZIP version:',zip_link:'MSI in ZIP (.zip)',
-  wn_label:"What's New v5.6.9.1:",
-  wn_text:'NEW &mdash; "USD to Revit" rebuilds any USD file into native, editable Revit elements &mdash; dramatically faster and far more stable on large models. Imports now run smoothly without interruption pop-ups. Full 3-language interface (English / Traditional Chinese / Japanese), switchable in the About dialog.',
+  wn_label:"What's New v5.6.0:",
+  wn_text:'NEW &mdash; bidirectional IFC &harr; USD roundtrip: two new Ribbon buttons (IFC to USD / USD to IFC), IfcOpenShell + OCCT bundled, encrypted ZSM v3.6, 99.78% ModelBA fidelity. Plus the multilingual pre-install README + prerequisite checker.',
   un_label:'Upgrade note:',
-  un_text:'Just double-click v5.6.9.1 MSI to upgrade. If About Dialog shows License inactive after upgrade, please re-paste your original license.txt.',
+  un_text:'Just double-click v5.6.0 MSI to upgrade. If About Dialog shows License inactive after upgrade, please re-paste your original license.txt.',
   pb_notice:'&#9888; Pre-Beta &middot; MSI is not yet code-signed. Windows may show a SmartScreen "Unknown Publisher" warning &mdash; click "More info" &rarr; "Run anyway" to proceed. Trial access is NDA-bound &middot; do not redistribute.',
   mc_ph:"Paste your Machine Code here — it's a long hex string from Revit → Zigma Tab → About → Copy Machine Code",
   mc_err:'This doesn\'t look like a valid Machine Code. Please re-copy it from Revit → Zigma Tab → About → Copy Machine Code.',
@@ -401,10 +403,10 @@ zh:{
   tk_label:'Zigma 工具包',rm_label:'README.txt',
   diag_label:'無法安裝或開啟?安裝診斷工具:',diag_link:'診斷工具包 (.zip)',
   zip_label:'.msi 下載被 Microsoft 封鎖?改用 ZIP 版:',zip_link:'ZIP 內含 MSI (.zip)',
-  wn_label:'v5.6.9.1 更新內容：',
-  wn_text:'新增 &mdash;「USD to Revit」將任意 USD 檔重建為原生、可編輯的 Revit 構件 &mdash; 大模型大幅加速、更穩定。匯入過程不再被彈窗打斷。全介面三語（English／繁體中文／日本語）,可在 About 對話框切換。',
+  wn_label:'v5.6.0 更新內容：',
+  wn_text:'新增 &mdash; 雙向 IFC &harr; USD 來回轉換:Ribbon 新增兩顆按鈕（IFC to USD／USD to IFC）,內含 IfcOpenShell + OCCT,加密 ZSM v3.6,ModelBA 保真 99.78%。另保留多語安裝前 README + 必要條件檢查。',
   un_label:'升級提醒：',
-  un_text:'雙擊 v5.6.9.1 MSI 即可升級。若升級後 About 對話框顯示授權失效,請重新貼上原 license.txt。',
+  un_text:'雙擊 v5.6.0 MSI 即可升級。若升級後 About 對話框顯示授權失效,請重新貼上原 license.txt。',
   pb_notice:'&#9888; Pre-Beta &middot; MSI 尚未進行程式碼簽署。Windows 可能顯示 SmartScreen「未知發行者」警告 &mdash; 請點「其他資訊」&rarr;「仍要執行」繼續安裝。試用授權受 NDA 約束 &middot; 不得轉發。',
   mc_ph:'請貼上您的機器碼 — 是一段長 hex 字串，可從 Revit → Zigma 分頁 → About → 複製機器碼',
   mc_err:'這看起來不是有效的機器碼。請從 Revit → Zigma 分頁 → About → 複製機器碼 重新複製。',
@@ -450,10 +452,10 @@ ja:{
   tk_label:'Zigma ツールキット',rm_label:'README.txt',
   diag_label:'インストール/起動できない場合の診断ツール:',diag_link:'診断ツールキット (.zip)',
   zip_label:'.msi のダウンロードがブロックされた場合のZIP版:',zip_link:'ZIP内のMSI (.zip)',
-  wn_label:'v5.6.9.1 の新機能：',
-  wn_text:'新機能 &mdash;「USD to Revit」が任意の USD ファイルをネイティブで編集可能な Revit 要素に再構築 &mdash; 大規模モデルで大幅に高速化・安定化。取り込み中の中断ポップアップを排除。UI は 3 言語（English／繁體中文／日本語）、About ダイアログで切替可能。',
+  wn_label:'v5.6.0 の新機能：',
+  wn_text:'新機能 &mdash; 双方向 IFC &harr; USD ラウンドトリップ:リボンに2つの新ボタン（IFC to USD／USD to IFC）、IfcOpenShell + OCCT 同梱、暗号化 ZSM v3.6、ModelBA 忠実度 99.78%。多言語プリインストール README + 前提条件チェックも継続。',
   un_label:'アップグレードの注意：',
-  un_text:'v5.6.9.1 MSI をダブルクリックするだけでアップグレードできます。アップグレード後に About ダイアログで License 無効と表示された場合は、元の license.txt を貼り直してください。',
+  un_text:'v5.6.0 MSI をダブルクリックするだけでアップグレードできます。アップグレード後に About ダイアログで License 無効と表示された場合は、元の license.txt を貼り直してください。',
   pb_notice:'&#9888; Pre-Beta &middot; MSI はまだコード署名されていません。Windows に SmartScreen の「不明な発行元」警告が表示される場合は「詳細情報」&rarr;「実行」をクリックして続行してください。トライアルアクセスは NDA 対象 &middot; 再配布禁止。',
   mc_ph:'マシンコードをここに貼り付けてください — Revit → Zigma タブ → About → マシンコードをコピー で取得した長い hex 文字列です',
   mc_err:'有効なマシンコードではないようです。Revit → Zigma タブ → About → マシンコードをコピー から再度コピーしてください。',
@@ -462,6 +464,55 @@ ja:{
   ftr_by:'by',
   ftr_copyright:'&copy; 2026 Reality Matrix AI Inc. (&#23526;&#30697;&#31185;&#25216;). All rights reserved.',
   ftr_sales:'営業：',ftr_support:'サポート：',ftr_location:'台北 · 台湾'
+},
+ko:{
+  nav_about:'회사 소개',nav_howto:'사용 방법',nav_trial:'무료 체험판',nav_pricing:'라이선스 플랜',nav_dl:'체험판 다운로드',
+  h_badge:'OpenUSD 네이티브 &middot; USD&#8596;Revit &middot; Autodesk Revit 2027',
+  h1:'양방향 <em>USD&#8596;Revit</em><br>산업용 디지털 트윈을 위한',
+  h_sub:'OpenUSD가 산업용 디지털 트윈을 담당합니다. MEP 팀은 Autodesk Revit에서 작업합니다. Zigma가 양쪽을 연결하여 &mdash; USD의 정밀 데이터를 Revit으로 가져오고, Revit MEP를 다시 USD로 동기화합니다.',
+  s1h:'다운로드 및 설치',s1p:'MSI 설치 프로그램을 실행하면 Revit에 Zigma 탭이 나타납니다.',
+  s2h:'머신 코드 확인',s2p:'Zigma 탭에서 About을 클릭하고 머신 코드를 복사합니다.',
+  s3h:'무료 체험판 신청',s3p:'아래에 머신 코드를 붙여넣고 7일 체험판 키를 받으세요.',
+  s4h:'활성화 및 시작',s4p:'Zigma About 대화 상자에 키를 입력하고 변환을 시작합니다.',
+  ht_title:'머신 코드 확인 방법',
+  ht_desc:'Revit Zigma 탭에서 간단한 두 단계:',
+  ht_s1:'Zigma 리본에서 About 열기',
+  ht_s1p:'Revit에서 리본의 Zigma 탭을 클릭한 다음 About 버튼을 클릭합니다.',
+  ht_s2:'About 대화 상자에서 머신 코드 복사',
+  ht_s2p:'About 대화 상자에서 언어를 선택하고, 머신 코드를 복사한 후 아래 양식에 작성하여 제출합니다.',
+  tr_title:'&#127873; 무료 체험판 라이선스 &mdash; 7일',
+  tr_instant:'아래 양식을 작성하여 무료 체험판을 신청하세요 &mdash; 신용카드 불필요:',
+  tr_days:'일',tr_eops:'내보내기+가져오기 횟수',tr_emodels:'작업당 요소 수',
+  tr_note:'머신 코드와 연락처 정보를 제출해 주세요. 1 영업일 이내에 체험판 라이선스 키를 이메일로 보내드립니다.',
+  mc_label:'머신 코드',
+  mc_field:'머신 코드 (Zigma &rarr; About 대화 상자에서 확인) *',
+  ci_label:'연락처 정보',
+  co_label:'회사명 *',nm_label:'담당자명 *',em_label:'이메일 *',ph_label:'전화번호',
+  gen_btn:'체험판 신청 제출',
+  sub_note:'제출 버튼을 클릭하면 신청 내용이 저희 팀에 직접 전송됩니다 &mdash; 이메일 클라이언트가 필요 없습니다. 1 영업일 이내에 검토 후 체험판 라이선스 키를 이메일로 보내드립니다.',
+  ok_title:'체험판 신청이 완료되었습니다!',
+  ok_sub:'감사합니다! 체험판 신청이 저희 팀에 전송되었습니다. 1 영업일 이내에 체험판 라이선스 키를 이메일로 보내드립니다.<br>문의 사항이 있으시면 <a href="mailto:michael.lin@realitymatrixai.com">michael.lin@realitymatrixai.com</a>으로 연락해 주세요.',
+  pr_title:'라이선스 플랜',pr_sub:'모든 라이선스는 저희 팀에서 발급합니다. 시작하려면 문의해 주세요.',
+  pr_contact_big:'영업팀 문의',
+  ent_name:'기업용',ind_name:'개인용',
+  ent_feat:'1,000회 가져오기/내보내기<br>작업당 최대 20,000개 요소<br>우선 지원 및 교육<br>오프라인 작동 &mdash; 네트워크 불필요',
+  ind_feat:'300회 가져오기/내보내기<br>작업당 최대 10,000개 요소<br>일반 지원<br>오프라인 작동 &mdash; 네트워크 불필요',
+  contact_btn:'영업팀 문의',
+  tk_label:'Zigma 툴킷',rm_label:'README.txt',
+  diag_label:'설치 또는 실행이 안 되나요? 진단 도구:',diag_link:'진단 툴킷 (.zip)',
+  zip_label:'.msi 다운로드가 Microsoft에 의해 차단되었나요? ZIP 버전:',zip_link:'ZIP 내 MSI (.zip)',
+  wn_label:'v5.6.0 새로운 기능:',
+  wn_text:'신규 &mdash; 양방향 IFC &harr; USD 라운드트립: 두 개의 새 리본 버튼(IFC to USD / USD to IFC), IfcOpenShell + OCCT 번들, 암호화 ZSM v3.6, 99.78% ModelBA 충실도. 다국어 사전 설치 README + 필수 조건 검사기도 포함.',
+  un_label:'업그레이드 안내:',
+  un_text:'v5.6.0 MSI를 더블 클릭하면 업그레이드됩니다. 업그레이드 후 About 대화 상자에서 라이선스 비활성으로 표시되면 원본 license.txt를 다시 붙여넣어 주세요.',
+  pb_notice:'&#9888; Pre-Beta &middot; MSI는 아직 코드 서명되지 않았습니다. Windows에서 SmartScreen "알 수 없는 게시자" 경고가 표시될 수 있습니다 &mdash; "추가 정보" &rarr; "실행"을 클릭하여 계속 진행하세요. 체험판 액세스는 NDA 적용 대상 &middot; 재배포 금지.',
+  mc_ph:'여기에 머신 코드를 붙여넣으세요 — Revit → Zigma 탭 → About → 머신 코드 복사에서 얻은 긴 hex 문자열입니다',
+  mc_err:'유효한 머신 코드가 아닌 것 같습니다. Revit → Zigma 탭 → About → 머신 코드 복사에서 다시 복사해 주세요.',
+  co_ph:'예: 삼성엔지니어링',nm_ph:'성명',em_ph:'you@company.com',ph_ph:'+82-xxx-xxxx-xxxx',
+  pr_questions:'문의 사항이 있으신가요?',
+  ftr_by:'by',
+  ftr_copyright:'&copy; 2026 Reality Matrix AI Inc. (&#23526;&#30697;&#31185;&#25216;). All rights reserved.',
+  ftr_sales:'영업:',ftr_support:'기술 지원:',ftr_location:'타이베이 · 대만'
 }
 };
 function setLang(lang){
@@ -474,11 +525,11 @@ function setLang(lang){
   document.querySelectorAll('.lbtn').forEach(b=>b.classList.remove('active'));
   const ab=document.getElementById('lbtn-'+lang); if(ab) ab.classList.add('active');
   localStorage.setItem('zg_lang',lang);
-  document.documentElement.lang=lang==='zh'?'zh-TW':lang;
+  document.documentElement.lang=lang==='zh'?'zh-TW':lang==='ko'?'ko':'ja'===lang?'ja':lang;
 }
 (function(){
   const s=localStorage.getItem('zg_lang'); const n=navigator.language||'';
-  setLang(s||(n.startsWith('zh')?'zh':n.startsWith('ja')?'ja':'en'));
+  setLang(s||(n.startsWith('zh')?'zh':n.startsWith('ja')?'ja':n.startsWith('ko')?'ko':'en'));
 })();
 </script>
 </body></html>
