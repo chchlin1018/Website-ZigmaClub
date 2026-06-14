@@ -118,7 +118,7 @@ footer{text-align:center;padding:3rem 2rem;border-top:1px solid var(--bd);font-s
   <a href="https://github.com/chchlin1018/Website-ZigmaClub/releases/download/v5.6.12.2-pre-beta/Zigma-Diagnostic-Toolkit.zip" style="color:#FFD700;text-decoration:underline;font-weight:600" title="If install/startup fails: download + extract, right-click customer-diagnostic.cmd -> Run as administrator, then email the Desktop .txt to michael.lin@realitymatrixai.com" data-i18n="diag_link">Diagnostic Toolkit (.zip)</a>
   <br>
   <span style="color:#ff4d4d;font-size:.78rem">
-    <strong data-i18n="wn_label">What's New v5.6.12.2:</strong> <span data-i18n="wn_text">Major geometry-fidelity upgrade: arc-based floor/ceiling/roof profiles now restored exactly (no more polyline approximation); Toposolid support; structural framing join and position refinement; furniture/planting elevation restore fix. Also fixes Zigma USDC detection on import — files that previously fell back to plain mesh now import with full native fidelity.</span><br>
+    <strong data-i18n="wn_label">What's New v5.6.12.2:</strong> <span data-i18n="wn_text">Fixed IFC ↔ USD conversion — it now produces a complete, usable model in both directions. More complete model import — railings, stairs and similar elements now rebuild reliably. Includes the v5.6.12 geometry-fidelity upgrade (exact arc floor/ceiling/roof profiles, Toposolid support, structural framing refinement). Stability and diagnostics improvements.</span><br>
     <strong data-i18n="un_label">Upgrade note:</strong> <span data-i18n="un_text">Just double-click v5.6.12.2 MSI to upgrade. If About Dialog shows License inactive after upgrade, please re-paste your original license.txt.</span>
   </span>
 </div>
@@ -355,7 +355,7 @@ en:{
   diag_label:"Can't install or start? Diagnostic tool:",diag_link:'Diagnostic Toolkit (.zip)',
   zip_label:'.msi download blocked by Microsoft? ZIP version:',zip_link:'MSI in ZIP (.zip)',
   wn_label:"What's New v5.6.12.2:",
-  wn_text:'Major geometry-fidelity upgrade: arc-based floor/ceiling/roof profiles now restored exactly (no more polyline approximation); Toposolid support; structural framing join and position refinement; furniture/planting elevation restore fix. Also fixes Zigma USDC detection on import — files that previously fell back to plain mesh now import with full native fidelity.',
+  wn_text:'Fixed IFC ↔ USD conversion — it now produces a complete, usable model in both directions. More complete model import — railings, stairs and similar elements now rebuild reliably. Includes the v5.6.12 geometry-fidelity upgrade (exact arc floor/ceiling/roof profiles, Toposolid support, structural framing refinement). Stability and diagnostics improvements.',
   un_label:'Upgrade note:',
   un_text:'Just double-click v5.6.12.2 MSI to upgrade. If About Dialog shows License inactive after upgrade, please re-paste your original license.txt.',
   pb_notice:'&#9888; Pre-Beta &middot; MSI is not yet code-signed. Windows may show a SmartScreen "Unknown Publisher" warning &mdash; click "More info" &rarr; "Run anyway" to proceed. Trial access is NDA-bound &middot; do not redistribute.',
@@ -404,7 +404,7 @@ zh:{
   diag_label:'無法安裝或開啟?安裝診斷工具:',diag_link:'診斷工具包 (.zip)',
   zip_label:'.msi 下載被 Microsoft 封鎖?改用 ZIP 版:',zip_link:'ZIP 內含 MSI (.zip)',
   wn_label:'v5.6.12.2 更新內容：',
-  wn_text:'幾何保真大幅強化:弧形樓板/天花/屋頂輪廓完整還原(不再折線近似);地形實體(Toposolid)比對支援;結構構架接合與位置精修;家具/植栽高程還原修正。另修正匯入時 Zigma USDC 偵測 — 先前被誤判為一般網面的檔案,現可完整原生高保真匯入。',
+  wn_text:'修復 IFC ↔ USD 轉換 — 雙向皆可產生完整、可用的模型。模型匯入更完整 — 欄杆、樓梯等元件可靠重建。內含 v5.6.12 幾何保真升級(弧形樓板/天花/屋頂輪廓精確、Toposolid 支援、結構構架精修)。穩定性與診斷改善。',
   un_label:'升級提醒：',
   un_text:'雙擊 v5.6.12.2 MSI 即可升級。若升級後 About 對話框顯示授權失效,請重新貼上原 license.txt。',
   pb_notice:'&#9888; Pre-Beta &middot; MSI 尚未進行程式碼簽署。Windows 可能顯示 SmartScreen「未知發行者」警告 &mdash; 請點「其他資訊」&rarr;「仍要執行」繼續安裝。試用授權受 NDA 約束 &middot; 不得轉發。',
@@ -453,7 +453,7 @@ ja:{
   diag_label:'インストール/起動できない場合の診断ツール:',diag_link:'診断ツールキット (.zip)',
   zip_label:'.msi のダウンロードがブロックされた場合のZIP版:',zip_link:'ZIP内のMSI (.zip)',
   wn_label:'v5.6.12.2 の新機能：',
-  wn_text:'ジオメトリ忠実度を大幅強化:円弧プロファイルの床・天井・屋根を正確に復元(ポリライン近似を廃止)。Toposolid 対応、構造フレーム接合・位置の精密化、家具・植栽の高さ復元を修正。さらにインポート時の Zigma USDC 検出を修正 — 従来メッシュ扱いになっていたファイルもネイティブ高忠実度でインポートされます。',
+  wn_text:'IFC ↔ USD 変換を修正 — 双方向で完全かつ使用可能なモデルを生成。モデルインポートがより完全に — 手すり・階段などの要素を確実に再構築。v5.6.12 のジオメトリ忠実度向上(円弧の床・天井・屋根プロファイルの正確な復元、Toposolid 対応、構造フレーミング改善)を含む。安定性と診断の改善。',
   un_label:'アップグレードの注意：',
   un_text:'v5.6.12.2 MSI をダブルクリックするだけでアップグレードできます。アップグレード後に About ダイアログで License 無効と表示された場合は、元の license.txt を貼り直してください。',
   pb_notice:'&#9888; Pre-Beta &middot; MSI はまだコード署名されていません。Windows に SmartScreen の「不明な発行元」警告が表示される場合は「詳細情報」&rarr;「実行」をクリックして続行してください。トライアルアクセスは NDA 対象 &middot; 再配布禁止。',
@@ -502,7 +502,7 @@ ko:{
   diag_label:'설치 또는 실행이 안 되나요? 진단 도구:',diag_link:'진단 툴킷 (.zip)',
   zip_label:'.msi 다운로드가 Microsoft에 의해 차단되었나요? ZIP 버전:',zip_link:'ZIP 내 MSI (.zip)',
   wn_label:'v5.6.12.2 새로운 기능:',
-  wn_text:'지오메트리 충실도 대폭 강화: 호(arc) 기반 바닥/천장/지붕 프로필 정확 복원(폴리라인 근사 제거), Toposolid 지원, 구조 프레임 접합·위치 정밀화, 가구/식재 높이 복원 수정. 또한 가져오기 시 Zigma USDC 감지 수정 — 기존에 일반 메시로 처리되던 파일이 네이티브 고충실도로 가져와집니다.',
+  wn_text:'IFC ↔ USD 변환 수정 — 양방향 모두 완전하고 사용 가능한 모델 생성. 모델 가져오기 완전성 향상 — 난간, 계단 등 요소를 안정적으로 재구성. v5.6.12 지오메트리 충실도 향상(호 형태 바닥/천장/지붕 프로필 정확 복원, Toposolid 지원, 구조 프레이밍 개선) 포함. 안정성 및 진단 개선.',
   un_label:'업그레이드 안내:',
   un_text:'v5.6.12.2 MSI를 더블 클릭하면 업그레이드됩니다. 업그레이드 후 About 대화 상자에서 라이선스 비활성으로 표시되면 원본 license.txt를 다시 붙여넣어 주세요.',
   pb_notice:'&#9888; Pre-Beta &middot; MSI는 아직 코드 서명되지 않았습니다. Windows에서 SmartScreen "알 수 없는 게시자" 경고가 표시될 수 있습니다 &mdash; "추가 정보" &rarr; "실행"을 클릭하여 계속 진행하세요. 체험판 액세스는 NDA 적용 대상 &middot; 재배포 금지.',
