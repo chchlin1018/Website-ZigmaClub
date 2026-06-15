@@ -97,6 +97,7 @@ footer{text-align:center;padding:3rem 2rem;border-top:1px solid var(--bd);font-s
       <button class="lbtn" id="lbtn-ko" onclick="setLang('ko')">한국어</button>
     </div>
     <a href="https://www.realitymatrixai.com" target="_blank" data-i18n="nav_about">About Us</a>
+    <a href="#features" data-i18n="nav_features">Features</a>
     <a href="#howto" data-i18n="nav_howto">How To</a>
     <a href="#trial" data-i18n="nav_trial">Free Trial</a>
     <a href="#pricing" data-i18n="nav_pricing">Pricing</a>
@@ -136,6 +137,85 @@ footer{text-align:center;padding:3rem 2rem;border-top:1px solid var(--bd);font-s
   <div class="step"><div class="step-n">2</div><h3 data-i18n="s2h">Get Machine Code</h3><p data-i18n="s2p">Click About in Zigma tab. Copy your Machine Code.</p></div>
   <div class="step"><div class="step-n">3</div><h3 data-i18n="s3h">Get Free Trial</h3><p data-i18n="s3p">Paste Machine Code below. Get 7-day trial key instantly.</p></div>
   <div class="step"><div class="step-n">4</div><h3 data-i18n="s4h">Activate &amp; Go</h3><p data-i18n="s4p">Enter key in Zigma About dialog. Start converting.</p></div>
+</section>
+
+<!-- Pre-Beta Product Features + Roadmap -->
+<section class="howto-wrap" id="features">
+  <div class="howto-h">
+    <h2 data-i18n="ft_h">Zigma Builder &mdash; USD &#8596; Revit 2027 &middot; Pre-Beta</h2>
+    <p data-i18n="ft_sub">Current version 5.6.12.5 (released on the Zigma product website 2026-06-15). Daily builds keep fixing bugs and adding features.</p>
+  </div>
+
+  <!-- Key Features -->
+  <span class="sl" style="display:block;text-align:center;margin-bottom:1.2rem" data-i18n="ft_key_label">Key Features</span>
+  <div class="ht-grid">
+    <div class="ht-step">
+      <h3 data-i18n="ft_k1_h">Revit Model Round-Trip (Model A &rarr; USD &rarr; Model B)</h3>
+      <p data-i18n="ft_k1_p">Powered by the <strong>Zigma V5C Engine</strong> (fidelity conversion engine), with broad support for the Revit BIM and IFC 4 specifications. A source Revit model (Model A) is exported to USD and re-imported as a Revit model (Model B) that matches the original at <strong>99% similarity</strong> &mdash; verified across all six Revit 2027 Snowdon sample models (Architecture, Structural, HVAC, Plumbing, Electrical, Site).</p>
+    </div>
+    <div class="ht-step">
+      <h3 data-i18n="ft_k2_h">IFC &#8596; USD Conversion</h3>
+      <p data-i18n="ft_k2_p">Bidirectional IFC &rarr; USD and USD &rarr; IFC conversion at <strong>99%+ accuracy</strong>, built directly into the same Zigma V5C fidelity engine.</p>
+    </div>
+    <div class="ht-step">
+      <h3 data-i18n="ft_k3_h">Arbitrary USD Import into Revit</h3>
+      <p data-i18n="ft_k3_p">The <strong>Zigma Geometric Engine</strong> (model recognition engine) imports general-purpose USD files into native Revit models, with broad support for the <strong>NVIDIA AI Factory (AIF) specification</strong>. NVIDIA DSX and NVIDIA Warehouse/Factory scenes convert with <strong>90%+ automation</strong>.</p>
+    </div>
+    <div class="ht-step">
+      <h3 data-i18n="ft_k4_h">NVIDIA DSX Coverage</h3>
+      <p data-i18n="ft_k4_p">An NVIDIA DSX scene resolves into its 15 USD file types &mdash; Architecture, MEP, Structural and more &mdash; each recognized and rebuilt as native Revit elements.</p>
+    </div>
+  </div>
+
+  <!-- Support Features -->
+  <span class="sl" style="display:block;text-align:center;margin:2.5rem 0 1.2rem" data-i18n="ft_sup_label">Support Features</span>
+  <div class="ht-grid">
+    <div class="ht-step">
+      <h3 data-i18n="ft_s1_h">Built-in USD Viewer</h3>
+      <p data-i18n="ft_s1p">The Zigma Builder Revit plugin ships with a built-in USD viewer (Hydra + Storm engine), so you can quickly inspect an exported USD model without leaving Revit.</p>
+    </div>
+    <div class="ht-step">
+      <h3 data-i18n="ft_s2_h">Remote Bug Submission</h3>
+      <p data-i18n="ft_s2p">Submit a bug ticket straight to the Zigma backend &mdash; logged and tracked, with attachments up to 50 MB. No email, phone call or instant messenger required.</p>
+    </div>
+    <div class="ht-step">
+      <h3 data-i18n="ft_s3_h">Remote Model Scan Submission</h3>
+      <p data-i18n="ft_s3p">One-click scan of a Revit model to surface any elements or features that cannot be converted or would be lost, submitted directly to the Zigma backend.</p>
+    </div>
+    <div class="ht-step">
+      <h3 data-i18n="ft_s4_h">Real-Time Remote Debug Session</h3>
+      <p data-i18n="ft_s4p">Open a 30&ndash;60 minute live remote session that lets the Zigma team chat with you directly and access your Revit model to scan, verify and run system checks for issues.</p>
+    </div>
+    <div class="ht-step">
+      <h3 data-i18n="ft_s5_h">Protection &amp; Licensing</h3>
+      <p data-i18n="ft_s5p">Every Zigma EXE/DLL binary is protected in the Pre-Beta build. Licensing is fully copy-and-paste &mdash; machine code in, license key out &mdash; with no internet connection required, a fit for air-gapped fab IT policies that allow no external network.</p>
+    </div>
+  </div>
+
+  <!-- Roadmap -->
+  <span class="sl" style="display:block;text-align:center;margin:2.5rem 0 1.2rem" data-i18n="ft_rm_label">Product Roadmap</span>
+  <div class="steps" style="max-width:1000px;margin:0 auto;padding:0">
+    <div class="step">
+      <div class="step-n" style="border-radius:8px;width:auto;padding:0 .6rem">Jun 19</div>
+      <h3 data-i18n="ft_r1_h">v5.7.0+</h3>
+      <p data-i18n="ft_r1_p">Major upgrade to the Zigma Geometric Engine for arbitrary USD &rarr; Revit: automatic geometry recognition plus auto-fill of Revit model and element parameters.</p>
+    </div>
+    <div class="step">
+      <div class="step-n" style="border-radius:8px;width:auto;padding:0 .6rem">Jun 22</div>
+      <h3 data-i18n="ft_r2_h">v5.7.5+</h3>
+      <p data-i18n="ft_r2_p">Bug-fix and stability enhancements.</p>
+    </div>
+    <div class="step">
+      <div class="step-n" style="border-radius:8px;width:auto;padding:0 .6rem">Jun 25</div>
+      <h3 data-i18n="ft_r3_h">v5.8</h3>
+      <p data-i18n="ft_r3_p">Major support for both Revit 2026 and Revit 2027.</p>
+    </div>
+    <div class="step">
+      <div class="step-n" style="border-radius:8px;width:auto;padding:0 .6rem">Jul 10</div>
+      <h3 data-i18n="ft_r4_h">v6.0 (planned)</h3>
+      <p data-i18n="ft_r4_p">EV (Extended Validation) digital certificate for Microsoft Defender, plus company registration and product registration &amp; verification.</p>
+    </div>
+  </div>
 </section>
 
 <section class="howto-wrap" id="howto">
@@ -319,7 +399,38 @@ async function writeTrialRequestRecord(data){
 }
 const _ZG={
 en:{
-  nav_about:'About Us',nav_howto:'How To',nav_trial:'Free Trial',nav_pricing:'Pricing',nav_dl:'Download Trial',
+  nav_about:'About Us',nav_features:'Features',nav_howto:'How To',nav_trial:'Free Trial',nav_pricing:'Pricing',nav_dl:'Download Trial',
+  ft_h:'Zigma Builder &mdash; USD &#8596; Revit 2027 &middot; Pre-Beta',
+  ft_sub:'Current version 5.6.12.5 (released on the Zigma product website 2026-06-15). Daily builds keep fixing bugs and adding features.',
+  ft_key_label:'Key Features',
+  ft_k1_h:'Revit Model Round-Trip (Model A &rarr; USD &rarr; Model B)',
+  ft_k1_p:'Powered by the <strong>Zigma V5C Engine</strong> (fidelity conversion engine), with broad support for the Revit BIM and IFC 4 specifications. A source Revit model (Model A) is exported to USD and re-imported as a Revit model (Model B) that matches the original at <strong>99% similarity</strong> &mdash; verified across all six Revit 2027 Snowdon sample models (Architecture, Structural, HVAC, Plumbing, Electrical, Site).',
+  ft_k2_h:'IFC &#8596; USD Conversion',
+  ft_k2_p:'Bidirectional IFC &rarr; USD and USD &rarr; IFC conversion at <strong>99%+ accuracy</strong>, built directly into the same Zigma V5C fidelity engine.',
+  ft_k3_h:'Arbitrary USD Import into Revit',
+  ft_k3_p:'The <strong>Zigma Geometric Engine</strong> (model recognition engine) imports general-purpose USD files into native Revit models, with broad support for the <strong>NVIDIA AI Factory (AIF) specification</strong>. NVIDIA DSX and NVIDIA Warehouse/Factory scenes convert with <strong>90%+ automation</strong>.',
+  ft_k4_h:'NVIDIA DSX Coverage',
+  ft_k4_p:'An NVIDIA DSX scene resolves into its 15 USD file types &mdash; Architecture, MEP, Structural and more &mdash; each recognized and rebuilt as native Revit elements.',
+  ft_sup_label:'Support Features',
+  ft_s1_h:'Built-in USD Viewer',
+  ft_s1p:'The Zigma Builder Revit plugin ships with a built-in USD viewer (Hydra + Storm engine), so you can quickly inspect an exported USD model without leaving Revit.',
+  ft_s2_h:'Remote Bug Submission',
+  ft_s2p:'Submit a bug ticket straight to the Zigma backend &mdash; logged and tracked, with attachments up to 50 MB. No email, phone call or instant messenger required.',
+  ft_s3_h:'Remote Model Scan Submission',
+  ft_s3p:'One-click scan of a Revit model to surface any elements or features that cannot be converted or would be lost, submitted directly to the Zigma backend.',
+  ft_s4_h:'Real-Time Remote Debug Session',
+  ft_s4p:'Open a 30&ndash;60 minute live remote session that lets the Zigma team chat with you directly and access your Revit model to scan, verify and run system checks for issues.',
+  ft_s5_h:'Protection & Licensing',
+  ft_s5p:'Every Zigma EXE/DLL binary is protected in the Pre-Beta build. Licensing is fully copy-and-paste &mdash; machine code in, license key out &mdash; with no internet connection required, a fit for air-gapped fab IT policies that allow no external network.',
+  ft_rm_label:'Product Roadmap',
+  ft_r1_h:'v5.7.0+',
+  ft_r1_p:'Major upgrade to the Zigma Geometric Engine for arbitrary USD &rarr; Revit: automatic geometry recognition plus auto-fill of Revit model and element parameters.',
+  ft_r2_h:'v5.7.5+',
+  ft_r2_p:'Bug-fix and stability enhancements.',
+  ft_r3_h:'v5.8',
+  ft_r3_p:'Major support for both Revit 2026 and Revit 2027.',
+  ft_r4_h:'v6.0 (planned)',
+  ft_r4_p:'EV (Extended Validation) digital certificate for Microsoft Defender, plus company registration and product registration & verification.',
   h_badge:'OpenUSD Native &middot; USD&#8596;Revit &middot; Autodesk Revit 2027',
   h1:'Bidirectional <em>USD&#8596;Revit</em><br>for Industrial Digital Twins',
   h_sub:'OpenUSD holds the industrial digital twin. Your MEP team works in Autodesk Revit. Zigma bridges them &mdash; bringing USD precision into Revit, and syncing Revit MEP back to USD.',
@@ -368,7 +479,38 @@ en:{
   ftr_sales:'Sales:',ftr_support:'Support:',ftr_location:'Taipei, Taiwan'
 },
 zh:{
-  nav_about:'關於我們',nav_howto:'操作指引',nav_trial:'免費試用',nav_pricing:'授權方案',nav_dl:'下載試用版',
+  nav_about:'關於我們',nav_features:'產品功能',nav_howto:'操作指引',nav_trial:'免費試用',nav_pricing:'授權方案',nav_dl:'下載試用版',
+  ft_h:'Zigma Builder &mdash; USD &#8596; Revit 2027 &middot; Pre-Beta',
+  ft_sub:'目前版本 5.6.12.5（已於 2026-06-15 在 Zigma 產品網站發布）。每日建置持續修復錯誤並強化功能。',
+  ft_key_label:'核心功能',
+  ft_k1_h:'Revit 模型往返轉換（Model A &rarr; USD &rarr; Model B）',
+  ft_k1_p:'採用 <strong>Zigma V5C 引擎</strong>（保真轉換引擎），廣泛支援 Revit BIM 與 IFC 4 規格。來源 Revit 模型（Model A）匯出為 USD，再匯入回 Revit 模型（Model B），與原始模型達 <strong>99% 相似度</strong> &mdash; 已於全部六個 Revit 2027 Snowdon 範例模型（建築、結構、HVAC、給排水、電氣、基地）驗證。',
+  ft_k2_h:'IFC &#8596; USD 轉換',
+  ft_k2_p:'雙向 IFC &rarr; USD 與 USD &rarr; IFC 轉換，準確度達 <strong>99%+</strong>，直接內建於同一套 Zigma V5C 保真引擎。',
+  ft_k3_h:'任意 USD 匯入 Revit',
+  ft_k3_p:'<strong>Zigma 幾何引擎</strong>（模型辨識引擎）將通用 USD 檔匯入為原生 Revit 模型，廣泛支援 <strong>NVIDIA AI Factory（AIF）規格</strong>。NVIDIA DSX 與 NVIDIA Warehouse/Factory 場景可達 <strong>90%+ 自動化</strong>轉換。',
+  ft_k4_h:'NVIDIA DSX 覆蓋',
+  ft_k4_p:'NVIDIA DSX 場景可解析為其 15 種 USD 檔案類型 &mdash; 建築、MEP、結構等 &mdash; 各自被辨識並重建為原生 Revit 元件。',
+  ft_sup_label:'支援功能',
+  ft_s1_h:'內建 USD 檢視器',
+  ft_s1p:'Zigma Builder Revit 外掛內建 USD 檢視器（Hydra + Storm 引擎），讓您無需離開 Revit 即可快速檢視匯出的 USD 模型。',
+  ft_s2_h:'遠端錯誤提交',
+  ft_s2p:'直接向 Zigma 後端提交錯誤工單 &mdash; 完整記錄並追蹤，可附加最多 50 MB 檔案。無需電子郵件、電話或即時通訊軟體。',
+  ft_s3_h:'遠端模型掃描提交',
+  ft_s3p:'一鍵掃描 Revit 模型，找出無法轉換或可能遺失的元件與特徵，並直接提交至 Zigma 後端。',
+  ft_s4_h:'遠端即時連線除錯',
+  ft_s4p:'開啟 30&ndash;60 分鐘的即時遠端連線，讓 Zigma 團隊直接與您對話，並存取您的 Revit 模型進行掃描、驗證與系統檢查以排除問題。',
+  ft_s5_h:'保護與授權',
+  ft_s5p:'Pre-Beta 版本中每個 Zigma EXE/DLL 二進位檔皆受保護。授權完全採複製貼上 &mdash; 貼入機器碼、取得授權金鑰 &mdash; 全程無需網路連線，符合無外部網路的氣隙（air-gapped）大廠 IT 政策。',
+  ft_rm_label:'產品藍圖',
+  ft_r1_h:'v5.7.0+',
+  ft_r1_p:'針對任意 USD &rarr; Revit 大幅升級 Zigma 幾何引擎：自動幾何辨識，並自動填入 Revit 模型與元件參數。',
+  ft_r2_h:'v5.7.5+',
+  ft_r2_p:'錯誤修復與穩定性強化。',
+  ft_r3_h:'v5.8',
+  ft_r3_p:'同時主力支援 Revit 2026 與 Revit 2027。',
+  ft_r4_h:'v6.0（規劃中）',
+  ft_r4_p:'導入 Microsoft Defender 的 EV（延伸驗證）數位憑證，並完成公司登記與產品註冊及驗證流程。',
   h_badge:'OpenUSD 原生 &middot; USD&#8596;Revit &middot; Autodesk Revit 2027',
   h1:'雙向 <em>USD&#8596;Revit</em><br>為工業數位孿生而生',
   h_sub:'OpenUSD 承載工業數位孿生。MEP 團隊在 Autodesk Revit 工作。Zigma 橋接兩者 &mdash; 將 USD 精準數據帶入 Revit，並將 Revit MEP 同步回 USD。',
@@ -417,7 +559,38 @@ zh:{
   ftr_sales:'業務：',ftr_support:'技術支援：',ftr_location:'臺北 · 臺灣'
 },
 ja:{
-  nav_about:'会社について',nav_howto:'使い方',nav_trial:'無料トライアル',nav_pricing:'ライセンスプラン',nav_dl:'トライアル版ダウンロード',
+  nav_about:'会社について',nav_features:'機能',nav_howto:'使い方',nav_trial:'無料トライアル',nav_pricing:'ライセンスプラン',nav_dl:'トライアル版ダウンロード',
+  ft_h:'Zigma Builder &mdash; USD &#8596; Revit 2027 &middot; Pre-Beta',
+  ft_sub:'現在のバージョンは 5.6.12.5（2026-06-15 に Zigma 製品サイトで公開）。デイリービルドでバグ修正と機能強化を継続しています。',
+  ft_key_label:'主な機能',
+  ft_k1_h:'Revit モデルのラウンドトリップ（Model A &rarr; USD &rarr; Model B）',
+  ft_k1_p:'<strong>Zigma V5C エンジン</strong>（忠実度変換エンジン）を採用し、Revit BIM および IFC 4 仕様を幅広くサポートします。元の Revit モデル（Model A）を USD にエクスポートし、Revit モデル（Model B）として再インポートすると、元モデルと <strong>99% の類似度</strong>で一致します &mdash; Revit 2027 Snowdon サンプルモデル 6 種すべて（建築・構造・HVAC・配管・電気・敷地）で検証済みです。',
+  ft_k2_h:'IFC &#8596; USD 変換',
+  ft_k2_p:'双方向の IFC &rarr; USD および USD &rarr; IFC 変換を <strong>99% 以上の精度</strong>で実現。同じ Zigma V5C 忠実度エンジンに直接組み込まれています。',
+  ft_k3_h:'任意の USD を Revit にインポート',
+  ft_k3_p:'<strong>Zigma ジオメトリックエンジン</strong>（モデル認識エンジン）が汎用 USD ファイルをネイティブ Revit モデルとしてインポートし、<strong>NVIDIA AI Factory（AIF）仕様</strong>を幅広くサポートします。NVIDIA DSX および NVIDIA Warehouse/Factory シーンは <strong>90% 以上の自動化</strong>で変換されます。',
+  ft_k4_h:'NVIDIA DSX 対応',
+  ft_k4_p:'NVIDIA DSX シーンは 15 種類の USD ファイルタイプ &mdash; 建築・MEP・構造など &mdash; に分解され、それぞれが認識されてネイティブ Revit 要素として再構築されます。',
+  ft_sup_label:'サポート機能',
+  ft_s1_h:'内蔵 USD ビューア',
+  ft_s1p:'Zigma Builder Revit プラグインには USD ビューア（Hydra + Storm エンジン）が内蔵されており、Revit を離れることなくエクスポートした USD モデルをすばやく確認できます。',
+  ft_s2_h:'リモートバグ送信',
+  ft_s2p:'バグチケットを Zigma バックエンドに直接送信 &mdash; 記録・追跡され、最大 50 MB の添付が可能です。メール・電話・インスタントメッセンジャーは不要です。',
+  ft_s3_h:'リモートモデルスキャン送信',
+  ft_s3p:'Revit モデルをワンクリックでスキャンし、変換できない、または失われる可能性のある要素や機能を抽出して、Zigma バックエンドに直接送信します。',
+  ft_s4_h:'リアルタイムリモートデバッグセッション',
+  ft_s4p:'30&ndash;60 分のライブリモートセッションを開始すると、Zigma チームが直接チャットし、お客様の Revit モデルにアクセスしてスキャン・検証・システムチェックを行い、問題を調査します。',
+  ft_s5_h:'保護とライセンス',
+  ft_s5p:'Pre-Beta ビルドではすべての Zigma EXE/DLL バイナリが保護されています。ライセンスは完全にコピー＆ペースト方式 &mdash; マシンコードを入力し、ライセンスキーを取得 &mdash; インターネット接続は不要で、外部ネットワークを許可しないエアギャップ（air-gapped）の大規模工場 IT ポリシーに適合します。',
+  ft_rm_label:'製品ロードマップ',
+  ft_r1_h:'v5.7.0+',
+  ft_r1_p:'任意の USD &rarr; Revit に向けて Zigma ジオメトリックエンジンを大幅強化：自動ジオメトリ認識と、Revit モデル・要素パラメータの自動入力。',
+  ft_r2_h:'v5.7.5+',
+  ft_r2_p:'バグ修正と安定性の強化。',
+  ft_r3_h:'v5.8',
+  ft_r3_p:'Revit 2026 と Revit 2027 の両方を本格サポート。',
+  ft_r4_h:'v6.0（予定）',
+  ft_r4_p:'Microsoft Defender 向けの EV（拡張検証）デジタル証明書に加え、会社登記、製品登録および検証プロセス。',
   h_badge:'OpenUSD ネイティブ &middot; USD&#8596;Revit &middot; Autodesk Revit 2027',
   h1:'双方向 <em>USD&#8596;Revit</em><br>産業デジタルツイン向け',
   h_sub:'OpenUSD が産業デジタルツインを保持します。MEP チームは Autodesk Revit で作業します。Zigma が両者を橋渡しし、USD の精度を Revit に取り込み、Revit MEP を USD に同期します。',
@@ -466,7 +639,38 @@ ja:{
   ftr_sales:'営業：',ftr_support:'サポート：',ftr_location:'台北 · 台湾'
 },
 ko:{
-  nav_about:'회사 소개',nav_howto:'사용 방법',nav_trial:'무료 체험판',nav_pricing:'라이선스 플랜',nav_dl:'체험판 다운로드',
+  nav_about:'회사 소개',nav_features:'기능',nav_howto:'사용 방법',nav_trial:'무료 체험판',nav_pricing:'라이선스 플랜',nav_dl:'체험판 다운로드',
+  ft_h:'Zigma Builder &mdash; USD &#8596; Revit 2027 &middot; Pre-Beta',
+  ft_sub:'현재 버전 5.6.12.5(2026-06-15 Zigma 제품 웹사이트에 공개). 매일 빌드로 버그 수정과 기능 개선을 지속합니다.',
+  ft_key_label:'주요 기능',
+  ft_k1_h:'Revit 모델 왕복 변환(Model A &rarr; USD &rarr; Model B)',
+  ft_k1_p:'<strong>Zigma V5C 엔진</strong>(충실도 변환 엔진)을 기반으로 Revit BIM 및 IFC 4 사양을 폭넓게 지원합니다. 원본 Revit 모델(Model A)을 USD로 내보낸 뒤 Revit 모델(Model B)로 다시 가져오면 원본과 <strong>99% 유사도</strong>로 일치합니다 &mdash; Revit 2027 Snowdon 샘플 모델 6종(건축, 구조, HVAC, 배관, 전기, 대지) 전체에서 검증되었습니다.',
+  ft_k2_h:'IFC &#8596; USD 변환',
+  ft_k2_p:'양방향 IFC &rarr; USD 및 USD &rarr; IFC 변환을 <strong>99% 이상의 정확도</strong>로 제공하며, 동일한 Zigma V5C 충실도 엔진에 직접 내장되어 있습니다.',
+  ft_k3_h:'임의의 USD를 Revit으로 가져오기',
+  ft_k3_p:'<strong>Zigma 지오메트릭 엔진</strong>(모델 인식 엔진)이 범용 USD 파일을 네이티브 Revit 모델로 가져오며, <strong>NVIDIA AI Factory(AIF) 사양</strong>을 폭넓게 지원합니다. NVIDIA DSX 및 NVIDIA Warehouse/Factory 장면은 <strong>90% 이상 자동화</strong>로 변환됩니다.',
+  ft_k4_h:'NVIDIA DSX 지원',
+  ft_k4_p:'NVIDIA DSX 장면은 15가지 USD 파일 유형 &mdash; 건축, MEP, 구조 등 &mdash; 으로 분해되며, 각각 인식되어 네이티브 Revit 요소로 재구성됩니다.',
+  ft_sup_label:'지원 기능',
+  ft_s1_h:'내장 USD 뷰어',
+  ft_s1p:'Zigma Builder Revit 플러그인에는 USD 뷰어(Hydra + Storm 엔진)가 내장되어 있어 Revit을 벗어나지 않고 내보낸 USD 모델을 빠르게 확인할 수 있습니다.',
+  ft_s2_h:'원격 버그 제출',
+  ft_s2p:'버그 티켓을 Zigma 백엔드로 바로 제출 &mdash; 기록 및 추적되며 최대 50 MB 첨부가 가능합니다. 이메일, 전화, 인스턴트 메신저가 필요 없습니다.',
+  ft_s3_h:'원격 모델 스캔 제출',
+  ft_s3p:'Revit 모델을 한 번의 클릭으로 스캔하여 변환할 수 없거나 손실될 수 있는 요소와 기능을 찾아 Zigma 백엔드로 직접 제출합니다.',
+  ft_s4_h:'실시간 원격 디버그 세션',
+  ft_s4p:'30&ndash;60분 실시간 원격 세션을 열면 Zigma 팀이 직접 채팅하고 사용자의 Revit 모델에 접근하여 스캔, 검증 및 시스템 점검으로 문제를 진단합니다.',
+  ft_s5_h:'보호 및 라이선스',
+  ft_s5p:'Pre-Beta 빌드에서는 모든 Zigma EXE/DLL 바이너리가 보호됩니다. 라이선스는 완전한 복사-붙여넣기 방식 &mdash; 머신 코드를 입력하면 라이선스 키가 발급되며 &mdash; 인터넷 연결이 전혀 필요 없어 외부 네트워크를 허용하지 않는 에어갭(air-gapped) 대형 공장 IT 정책에 적합합니다.',
+  ft_rm_label:'제품 로드맵',
+  ft_r1_h:'v5.7.0+',
+  ft_r1_p:'임의의 USD &rarr; Revit을 위한 Zigma 지오메트릭 엔진 대규모 업그레이드: 자동 지오메트리 인식과 Revit 모델 및 요소 매개변수 자동 입력.',
+  ft_r2_h:'v5.7.5+',
+  ft_r2_p:'버그 수정 및 안정성 향상.',
+  ft_r3_h:'v5.8',
+  ft_r3_p:'Revit 2026 및 Revit 2027 양쪽 본격 지원.',
+  ft_r4_h:'v6.0(예정)',
+  ft_r4_p:'Microsoft Defender용 EV(확장 검증) 디지털 인증서와 함께 회사 등록, 제품 등록 및 검증 절차.',
   h_badge:'OpenUSD 네이티브 &middot; USD&#8596;Revit &middot; Autodesk Revit 2027',
   h1:'양방향 <em>USD&#8596;Revit</em><br>산업용 디지털 트윈을 위한',
   h_sub:'OpenUSD가 산업용 디지털 트윈을 담당합니다. MEP 팀은 Autodesk Revit에서 작업합니다. Zigma가 양쪽을 연결하여 &mdash; USD의 정밀 데이터를 Revit으로 가져오고, Revit MEP를 다시 USD로 동기화합니다.',

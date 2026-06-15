@@ -1,7 +1,7 @@
 {
-  "zigma_version": "5.6.10.4",
-  "download_url": "https://github.com/chchlin1018/Website-ZigmaClub/releases/download/v5.6.10.4-pre-beta/ZigmaSetup_v5.6.10.4_Pre-Beta.msi",
-  "download_zip_url": "https://github.com/chchlin1018/Website-ZigmaClub/releases/download/v5.6.10.4-pre-beta/ZigmaSetup_v5.6.10.4_Pre-Beta.zip",
-  "release_url": "https://github.com/chchlin1018/Website-ZigmaClub/releases/tag/v5.6.10.4-pre-beta",
-  "notes": "v5.6.10.4 · Korean (한국어) added as the 4th UI/report language (English / 繁體中文 / 日本語 / 한국어) · experimental USD-to-Revit geometric engine (early preview · rebuilds non-Zigma OpenUSD into native Revit elements) · bidirectional IFC <-> USD roundtrip · no VMProtect · ZIP alternative if Microsoft blocks the .msi download"
+  "zigma_version": "5.6.12.5",
+  "download_url": "https://github.com/chchlin1018/Website-ZigmaClub/releases/download/v5.6.12.5-pre-beta/ZigmaSetup_v5.6.12.5_Pre-Beta.msi",
+  "download_zip_url": "https://github.com/chchlin1018/Website-ZigmaClub/releases/download/v5.6.12.5-pre-beta/ZigmaSetup_v5.6.12.5_Pre-Beta.zip",
+  "release_url": "https://github.com/chchlin1018/Website-ZigmaClub/releases/tag/v5.6.12.5-pre-beta",
+  "notes": "v5.6.12.5 · Architectural import fidelity upgrade — walls, curtain-wall grids, stairs and parameter copy now rebuild at full A++ fidelity (rebuilt model matches the source) · import-engine reliability refactor under the hood · includes all v5.6.12.2 fixes (IFC <-> USD conversion, accelerated graphics, import completeness) · 4 UI/report languages (English / 繁體中文 / 日本語 / 한국어) · built-in USD viewer (Hydra + Storm) · copy-and-paste machine-code licensing, no internet required · ZIP alternative if Microsoft blocks the .msi download"
 }
