@@ -1,7 +1,7 @@
 {
-  "zigma_version": "5.7.4",
-  "download_url": "https://github.com/chchlin1018/Website-ZigmaClub/releases/download/v5.7.4-pre-beta/ZigmaSetup_v5.7.4_Pre-Beta.msi",
-  "download_zip_url": "https://github.com/chchlin1018/Website-ZigmaClub/releases/download/v5.7.4-pre-beta/ZigmaSetup_v5.7.4_Pre-Beta.zip",
-  "release_url": "https://github.com/chchlin1018/Website-ZigmaClub/releases/tag/v5.7.4-pre-beta",
-  "notes": "v5.7.4：幾何引擎升級（NVIDIA SimReady 支援）、USD 檢視器修正、匯入時預設不處理連結模型"
+  "zigma_version": "5.7.5",
+  "download_url": "https://github.com/chchlin1018/Website-ZigmaClub/releases/download/v5.7.5-pre-beta/ZigmaSetup_v5.7.5_Pre-Beta.msi",
+  "download_zip_url": "https://github.com/chchlin1018/Website-ZigmaClub/releases/download/v5.7.5-pre-beta/ZigmaSetup_v5.7.5_Pre-Beta.zip",
+  "release_url": "https://github.com/chchlin1018/Website-ZigmaClub/releases/tag/v5.7.5-pre-beta",
+  "notes": "v5.7.5：幾何引擎升級（NVIDIA SimReady 支援）、USD 檢視器修正、匯入時預設不處理連結模型"
 }
