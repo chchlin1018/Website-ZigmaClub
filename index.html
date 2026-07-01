@@ -78,6 +78,10 @@ footer{text-align:center;padding:3rem 2rem;border-top:1px solid var(--bd);font-s
 @keyframes fi{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
 @media(max-width:1024px){.section{max-width:90vw;padding:0 1.5rem 4rem}.howto-wrap{max-width:95vw}}
 @media(max-width:600px){.rw,.rw3{grid-template-columns:1fr}nav{padding:.8rem 1rem;flex-wrap:wrap;gap:.5rem}nav .links{gap:.8rem;font-size:.8rem}.hero{padding:3rem 1.5rem 2rem}}
+/* What's New v5.7.6 · 標題綠色放大 / 內文白色 (per Michael 2026-07-02) */
+#wntitle{color:#4ade80;font-weight:700;font-size:1.12rem}
+#wnbody{color:#fff}
+#wnbody strong{color:#4ade80;font-size:1.05rem;line-height:2.6}
 </style>
 </head>
 <body>
@@ -119,9 +123,9 @@ footer{text-align:center;padding:3rem 2rem;border-top:1px solid var(--bd);font-s
 </div>
 <!-- What's New v5.7.6 (centered column · segmented · readable) -->
 <div style="text-align:center;max-width:900px;margin:0.3rem auto 1.1rem;padding:0.6rem 1.5rem 0.9rem;background:rgba(0,0,0,.15);line-height:1.85">
-  <div style="color:#ff6666;font-weight:700;font-size:.92rem;margin-bottom:.35rem" data-i18n="wn_label">What's New v5.7.6:</div>
-  <div style="color:#ff8a8a;font-size:.8rem" data-i18n="wn_text">New standalone USD Viewer (NVIDIA SimReady + real-time physics), faster import/export, large-model import protection, NVIDIA SimReady export, more complete model restoration, and the new Zigma Geometry Engine 2.8.</div>
-  <div style="color:#ffb3b3;font-size:.78rem;margin-top:.55rem"><strong data-i18n="un_label">Upgrade note:</strong> <span data-i18n="un_text">Just double-click v5.7.6 MSI to upgrade. If About Dialog shows License inactive after upgrade, please re-paste your original license.txt.</span></div>
+  <div id="wntitle" style="margin-bottom:.45rem" data-i18n="wn_label">What's New v5.7.6:</div>
+  <div id="wnbody" style="font-size:.82rem" data-i18n="wn_text">New standalone USD Viewer (NVIDIA SimReady + real-time physics), faster import/export, large-model import protection, NVIDIA SimReady export, more complete model restoration, and the new Zigma Geometry Engine 2.8.</div>
+  <div style="color:#fff;opacity:.8;font-size:.78rem;margin-top:.6rem"><strong data-i18n="un_label">Upgrade note:</strong> <span data-i18n="un_text">Just double-click v5.7.6 MSI to upgrade. If About Dialog shows License inactive after upgrade, please re-paste your original license.txt.</span></div>
 </div>
 
 <div class="banner-pb" data-i18n="pb_notice">⚠ Pre-Beta · MSI is not yet code-signed. Windows may show a SmartScreen "Unknown Publisher" warning — click "More info" → "Run anyway" to proceed. Trial access is NDA-bound · do not redistribute.</div>
