@@ -22,7 +22,7 @@
 <meta name="twitter:title" content="Zigma — USD ↔ Revit Builder">
 <meta name="twitter:description" content="OpenUSD-native USD ↔ Revit plugin for industrial digital twins. Pre-Beta on Revit 2027.">
 <meta name="twitter:image" content="https://www.zigma.club/img/step2-about.jpg">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Zigma Builder","operatingSystem":"Windows 10/11","applicationCategory":"DesignApplication","description":"Bidirectional USD \u2194 Revit plugin for OpenUSD-native industrial digital twin workflows.","softwareVersion":"5.7.8.1","releaseNotes":"https://github.com/chchlin1018/Website-ZigmaClub/releases/tag/v5.7.8.1-pre-beta","downloadUrl":"https://github.com/chchlin1018/Website-ZigmaClub/releases/download/v5.7.8.1-pre-beta/ZigmaSetup_v5.7.8.1_Pre-Beta.msi","requirements":"Autodesk Revit 2027 (64-bit Windows 10/11). .NET 10 and Visual C++ runtime are included or provided by Revit - no separate install needed.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD","availability":"https://schema.org/PreOrder","description":"Pre-Beta trial \u2014 request via website form"},"publisher":{"@type":"Organization","name":"Reality Matrix AI Inc.","url":"https://www.realitymatrixai.com"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Zigma Builder","operatingSystem":"Windows 10/11","applicationCategory":"DesignApplication","description":"Bidirectional USD \u2194 Revit plugin for OpenUSD-native industrial digital twin workflows.","softwareVersion":"5.7.8.1","releaseNotes":"https://github.com/chchlin1018/Website-ZigmaClub/releases/tag/v5.7.8.1-pre-beta","downloadUrl":"https://www.zigma.club/","requirements":"Autodesk Revit 2027 (64-bit Windows 10/11). .NET 10 and Visual C++ runtime are included or provided by Revit - no separate install needed.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD","availability":"https://schema.org/BackOrder","description":"Pre-Beta trial \u2014 download temporarily paused while the next build is prepared"},"publisher":{"@type":"Organization","name":"Reality Matrix AI Inc.","url":"https://www.realitymatrixai.com"}}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
@@ -104,7 +104,7 @@ footer{text-align:center;padding:3rem 2rem;border-top:1px solid var(--bd);font-s
     <a href="#howto" data-i18n="nav_howto">How To</a>
     <a href="#trial" data-i18n="nav_trial">Free Trial</a>
     <a href="#pricing" data-i18n="nav_pricing">Pricing</a>
-    <a class="dl-btn" href="https://github.com/chchlin1018/Website-ZigmaClub/releases/download/v5.7.8.1-pre-beta/ZigmaSetup_v5.7.8.1_Pre-Beta.msi" data-i18n="nav_dl" title="Pre-Beta v5.7.8.1 (161.6 MB) — single multilingual MSI · shows a pre-install README in your Windows language + checks prerequisites before installing">Download Trial</a>
+    <span class="dl-btn dl-disabled" data-i18n="nav_dl_paused" title="Download is temporarily paused while a new build is prepared. The install guide and diagnostic tool below remain available for existing users.">Download Paused</span>
   </div>
 </nav>
 
@@ -112,11 +112,10 @@ footer{text-align:center;padding:3rem 2rem;border-top:1px solid var(--bd);font-s
 <div style="text-align:center;padding:0.5rem 1.5rem 0.3rem;font-size:.82rem;background:rgba(0,0,0,.15)">
   <span style="color:#ff4d4d;font-weight:700;font-size:.85rem">Latest Version: 5.7.8.1 (Pre-Beta)</span>
   <br>
+  <span style="color:#fb923c;font-weight:600;font-size:.8rem" data-i18n="dl_paused_notice">&#9888; Download temporarily paused while the next build is prepared. The install guide and diagnostic tool below stay available for existing users.</span>
+  <br>
   <span style="color:rgba(255,255,255,.5);font-size:.76rem" data-i18n="ts_label">Install guide:</span>&nbsp;
   <a href="https://github.com/chchlin1018/Website-ZigmaClub/releases/download/v5.7.8.1-pre-beta/README.txt" style="color:#FFD700;text-decoration:underline;font-weight:600" title="Pre-Beta installation guide + troubleshooting (3-language)" data-i18n="rm_label">README.txt</a>
-  <br>
-  <span style="color:rgba(255,255,255,.5);font-size:.76rem" data-i18n="zip_label">.msi download blocked by Microsoft? ZIP version:</span>&nbsp;
-  <a href="https://github.com/chchlin1018/Website-ZigmaClub/releases/download/v5.7.8.1-pre-beta/ZigmaSetup_v5.7.8.1_Pre-Beta.zip" style="color:#FFD700;text-decoration:underline;font-weight:600" title="If your browser or SmartScreen blocks the .msi download, get this .zip instead, extract it, then run the MSI inside. If a SmartScreen prompt appears, click 'More info → Run anyway' (expected for unsigned pre-beta)." data-i18n="zip_link">MSI in ZIP (.zip)</a>
   <br>
   <span style="color:rgba(255,255,255,.5);font-size:.76rem" data-i18n="diag_label">Can't install or start? Diagnostic tool:</span>&nbsp;
   <a href="https://github.com/chchlin1018/Website-ZigmaClub/releases/download/v5.7.8.1-pre-beta/Zigma-Diagnostic-Toolkit.zip" style="color:#FFD700;text-decoration:underline;font-weight:600" title="If install/startup fails: download + extract, right-click customer-diagnostic.cmd -> Run as administrator, then email the Desktop .txt to michael.lin@realitymatrixai.com" data-i18n="diag_link">Diagnostic Toolkit (.zip)</a>
@@ -328,6 +327,8 @@ async function writeTrialRequestRecord(data){
 const _ZG={
 en:{
   nav_about:'About Us',nav_howto:'How To',nav_trial:'Free Trial',nav_pricing:'Pricing',nav_dl:'Download Trial',
+  nav_dl_paused:'Download Paused',
+  dl_paused_notice:'&#9888; Download temporarily paused while the next build is prepared. The install guide and diagnostic tool below stay available for existing users.',
   h_badge:'OpenUSD Native &middot; USD&#8596;Revit &middot; Autodesk Revit 2027',
   h1:'Bidirectional <em>USD&#8596;Revit</em><br>for Industrial Digital Twins',
   h_sub:'OpenUSD holds the industrial digital twin. Your MEP team works in Autodesk Revit. Zigma bridges them &mdash; bringing USD precision into Revit, and syncing Revit MEP back to USD.',
@@ -378,6 +379,8 @@ en:{
 },
 zh:{
   nav_about:'關於我們',nav_howto:'操作指引',nav_trial:'免費試用',nav_pricing:'授權方案',nav_dl:'下載試用版',
+  nav_dl_paused:'下載暫停中',
+  dl_paused_notice:'&#9888; 新版本準備中,下載暫停。下方的安裝說明與診斷工具仍可使用,現有用戶不受影響。',
   h_badge:'OpenUSD 原生 &middot; USD&#8596;Revit &middot; Autodesk Revit 2027',
   h1:'雙向 <em>USD&#8596;Revit</em><br>為工業數位孿生而生',
   h_sub:'OpenUSD 承載工業數位孿生。MEP 團隊在 Autodesk Revit 工作。Zigma 橋接兩者 &mdash; 將 USD 精準數據帶入 Revit，並將 Revit MEP 同步回 USD。',
@@ -428,6 +431,8 @@ zh:{
 },
 ja:{
   nav_about:'会社について',nav_howto:'使い方',nav_trial:'無料トライアル',nav_pricing:'ライセンスプラン',nav_dl:'トライアル版ダウンロード',
+  nav_dl_paused:'ダウンロード停止中',
+  dl_paused_notice:'&#9888; 次のビルドを準備中のため、ダウンロードを一時停止しています。下記のインストールガイドと診断ツールは引き続きご利用いただけます。',
   h_badge:'OpenUSD ネイティブ &middot; USD&#8596;Revit &middot; Autodesk Revit 2027',
   h1:'双方向 <em>USD&#8596;Revit</em><br>産業デジタルツイン向け',
   h_sub:'OpenUSD が産業デジタルツインを保持します。MEP チームは Autodesk Revit で作業します。Zigma が両者を橋渡しし、USD の精度を Revit に取り込み、Revit MEP を USD に同期します。',
@@ -478,6 +483,8 @@ ja:{
 },
 ko:{
   nav_about:'회사 소개',nav_howto:'사용 방법',nav_trial:'무료 체험판',nav_pricing:'라이선스 플랜',nav_dl:'체험판 다운로드',
+  nav_dl_paused:'다운로드 일시 중지',
+  dl_paused_notice:'&#9888; 다음 빌드를 준비하는 동안 다운로드를 일시 중지했습니다. 아래의 설치 가이드와 진단 도구는 계속 이용하실 수 있습니다.',
   h_badge:'OpenUSD 네이티브 &middot; USD&#8596;Revit &middot; Autodesk Revit 2027',
   h1:'양방향 <em>USD&#8596;Revit</em><br>산업용 디지털 트윈을 위한',
   h_sub:'OpenUSD가 산업용 디지털 트윈을 담당합니다. MEP 팀은 Autodesk Revit에서 작업합니다. Zigma가 양쪽을 연결하여 &mdash; USD의 정밀 데이터를 Revit으로 가져오고, Revit MEP를 다시 USD로 동기화합니다.',
