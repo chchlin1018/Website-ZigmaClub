@@ -124,7 +124,7 @@ footer{text-align:center;padding:3rem 2rem;border-top:1px solid var(--bd);font-s
 <!-- What's New v5.7.9.1 (centered column · segmented · readable) -->
 <div style="text-align:center;max-width:900px;margin:0.3rem auto 1.1rem;padding:0.6rem 1.5rem 0.9rem;background:rgba(0,0,0,.15);line-height:1.85">
   <div id="wntitle" style="margin-bottom:.45rem" data-i18n="wn_label">What's New v5.7.9.1:</div>
-  <div id="wnbody" style="font-size:.82rem" data-i18n="wn_text"><strong>What's new in 5.7.9.1-r2</strong> Elbow and tee connector sizes can now be specified by the USD scene file (previously always taken from the part library). Pipe radius values written as double / double[] are now read correctly, so scene-specified sizes are no longer replaced by library defaults. Family instance sizes specified by the scene are verified against the final values after import. Version information now reports the actual build flavor.</div>
+  <div id="wnbody" style="font-size:.82rem" data-i18n="wn_text"><strong>What's new in 5.7.9.1-r4</strong> Elbow angle and orientation from the scene file are applied on import; connector positions are recomputed after size adjustment and reported; connection results are reported with a clear pass/fail per connector.</div>
   <div style="color:#fff;opacity:.8;font-size:.78rem;margin-top:.6rem"><strong data-i18n="un_label">Upgrade note:</strong> <span data-i18n="un_text">Just double-click v5.7.9.1 MSI to upgrade. If About Dialog shows License inactive after upgrade, please re-paste your original license.txt.</span></div>
 </div>
 
@@ -363,7 +363,7 @@ en:{
   rm_label:'README.txt',
   zip_label:'Corporate IT policy blocking the .msi? ZIP version:',zip_link:'MSI in ZIP (.zip)',
   wn_label:"What's New v5.7.9.1:",
-  wn_text:"<strong>What's new in 5.7.9.1-r2</strong> Elbow and tee connector sizes can now be specified by the USD scene file (previously always taken from the part library). Pipe radius values written as double / double[] are now read correctly, so scene-specified sizes are no longer replaced by library defaults. Family instance sizes specified by the scene are verified against the final values after import. Version information now reports the actual build flavor.",
+  wn_text:"<strong>What's new in 5.7.9.1-r4</strong> Elbow angle and orientation from the scene file are applied on import; connector positions are recomputed after size adjustment and reported; connection results are reported with a clear pass/fail per connector.",
   un_label:'Upgrade note:',
   un_text:'Just double-click v5.7.9.1 MSI to upgrade. If About Dialog shows License inactive after upgrade, please re-paste your original license.txt.',
   pb_notice:'&#9888; Pre-Beta &middot; Signed with an <strong>EV code-signing certificate</strong> &mdash; the publisher now shows as <strong>Reality Matrix AI Inc.</strong> On a newly released build Windows SmartScreen may still show an &quot;unrecognized app&quot; prompt (that is <em>download reputation</em>, not the signature): click <strong>More info &rarr; Run anyway</strong> and check the publisher reads Reality Matrix AI Inc. Trial access is NDA-bound &middot; do not redistribute.',
@@ -412,7 +412,7 @@ zh:{
   rm_label:'README.txt',
   zip_label:'公司 IT 政策封鎖 .msi?改用 ZIP 版:',zip_link:'ZIP 內含 MSI (.zip)',
   wn_label:'v5.7.9.1 更新內容：',
-  wn_text:"<strong>ZXBuilder 5.7.9.1-r2 更新內容</strong> 彎頭、三通的接口口徑可以由場景檔指定,不再固定用零件庫的口徑。四通這一版維持由零件庫決定。 風管附件、風管配件、管配件的 Instance 管徑相關參數可由場景檔指定,匯回 Revit 後最終值留在模型裡。 配件與附件的族實例尺寸由場景檔指定,匯回後的最終值我們已驗證完成。 半徑欄位讀取放寬:zigma:connection_points:radius 寫成 double 或 double[] 也能讀,不再只認 float[];之前建議的 float[] 寫法仍然可用。 場景檔寫法(屬性名、單位、範圍規則)請見隨版 Install Guide 與釋出通知。",
+  wn_text:"<strong>5.7.9.1-r4 更新內容</strong> 彎頭 45°/90° 角度可由場景檔指定,套用後的接口方向已驗證;管徑或角度調整後,匯回時重新讀取實際接點位置與方向,逐口寫入轉換報告;超出族可構範圍的角度在寫入前即拒收並列出原因,元件不會消失。",
   un_label:'升級提醒：',
   un_text:'雙擊 v5.7.9.1 MSI 即可升級。若升級後 About 對話框顯示授權失效,請重新貼上原 license.txt。',
   pb_notice:'&#9888; Pre-Beta &middot; 本版已以 <strong>EV 程式碼簽章憑證</strong>簽署,發行者顯示為 <strong>Reality Matrix AI Inc.</strong>。新版本因下載信譽尚未累積,Windows SmartScreen <strong>仍可能</strong>顯示「無法辨識的應用程式」—— 那是<em>信譽機制</em>,與簽章無關:請點「<strong>其他資訊</strong>」&rarr;「<strong>仍要執行</strong>」,並確認發行者顯示為 Reality Matrix AI Inc.。試用授權受 NDA 約束 &middot; 不得轉發。',
@@ -461,7 +461,7 @@ ja:{
   rm_label:'README.txt',
   zip_label:'社内 IT ポリシーで .msi がブロックされる場合の ZIP 版:',zip_link:'ZIP内のMSI (.zip)',
   wn_label:'v5.7.9.1 の新機能：',
-  wn_text:"<strong>5.7.9.1-r2 の更新内容</strong> エルボ・ティーの接続口径を USD シーンファイルで指定できるようになりました(従来は常に部品ライブラリの値)。 double / double[] で書かれた配管半径を正しく読み取り、シーン指定サイズがライブラリ既定値に置き換わらなくなりました。 シーン指定のファミリインスタンス寸法を、読み込み後の最終値と照合するようになりました。 バージョン情報が実際のビルド種別を表示するようになりました。",
+  wn_text:"<strong>5.7.9.1-r4 の更新内容</strong> エルボの角度と向きをシーンファイルから適用;寸法調整後に接続点位置を再計算して報告;接続結果を接続点ごとに合否で報告。",
   un_label:'アップグレードの注意：',
   un_text:'v5.7.9.1 MSI をダブルクリックするだけでアップグレードできます。アップグレード後に About ダイアログで License 無効と表示された場合は、元の license.txt を貼り直してください。',
   pb_notice:'&#9888; Pre-Beta &middot; 本バージョンは <strong>EV コード署名証明書</strong>で署名され、発行元は <strong>Reality Matrix AI Inc.</strong> と表示されます。リリース直後はダウンロード評価が蓄積されていないため、Windows SmartScreen が「認識されないアプリ」と表示する<strong>場合があります</strong>(署名ではなく<em>評価</em>の問題です):「<strong>詳細情報</strong>」&rarr;「<strong>実行</strong>」をクリックし、発行元が Reality Matrix AI Inc. であることをご確認ください。トライアルアクセスは NDA 対象 &middot; 再配布禁止。',
@@ -510,7 +510,7 @@ ko:{
   rm_label:'README.txt',
   zip_label:'사내 IT 정책으로 .msi가 차단되나요? ZIP 버전:',zip_link:'ZIP 내 MSI (.zip)',
   wn_label:'v5.7.9.1 새로운 기능:',
-  wn_text:"<strong>5.7.9.1-r2 새 기능</strong> 엘보/티 접속 구경을 USD 씬 파일로 지정 가능(이전엔 부품 라이브러리 값). double/double[] 로 기록된 배관 반경을 올바르게 읽음. 씬 지정 패밀리 인스턴스 치수를 가져온 후 최종값과 검증. 버전 정보가 실제 빌드 종류를 표시.",
+  wn_text:"<strong>5.7.9.1-r4 업데이트 내용</strong> 엘보 45°/90° 각도를 씬 파일에서 지정할 수 있으며 적용 후 커넥터 방향을 검증했습니다; 배관 지름 또는 각도 조정 후 가져오기 시 실제 커넥터 위치와 방향을 다시 읽어 커넥터별로 변환 보고서에 기록합니다; 패밀리가 만들 수 없는 범위의 각도는 쓰기 전에 거부되고 사유가 표시되며 요소는 사라지지 않습니다.",
   un_label:'업그레이드 안내:',
   un_text:'v5.7.9.1 MSI를 더블 클릭하면 업그레이드됩니다. 업그레이드 후 About 대화 상자에서 라이선스 비활성으로 표시되면 원본 license.txt를 다시 붙여넣어 주세요.',
   pb_notice:'&#9888; Pre-Beta &middot; 본 버전은 <strong>EV 코드 서명 인증서</strong>로 서명되어 게시자가 <strong>Reality Matrix AI Inc.</strong>로 표시됩니다. 출시 직후에는 다운로드 평판이 쌓이지 않아 Windows SmartScreen이 &quot;인식할 수 없는 앱&quot; 메시지를 <strong>표시할 수 있습니다</strong>(서명이 아닌 <em>평판</em> 문제): &quot;<strong>추가 정보</strong>&quot; &rarr; &quot;<strong>실행</strong>&quot;을 클릭하고 게시자가 Reality Matrix AI Inc.인지 확인하세요. 체험판 액세스는 NDA 적용 대상 &middot; 재배포 금지.',
