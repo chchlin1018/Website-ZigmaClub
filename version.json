@@ -1,16 +1,16 @@
 {
-  "zigma_version": "5.7.9.3",
-  "display_version": "5.7.9.3-r6",
-  "download_url": "https://github.com/chchlin1018/Website-ZigmaClub/releases/download/v5.7.9.3-pre-beta/ZigmaSetup_v5.7.9.3_Pre-Beta.msi",
-  "download_zip_url": "https://github.com/chchlin1018/Website-ZigmaClub/releases/download/v5.7.9.3-pre-beta/ZigmaSetup_v5.7.9.3_Pre-Beta.zip",
-  "release_url": "https://github.com/chchlin1018/Website-ZigmaClub/releases/tag/v5.7.9.3-pre-beta",
-  "notes": "v5.7.9.3-r6: cable tray width/height from the scene file verified on customer files; same code as r5",
+  "zigma_version": "5.8.0.0",
+  "display_version": "5.8.0.0",
+  "download_url": "https://github.com/chchlin1018/Website-ZigmaClub/releases/download/v5.8.0.0-pre-beta/ZigmaSetup_v5.8.0.0_Pre-Beta.msi",
+  "download_zip_url": "https://github.com/chchlin1018/Website-ZigmaClub/releases/download/v5.8.0.0-pre-beta/ZigmaSetup_v5.8.0.0_Pre-Beta.zip",
+  "release_url": "https://github.com/chchlin1018/Website-ZigmaClub/releases/tag/v5.8.0.0-pre-beta",
+  "notes": "ZXBuilder 5.8.0.0",
   "sha256": "91A02377928958C2C0D5A0DEF363F9BD7FCBE12545421E6BE60F2248576402E2",
   "bytes": 162816000,
   "published_at": "2026-09-22T17:38:37+08:00",
   "airgap": {
-    "download_url": "https://github.com/chchlin1018/Website-ZigmaClub/releases/download/v5.7.9.3-pre-beta/ZigmaSetup_v5.7.9.3_Pre-Beta_airgap.msi",
-    "release_url": "https://github.com/chchlin1018/Website-ZigmaClub/releases/tag/v5.7.9.3-pre-beta",
+    "download_url": "https://github.com/chchlin1018/Website-ZigmaClub/releases/download/v5.8.0.0-pre-beta/ZigmaSetup_v5.8.0.0_Pre-Beta_airgap.msi",
+    "release_url": "https://github.com/chchlin1018/Website-ZigmaClub/releases/tag/v5.8.0.0-pre-beta",
     "sha256": "F661AB51E60477E02565532D29B60FD9B8035027DE65945DA0AEF434C4288F42",
     "bytes": 163233792,
     "published_at": "2026-09-19T15:09:12+08:00"
@@ -39,6 +39,6 @@
     "sha256": "E7F9784B4E3C7D0CD462492C9782C2A927391E068354AC435C189F789EDC388E",
     "bytes": 83232098,
     "published_at": "2026-09-20T03:38:29+08:00",
-    "notes": "ZXFabStandardManager 0.3 pre-beta — adds a parts classification graph view, a new standard package format for ZXBuilder, and a smoother hand-off with ZXBuilder (source tagging). 0.3.0.0-r1 adds the third-party license notices (THIRD-PARTY-NOTICES.md and the licenses folder) to the package; the program files are unchanged and the About box still shows 0.3.0.0. Trial preview; unzip and run, no installer."
+    "notes": "ZXBuilder 5.8.0.0"
   }
 }
