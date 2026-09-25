@@ -39,6 +39,18 @@ nav .links{display:flex;gap:1.2rem;font-size:.9rem;color:var(--dm);align-items:c
 .dl-btn{background:var(--ac)!important;color:#fff!important;padding:.45rem 1.2rem;border-radius:8px;font-weight:600;font-size:.85rem;transition:all .2s}.dl-btn:hover{background:#3a7bf0!important;transform:translateY(-1px)}
 .dl-btn.dl-disabled{opacity:0.55!important;cursor:not-allowed!important;background:var(--s2)!important;color:var(--dm)!important;border:1px solid var(--bd)}
 .dl-btn.dl-disabled:hover{background:var(--s2)!important;transform:none!important}
+.dlgrid{max-width:920px;margin:.7rem auto 0;text-align:left}
+.dlrow{display:grid;grid-template-columns:1fr 1fr;gap:.7rem;margin-bottom:.7rem}
+.dlrow-h{grid-column:1/-1;font-size:.82rem;font-weight:700;color:#fff;letter-spacing:.3px;padding-left:.2rem}
+.dlcard{background:var(--s1);border:1px solid var(--bd);border-radius:12px;padding:.9rem 1rem;min-width:0;transition:border-color .3s}.dlcard:hover{border-color:var(--ac)}
+.dlcard-t{font-size:.8rem;color:var(--dm);margin-bottom:.5rem}
+.dlc-btn{display:inline-block;margin:0 0 .5rem 0}
+.dl-disabled .dl-lbl{display:none}.dlc-btn:not(.dl-disabled) .dl-soon{display:none}
+.dlmeta{font-size:.74rem;color:var(--dm);line-height:1.7}.dlmeta b{color:var(--tx);font-weight:500;font-family:var(--m)}
+.dlsha summary{cursor:pointer;list-style:none}.dlsha summary::-webkit-details-marker{display:none}.dlsha summary .dl-more{color:var(--ac);font-size:.7rem}.dlsha[open] summary .dl-more{display:none}
+.dlsha code{font-family:var(--m);font-size:.72rem;color:var(--tx);word-break:break-all}
+.dlcopy{font-family:var(--m);font-size:.68rem;padding:2px 8px;border-radius:5px;border:1px solid var(--bd);background:transparent;color:var(--dm);cursor:pointer;margin-left:.4rem;vertical-align:middle}.dlcopy:hover{color:var(--tx);border-color:var(--ac)}.dlcopy.ok::after{content:" \2713";color:#4ade80}
+@media(max-width:600px){.dlrow{grid-template-columns:1fr}}
 .hero{text-align:center;padding:5rem 2rem 3rem}.hero h1{font-size:clamp(2rem,5vw,3.5rem);font-weight:700;letter-spacing:-1px;margin-bottom:1rem}.hero h1 em{font-style:normal;color:var(--ac)}
 .hero p{font-size:1.1rem;color:var(--dm);max-width:620px;margin:0 auto 2rem}.badge{display:inline-block;padding:.35rem 1rem;border-radius:20px;font-size:.8rem;font-weight:500;background:var(--gw);color:var(--ac2);border:1px solid rgba(79,140,255,.3);margin-bottom:1.5rem}
 .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.2rem;max-width:900px;margin:0 auto 4rem;padding:0 2rem}
@@ -116,9 +128,51 @@ footer{text-align:center;padding:3rem 2rem;border-top:1px solid var(--bd);font-s
 <!-- Version + Troubleshooting downloads (centered · red text · matches About Dialog version) -->
 <div id="downloads" style="text-align:center;padding:0.5rem 1.5rem 0.3rem;font-size:.82rem;background:rgba(0,0,0,.15)">
   <span style="color:#ff4d4d;font-weight:700;font-size:.85rem">Latest Version: 5.8.0.0-r2 (Pre-Beta)</span>
-  <div style="margin-top:.65rem">
-    <a class="dl-btn" style="margin:0 .45rem .4rem 0;display:inline-block" href="https://github.com/chchlin1018/Website-ZigmaClub/releases/download/v5.8.0.0-pre-beta/ZigmaSetup_v5.8.0.0_Pre-Beta.msi" data-i18n="dl_std" title="Standard trial build with online license activation &mdash; EV code-signed MSI">Download Trial (Standard)</a>
-    <a class="dl-btn" style="margin:0 0 .4rem 0;display:inline-block" href="https://github.com/chchlin1018/Website-ZigmaClub/releases/download/v5.8.0.0-pre-beta/ZigmaSetup_v5.8.0.0_Pre-Beta_airgap.msi" data-i18n="dl_airgap" title="Fully offline build for air-gapped / secure environments &mdash; zero network calls.">Download AirGap Edition</a>
+  <div class="dlgrid" id="dlgrid">
+    <div class="dlrow" data-dl-row="2027">
+      <div class="dlrow-h" data-i18n="dl_r27">Revit 2027 edition</div>
+      <div class="dlcard" id="dl27n">
+        <div class="dlcard-t" data-i18n="dl_kind_normal">Standard installer (MSI)</div>
+        <a class="dl-btn dlc-btn" href="https://github.com/chchlin1018/Website-ZigmaClub/releases/download/v5.8.0.0-pre-beta/ZigmaSetup_v5.8.0.0_Pre-Beta.msi" title="Standard trial build with online license activation &mdash; EV code-signed MSI"><span class="dl-lbl" data-i18n="dl_std">Download Trial (Standard)</span><span class="dl-soon" data-i18n="dl_soon">Coming soon</span></a>
+        <div class="dlmeta" hidden>
+          <div><span data-i18n="dl_m_ver">Version</span> <b data-dl="ver"></b> &middot; <span data-i18n="dl_m_size">Size</span> <b data-dl="size"></b></div>
+          <div><span data-i18n="dl_m_time">Published</span> <b data-dl="time"></b></div>
+          <details class="dlsha"><summary>SHA-256 <code data-dl="sha8"></code> <span class="dl-more" data-i18n="dl_m_more">(show full)</span></summary><code data-dl="sha"></code><button type="button" class="dlcopy" data-i18n="dl_m_copy">Copy</button></details>
+        </div>
+      </div>
+      <div class="dlcard" id="dl27a">
+        <div class="dlcard-t" data-i18n="dl_kind_airgap">Offline (AirGap) installer (MSI)</div>
+        <a class="dl-btn dlc-btn" href="https://github.com/chchlin1018/Website-ZigmaClub/releases/download/v5.8.0.0-pre-beta/ZigmaSetup_v5.8.0.0_Pre-Beta_airgap.msi" title="Fully offline build for air-gapped / secure environments &mdash; zero network calls."><span class="dl-lbl" data-i18n="dl_airgap">Download AirGap Edition</span><span class="dl-soon" data-i18n="dl_soon">Coming soon</span></a>
+        <div class="dlmeta" hidden>
+          <div><span data-i18n="dl_m_ver">Version</span> <b data-dl="ver"></b> &middot; <span data-i18n="dl_m_size">Size</span> <b data-dl="size"></b></div>
+          <div><span data-i18n="dl_m_time">Published</span> <b data-dl="time"></b></div>
+          <details class="dlsha"><summary>SHA-256 <code data-dl="sha8"></code> <span class="dl-more" data-i18n="dl_m_more">(show full)</span></summary><code data-dl="sha"></code><button type="button" class="dlcopy" data-i18n="dl_m_copy">Copy</button></details>
+        </div>
+      </div>
+    </div>
+    <div class="dlrow" data-dl-row="2026">
+      <div class="dlrow-h" data-i18n="dl_r26">Revit 2026 edition</div>
+      <div class="dlcard" id="dl26n">
+        <div class="dlcard-t" data-i18n="dl_kind_normal">Standard installer (MSI)</div>
+        <a class="dl-btn dlc-btn dl-disabled" aria-disabled="true" title="Standard trial build with online license activation &mdash; EV code-signed MSI"><span class="dl-lbl" data-i18n="dl_std">Download Trial (Standard)</span><span class="dl-soon" data-i18n="dl_soon">Coming soon</span></a>
+        <div class="dlmeta" hidden>
+          <div><span data-i18n="dl_m_ver">Version</span> <b data-dl="ver"></b> &middot; <span data-i18n="dl_m_size">Size</span> <b data-dl="size"></b></div>
+          <div><span data-i18n="dl_m_time">Published</span> <b data-dl="time"></b></div>
+          <details class="dlsha"><summary>SHA-256 <code data-dl="sha8"></code> <span class="dl-more" data-i18n="dl_m_more">(show full)</span></summary><code data-dl="sha"></code><button type="button" class="dlcopy" data-i18n="dl_m_copy">Copy</button></details>
+        </div>
+      </div>
+      <div class="dlcard" id="dl26a">
+        <div class="dlcard-t" data-i18n="dl_kind_airgap">Offline (AirGap) installer (MSI)</div>
+        <a class="dl-btn dlc-btn dl-disabled" aria-disabled="true" title="Fully offline build for air-gapped / secure environments &mdash; zero network calls."><span class="dl-lbl" data-i18n="dl_airgap">Download AirGap Edition</span><span class="dl-soon" data-i18n="dl_soon">Coming soon</span></a>
+        <div class="dlmeta" hidden>
+          <div><span data-i18n="dl_m_ver">Version</span> <b data-dl="ver"></b> &middot; <span data-i18n="dl_m_size">Size</span> <b data-dl="size"></b></div>
+          <div><span data-i18n="dl_m_time">Published</span> <b data-dl="time"></b></div>
+          <details class="dlsha"><summary>SHA-256 <code data-dl="sha8"></code> <span class="dl-more" data-i18n="dl_m_more">(show full)</span></summary><code data-dl="sha"></code><button type="button" class="dlcopy" data-i18n="dl_m_copy">Copy</button></details>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div style="margin-top:.2rem">
     <a class="dl-btn" style="margin:.5rem .45rem .3rem 0;display:inline-block" href="https://github.com/chchlin1018/Website-ZigmaClub/releases/download/zxbuilder-docs-5800-zh/ZXBuilder-5800-Documents-zh-v4.1-20260924.zip" data-i18n="zxdocs_dl" title="ZXBuilder 5.8.0.0 documents (zh) &mdash; all user documents in one zip">Download Documents</a>
   </div>
   <br>
@@ -357,7 +411,7 @@ async function writeTrialRequestRecord(data){
 }
 const _ZG={
 en:{
-  nav_about:'About Us',nav_howto:'How To',nav_trial:'Free Trial',nav_pricing:'Pricing',nav_dl:'Download Trial',dl_std:'Download Trial (Standard)',dl_airgap:'Download AirGap Edition',
+  nav_about:'About Us',nav_howto:'How To',nav_trial:'Free Trial',nav_pricing:'Pricing',nav_dl:'Download Trial',dl_std:'Download Trial (Standard)',dl_airgap:'Download AirGap Edition',dl_r27:'Revit 2027 edition',dl_r26:'Revit 2026 edition',dl_kind_normal:'Standard installer (MSI)',dl_kind_airgap:'Offline (AirGap) installer (MSI)',dl_soon:'Coming soon',dl_m_ver:'Version',dl_m_size:'Size',dl_m_time:'Published',dl_m_more:'(show full)',dl_m_copy:'Copy',
   h_badge:'OpenUSD Native &middot; USD&#8596;Revit &middot; Autodesk Revit 2027',
   h1:'Bidirectional <em>USD&#8596;Revit</em><br>for Industrial Digital Twins',
   h_sub:'OpenUSD holds the industrial digital twin. Your MEP team works in Autodesk Revit. ZXBuilder bridges them &mdash; bringing USD precision into Revit, and syncing Revit MEP back to USD.',
@@ -406,7 +460,7 @@ en:{
   ftr_contact:'Contact:',ftr_location:'Taipei, Taiwan'
 },
 zh:{
-  nav_about:'關於我們',nav_howto:'操作指引',nav_trial:'免費試用',nav_pricing:'授權方案',nav_dl:'下載試用版',dl_std:'下載試用版(標準版)',dl_airgap:'下載 AirGap 離線版',
+  nav_about:'關於我們',nav_howto:'操作指引',nav_trial:'免費試用',nav_pricing:'授權方案',nav_dl:'下載試用版',dl_std:'下載試用版(標準版)',dl_airgap:'下載 AirGap 離線版',dl_r27:'Revit 2027 版',dl_r26:'Revit 2026 版',dl_kind_normal:'一般安裝檔(MSI)',dl_kind_airgap:'離線(AirGap)安裝檔(MSI)',dl_soon:'即將提供',dl_m_ver:'版本',dl_m_size:'檔案大小',dl_m_time:'發布時間',dl_m_more:'(展開完整碼)',dl_m_copy:'複製',
   h_badge:'OpenUSD 原生 &middot; USD&#8596;Revit &middot; Autodesk Revit 2027',
   h1:'雙向 <em>USD&#8596;Revit</em><br>為工業數位孿生而生',
   h_sub:'OpenUSD 承載工業數位孿生。MEP 團隊在 Autodesk Revit 工作。ZXBuilder 橋接兩者 &mdash; 將 USD 精準數據帶入 Revit，並將 Revit MEP 同步回 USD。',
@@ -455,7 +509,7 @@ zh:{
   ftr_contact:'聯絡我們：',ftr_location:'臺北 · 臺灣'
 },
 ja:{
-  nav_about:'会社について',nav_howto:'使い方',nav_trial:'無料トライアル',nav_pricing:'ライセンスプラン',nav_dl:'トライアル版ダウンロード',dl_std:'トライアル版ダウンロード(標準)',dl_airgap:'AirGap オフライン版ダウンロード',
+  nav_about:'会社について',nav_howto:'使い方',nav_trial:'無料トライアル',nav_pricing:'ライセンスプラン',nav_dl:'トライアル版ダウンロード',dl_std:'トライアル版ダウンロード(標準)',dl_airgap:'AirGap オフライン版ダウンロード',dl_r27:'Revit 2027 版',dl_r26:'Revit 2026 版',dl_kind_normal:'標準インストーラー(MSI)',dl_kind_airgap:'オフライン(AirGap)インストーラー(MSI)',dl_soon:'近日提供',dl_m_ver:'バージョン',dl_m_size:'ファイルサイズ',dl_m_time:'公開日時',dl_m_more:'(全文を表示)',dl_m_copy:'コピー',
   h_badge:'OpenUSD ネイティブ &middot; USD&#8596;Revit &middot; Autodesk Revit 2027',
   h1:'双方向 <em>USD&#8596;Revit</em><br>産業デジタルツイン向け',
   h_sub:'OpenUSD が産業デジタルツインを保持します。MEP チームは Autodesk Revit で作業します。ZXBuilder が両者を橋渡しし、USD の精度を Revit に取り込み、Revit MEP を USD に同期します。',
@@ -504,7 +558,7 @@ ja:{
   ftr_contact:'お問い合わせ：',ftr_location:'台北 · 台湾'
 },
 ko:{
-  nav_about:'회사 소개',nav_howto:'사용 방법',nav_trial:'무료 체험판',nav_pricing:'라이선스 플랜',nav_dl:'체험판 다운로드',dl_std:'체험판 다운로드(표준)',dl_airgap:'AirGap 오프라인 에디션 다운로드',
+  nav_about:'회사 소개',nav_howto:'사용 방법',nav_trial:'무료 체험판',nav_pricing:'라이선스 플랜',nav_dl:'체험판 다운로드',dl_std:'체험판 다운로드(표준)',dl_airgap:'AirGap 오프라인 에디션 다운로드',dl_r27:'Revit 2027 버전',dl_r26:'Revit 2026 버전',dl_kind_normal:'일반 설치 파일(MSI)',dl_kind_airgap:'오프라인(AirGap) 설치 파일(MSI)',dl_soon:'곧 제공',dl_m_ver:'버전',dl_m_size:'파일 크기',dl_m_time:'게시 시간',dl_m_more:'(전체 보기)',dl_m_copy:'복사',
   h_badge:'OpenUSD 네이티브 &middot; USD&#8596;Revit &middot; Autodesk Revit 2027',
   h1:'양방향 <em>USD&#8596;Revit</em><br>산업용 디지털 트윈을 위한',
   h_sub:'OpenUSD가 산업용 디지털 트윈을 담당합니다. MEP 팀은 Autodesk Revit에서 작업합니다. ZXBuilder가 양쪽을 연결하여 &mdash; USD의 정밀 데이터를 Revit으로 가져오고, Revit MEP를 다시 USD로 동기화합니다.',
@@ -553,6 +607,35 @@ ko:{
   ftr_contact:'문의:',ftr_location:'타이베이 · 대만'
 }
 };
+// Download grid: fills version / size / SHA-256 / published time from version.json (same file the plugin reads).
+// Static hrefs stay as the fallback; the Revit 2026 row stays greyed out until version.json carries ZXBuilder2026.
+(function(){
+  function fmtMB(b){return (typeof b==='number'&&b>0)?(b/1048576).toFixed(1)+' MB':'';}
+  function fmtT(t){if(typeof t!=='string')return '';var m=t.match(/^(\d{4}-\d{2}-\d{2})T(\d{2}:\d{2})(?::\d{2})?(Z|[+-]\d{2}:?\d{2})?$/);if(!m)return t;return m[1]+' '+m[2]+(m[3]?' (UTC'+(m[3]==='Z'?'':m[3])+')':'');}
+  function put(root,k,v){var e=root.querySelector('[data-dl="'+k+'"]');if(e)e.textContent=v;}
+  function fill(id,blk,ver){
+    var c=document.getElementById(id);if(!c||!blk||typeof blk!=='object')return false;
+    var url=blk.download_url;if(typeof url!=='string'||url.indexOf('https://')!==0)return false;
+    var a=c.querySelector('a.dlc-btn');if(a){a.setAttribute('href',url);a.classList.remove('dl-disabled');a.removeAttribute('aria-disabled');}
+    var m=c.querySelector('.dlmeta');if(!m)return true;
+    var sha=(typeof blk.sha256==='string'&&/^[0-9A-Fa-f]{64}$/.test(blk.sha256))?blk.sha256.toUpperCase():'';
+    put(m,'ver',typeof ver==='string'?ver:'');put(m,'size',fmtMB(blk.bytes));put(m,'time',fmtT(blk.published_at));put(m,'sha8',sha.slice(0,8));put(m,'sha',sha);
+    var d=m.querySelector('details');if(d)d.hidden=!sha;
+    m.hidden=false;return true;
+  }
+  document.querySelectorAll('.dlcopy').forEach(function(b){b.addEventListener('click',function(){
+    var e=b.parentNode.querySelector('[data-dl="sha"]');var t=e?e.textContent:'';if(!t)return;
+    var ok=function(){b.classList.add('ok');setTimeout(function(){b.classList.remove('ok');},1500);};
+    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(ok,function(){});}
+    else{var ta=document.createElement('textarea');ta.value=t;document.body.appendChild(ta);ta.select();try{document.execCommand('copy');ok();}catch(x){}document.body.removeChild(ta);}
+  });});
+  if(!window.fetch)return;
+  fetch('version.json',{cache:'no-store'}).then(function(r){return r.ok?r.json():null;}).then(function(j){
+    if(!j||typeof j!=='object')return;
+    fill('dl27n',j,j.display_version);fill('dl27a',j.airgap,j.display_version);
+    var b=j.ZXBuilder2026;if(b&&typeof b==='object'){fill('dl26n',b,b.display_version);fill('dl26a',b.airgap,b.display_version);}
+  }).catch(function(){});
+})();
 function setLang(lang){
   const t=_ZG[lang]; if(!t) return;
   document.querySelectorAll('[data-i18n]').forEach(el=>{ const k=el.dataset.i18n; if(t[k]!==undefined) el.innerHTML=t[k]; });
